@@ -6,7 +6,7 @@
         <div class="img">
             <div class="color-cortina">
             </div>
-           <img class="imagen" src="{{asset('assets/img/fondo.png')}}">
+           <img class="imagen" src="{{asset('img/fondo.png')}}">
         </div>
 
 
