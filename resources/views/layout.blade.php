@@ -14,8 +14,14 @@
 
 </head>
 <body>
+<header>
+
+</header>
 <div class="container" >
-@yield("login")
+@yield("content")
 </div>
+<footer>
+    <p>RoadTech</p>
+</footer>
 </body>
 </html>

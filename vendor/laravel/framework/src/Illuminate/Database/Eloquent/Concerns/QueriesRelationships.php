@@ -22,6 +22,8 @@ trait QueriesRelationships
      * @param  string  $boolean
      * @param  \Closure|null  $callback
      * @return \Illuminate\Database\Eloquent\Builder|static
+     *
+     * @throws \RuntimeException
      */
     public function has($relation, $operator = '>=', $count = 1, $boolean = 'and', Closure $callback = null)
     {
@@ -390,6 +392,8 @@ trait QueriesRelationships
 
             if (count($query->columns) > 1) {
                 $query->columns = [$query->columns[0]];
+
+                $query->bindings['select'] = [];
             }
 
             // Finally we will add the proper result column alias to the query and run the subselect
