@@ -1250,6 +1250,7 @@
 #58 /home/vagrant/code/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #59 {main}
 "} 
+
 [2020-01-16 13:05:22] local.ERROR: There are no commands defined in the "run" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"run\" namespace. at /home/vagrant/code/vendor/symfony/console/Application.php:598)
 [stacktrace]
 #0 /home/vagrant/code/vendor/symfony/console/Application.php(651): Symfony\\Component\\Console\\Application->findNamespace()
@@ -3192,4 +3193,5 @@
 #59 /home/vagrant/code/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
 #60 /home/vagrant/code/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #61 {main}
+
 "} 

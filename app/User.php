@@ -8,7 +8,13 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    //protected $table = "users";
+
+    public function Incidencia()
+    {
+        return $this->hasMany('App\Incidencia');
+    }
+    
+
     use Notifiable;
 
     /**
