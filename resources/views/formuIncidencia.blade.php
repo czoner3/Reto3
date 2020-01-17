@@ -2,58 +2,65 @@
 
 @section('content')
 
-    <h1>Registro articulo</h1>
+    <h1>Registro incidencia</h1>
     <form action=" " method="POST">
         @csrf
         <div>
+            <h2>Ficha Cliente</h2>
             <div>
                 <label for="dniCliente">Name:</label>
                 <input type="text" id="dniCliente" name="dniCliente">
             </div>
 
-            <div class="cliente" style="width: 50%;float: left;">
+            <div class="cliente" class="form-group" style="width: 50%;float: left;">
                 <div>
-                    <label for="nombre">Name:</label>
-                    <input type="text" id="nombre" name="nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre">
                 </div>
                 <div>
-                    <label for="apellido">Name:</label>
-                    <input type="text" id="apellido" name="apellido">
+                    <label for="apellido">Apellido:</label>
+                    <input class="form-control" type="text" id="apellido" name="apellido">
                 </div>
                 <div>
-                    <label for="direccion">Name:</label>
-                    <input type="text" id="direccion" name="direccion">
+                    <label for="direccion">Direccion:</label>
+                    <input class="form-control" type="text" id="direccion" name="direccion">
                 </div>
                 <div>
-                    <label for="telefono">Name:</label>
-                    <input type="text" id="telefono" name="telefono">
+                    <label for="telefono">Telefono:</label>
+                    <input class="form-control" type="text" id="telefono" name="telefono">
                 </div>
 
             </div>
             <div class="coche" style="width: 50%;float: left;">
                 <div>
-                    <label for="matricula">Name:</label>
-                    <input type="text" id="matricula" name="matricula">
+                    <label for="matricula">Matricula:</label>
+                    <input class="form-control" type="text" id="matricula" name="matricula">
                 </div>
                 <div>
-                    <label for="marca">Name:</label>
-                    <input type="text" id="marca" name="marca">
+                    <label for="marca">Marca:</label>
+                    <input class="form-control" type="text" id="marca" name="marca">
                 </div>
                 <div>
-                    <label for="modelo">Name:</label>
-                    <input type="text" id="modelo" name="modelo">
+                    <label for="modelo">Modelo:</label>
+                    <input class="form-control" type="text" id="modelo" name="modelo">
                 </div>
                 <div>
-                    <label for="aseguradora">Name:</label>
-                    <input type="text" id="aseguradora" name="aseguradora">
+                    <label for="aseguradora">Aseguradora:</label>
+                    <input class="form-control" type="text" id="aseguradora" name="aseguradora">
                 </div>
             </div>
         </div>
 
 
         <div>
-            <label for="tipoincidencia">Name:</label>
-            <input type="text" id="tipoincidencia" name="tipoincidencia">
+            <label for="tipoincidencia">Tipo de incidencia:</label>
+            <select class="custom-select">
+                <option name="tipoincidencia" value="1">averia</option>
+                <option name="tipoincidencia" value="2">pinchazo</option>
+                <option name="tipoincidencia" value="3">golpe</option>
+                <option name="tipoincidencia" value="4">otro</option>
+
+            </select>
         </div>
 
         <div>
