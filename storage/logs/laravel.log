@@ -1250,3 +1250,165 @@
 #58 /home/vagrant/code/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #59 {main}
 "} 
+[2020-01-17 07:51:27] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 07:52:14] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 07:55:03] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:00:58] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:01:29] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:01:36] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:06:35] local.ERROR: During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#7 [internal function]: Composer\Autoload\ClassLoader {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): During class fetch: Uncaught ErrorException: include(/home/vagrant/code/czone/vendor/composer/../laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php): failed to open stream: No such file or directory in /home/vagrant/code/czone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php(18): spl_autoload_call()
+#5 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(444): include('/home/vagrant/c...')
+#6 /home/vagrant/code/czone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#7 [internal function]: Composer\\Autoload\\ClassLoader at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:07:51] local.ERROR: Trait 'Illuminate\Console\Concerns\CallsCommands' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Trait 'Illuminate\\Console\\Concerns\\CallsCommands' not found at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
+[2020-01-17 08:11:50] local.ERROR: Trait 'Illuminate\Console\Concerns\CallsCommands' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Trait 'Illuminate\\Console\\Concerns\\CallsCommands' not found at /home/vagrant/code/czone/vendor/laravel/framework/src/Illuminate/Console/Command.php:18)
+[stacktrace]
+#0 {main}
+"} 
