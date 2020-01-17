@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Tecnico;
 use Illuminate\Http\Request;
-use App\User;
 
-class UserController extends Controller
+class TecnicoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Tecnico $tecnico)
     {
         //
     }
@@ -52,10 +52,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Tecnico $tecnico)
     {
         //
     }
@@ -64,10 +64,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $cliente)
+    public function update(Request $request, Tecnico $tecnico)
     {
         //
     }
@@ -75,10 +75,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Tecnico $tecnico)
     {
         //
     }

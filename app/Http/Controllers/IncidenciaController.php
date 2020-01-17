@@ -24,7 +24,9 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        //
+        {
+            return view('formuIncidencia');
+        }
     }
 
     /**
@@ -35,7 +37,19 @@ class IncidenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $incidencia = new Incidencia();
+
+        $incidencia->tipoincidencia = request('tipoincidencia');
+        $incidencia->lugar = request('lugar');
+        $incidencia->observaciones = request('observaciones');
+        $incidencia->estado = request('estado');
+        $incidencia->dniCliente = request('dniCliente');
+        $incidencia->idUsuario = request('idUsuario');
+        $incidencia->idTecnico = request('idTecnico');
+
+        $incidencia->save();
+
+        return redirect('/');
     }
 
     /**
