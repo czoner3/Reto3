@@ -19,7 +19,7 @@ class CreateVehiculosTable extends Migration
             $table->string('modelo');
             $table->string('tipo');
             $table->integer("aseguradora");
-            $table->string('dni_cliente');
+            $table->unsignedBigInteger('Cliente_id');
             $table->timestamps();
         });
     }

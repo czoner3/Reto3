@@ -416,6 +416,7 @@ class ComposerStaticInit48a70324bf2d21e3d330d7828bfa6771
 
     public static $classMap = array (
         'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
+        'App\\Comentario' => __DIR__ . '/../..' . '/app/Comentario.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -428,7 +429,9 @@ class ComposerStaticInit48a70324bf2d21e3d330d7828bfa6771
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IncidenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/IncidenciaController.php',
+        'App\\Http\\Controllers\\TecnicoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TecnicoController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\VehiculoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VehiculoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -443,6 +446,7 @@ class ComposerStaticInit48a70324bf2d21e3d330d7828bfa6771
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Tecnico' => __DIR__ . '/../..' . '/app/Tecnico.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Vehiculo' => __DIR__ . '/../..' . '/app/Vehiculo.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
