@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incidencia extends Model
 {
+<<<<<<< Updated upstream
     public function Cliente()
     {
         return $this->belongsTo('App\Cliente');
@@ -18,4 +19,7 @@ class Incidencia extends Model
     {
         return $this->belongsTo('App\Tecnico');
     }
+=======
+    //
+>>>>>>> Stashed changes
 }

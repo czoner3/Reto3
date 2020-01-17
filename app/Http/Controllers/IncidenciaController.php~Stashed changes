@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Incidencia;
 use Illuminate\Http\Request;
 use App\User;
 
-class UserController extends Controller
+class IncidenciaController extends Controller
 {
+<<<<<<< Updated upstream:app/Http/Controllers/UserController.php
     /**
      * Display a listing of the resource.
      *
@@ -81,5 +83,12 @@ class UserController extends Controller
     public function destroy(Cliente $cliente)
     {
         //
+=======
+    //
+    public function index()
+    {
+        $incidencia = Incidencia::all();
+        return view('incidencia', ['incidencia' => $incidencia]);
+>>>>>>> Stashed changes:app/Http/Controllers/IncidenciaController.php
     }
 }
