@@ -2,52 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
-
-      <change afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Incidencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Incidencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_081712_create_incidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_081712_create_incidencias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/RedisBroadcaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/RedisBroadcaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Constraints/HasInDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Constraints/HasInDatabase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/WithFaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/WithFaker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/button.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/message.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/panel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/promotion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/promotion.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Str.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Str.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/MailFake.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/MailFake.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/src/Console/TinkerCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/src/Console/TinkerCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/tinker/src/TinkerCaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/tinker/src/TinkerCaster.php" afterDir="false" />
-      
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,9 +174,7 @@
       <workItem from="1579174280359" duration="128000" />
       <workItem from="1579174528719" duration="272000" />
       <workItem from="1579175156763" duration="3896000" />
-
       <workItem from="1579246557882" duration="7465000" />
-
     </task>
     <servers />
   </component>
