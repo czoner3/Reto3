@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Incidencia;
+use App\Vehiculo;
 use Illuminate\Http\Request;
 
 class IncidenciaController extends Controller
@@ -43,13 +45,38 @@ class IncidenciaController extends Controller
         $incidencia->lugar = request('lugar');
         $incidencia->observaciones = request('observaciones');
         $incidencia->estado = request('estado');
-        $incidencia->dniCliente = request('dniCliente');
+        $incidencia->dniCliente = request('dni');
         $incidencia->idUsuario = request('idUsuario');
         $incidencia->idTecnico = request('idTecnico');
 
         $incidencia->save();
 
+
+        $cliente = new Cliente();
+
+        $cliente->dni = request('dni');
+        $cliente->nombre = request('nombre');
+        $cliente->apellido = request('apellido');
+        $cliente->direccion = request('direccion');
+        $cliente->telefono = request('telefono');
+
+        $cliente->save();
+
+        $vehiculo = new Vehiculo();
+
+        $vehiculo->matricula = request('matricula');
+        $vehiculo->marca = request('marca');
+        $vehiculo->modelo = request('modelo');
+        $vehiculo->tipo = request('tipo');
+        $vehiculo->aseguradora = request('aseguradora');
+        $vehiculo->Cliente_id = request('dni');
+
+        $vehiculo->save();
+
         return redirect('/');
+
+
+
     }
 
     /**
