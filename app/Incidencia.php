@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incidencia extends Model
 {
-<<<<<<< Updated upstream
     public function Cliente()
     {
         return $this->belongsTo('App\Cliente');
@@ -19,7 +18,34 @@ class Incidencia extends Model
     {
         return $this->belongsTo('App\Tecnico');
     }
-=======
-    //
->>>>>>> Stashed changes
+
+    //Scope
+    public function scopeEstado($query,$estado){
+        if($estado)
+            return $query->where('estado','=', "%estado%");
+
+    }
+
+    public function scopeCliente($query,$cliente){
+        if($cliente)
+            return $query->where('$cliente','=', "%$cliente%");
+
+    }
+
+    public function scopeOperador($query,$operador){
+        if($operador)
+            return $query->where('$operador','=', "%$operador%");
+
+    }
+
+    public function scopeTecnico($query,$tecnico){
+        if($tecnico)
+            return $query->where('$tecnico','=', "%$tecnico%");
+
+    }
+
+
+
+
+
 }

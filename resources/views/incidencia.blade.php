@@ -1,22 +1,70 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layout')
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+@section('content')
+<div class="row col-11"><h1>Gestion de bodegas</h1></div>
+<div class="row col-11">
+    <form action="/incidencia" method="get">
+    <div class="incidencia" class="form-group" style="width: 50%;float: left;">
+        <div>
+            <label for="incidencia">Tipo de incidencia:</label>
+            <input class="form-control" type="text" id="incidencia" name="incidencia">
+        </div>
+        <div>
+            <label for="localizacion">Localizacion:</label>
+            <input class="form-control" type="text" id="localizacion" name="localizacion">
+        </div>
+        <div>
+            <label for="estado">Estado:</label>
+            <input class="form-control" type="text" id="estado" name="estado">
+        </div>
+        <div>
+            <label for="cliente">Cliente:</label>
+            <input class="form-control" type="text" id="cliente" name="cliente">
+        </div>
+        <div>
+            <label for="operador">Operador:</label>
+            <input class="form-control" type="text" id="operador" name="operador">
+        </div>
+        <div>
+            <label for="tecnico">Tecnico:</label>
+            <input class="form-control" type="text" id="tecnico" name="tecnico">
+        </div>
+        <div class="row mb-3">
+            <input class=" btn btn-primary mr" type="submit" value="Filtrar">
+        </div>
+    </div>
+    </form>
+</div>
 
-    <title>Document</title>
-</head>
-<body>
-<h1>Gestion de bodegas</h1>
-</body>
-</html>
-
-
+<div class="row col-11">
+    <table class="table " border="1">
+        <thead class="thead-dark ">
+        <tr>
+            <th>Tipo de incidencia</th>
+            <th>Localizacion</th>
+            <th>Observaciones</th>
+            <th>Estado</th>
+            <th>Cliente</th>
+            <th>Operador</th>
+            <th>Tecnico</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($incidencia as $inci)
+            <tr>
+                <td>{{$inci->tipoincidencia }}</td>
+                <td>{{$inci->lugar }}</td>
+                <td> {{$inci->observaciones}}</td>
+                <td>{{$inci->estado}}</td>
+                <td>{{$inci->Cliente_id}}</td>
+                <td>{{$inci->Usuario_id}}</td>
+                <td>{{$inci->Tecnico_id}}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+</div>
+@endsection
 
 
 

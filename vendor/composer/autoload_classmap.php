@@ -18,15 +18,11 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\ClienteController' => $baseDir . '/app/Http/Controllers/ClienteController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-<<<<<<< Updated upstream
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IncidenciaController' => $baseDir . '/app/Http/Controllers/IncidenciaController.php',
     'App\\Http\\Controllers\\TecnicoController' => $baseDir . '/app/Http/Controllers/TecnicoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\VehiculoController' => $baseDir . '/app/Http/Controllers/VehiculoController.php',
-=======
-    'App\\Http\\Controllers\\IncidenciaController' => $baseDir . '/app/Http/Controllers/IncidenciaController.php',
->>>>>>> Stashed changes
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

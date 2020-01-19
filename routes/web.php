@@ -15,18 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/incidencia', 'IncidenciaController@index');
 /*Route::get('/login', function () {
     return view('login');
 });*/
 
 //Route::get('/');
 
-<<<<<<< Updated upstream
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create/incidencia', 'IncidenciaController@create');
-=======
->>>>>>> Stashed changes
+Route::get('/incidencia','IncidenciaController@index');
+

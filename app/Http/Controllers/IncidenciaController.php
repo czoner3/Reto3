@@ -14,9 +14,21 @@ class IncidenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(Request $request){
+
+        $estado = $request->get('estado');
+        $cliente = $request->get('$cliente');
+        $operador = $request->get('$operador');
+        $tecnico = $request->get('$tecnico');
+
         //
+        $incidencia = Incidencia::orderBy('id','DESC')
+            ->estado($estado)
+            ->cliente($cliente)
+            ->operador($operador)
+            ->tecnico($tecnico)
+            ->paginate(4);
+        return view('incidencia', compact('incidencia'));
     }
 
     /**
