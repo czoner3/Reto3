@@ -14,11 +14,17 @@
 
 </head>
 <body>
-<div><!--class="container"-->
+<style>
+    .global{
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+<div class="global"><!--class="container"-->
 @yield("content")
 </div>
 <footer>
-    <p>RoadTech</p>
+
 </footer>
 </body>
 </html>

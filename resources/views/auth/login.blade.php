@@ -9,7 +9,8 @@
     </div>
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="izquierda">
+    <div class="row justify-content-center form-box">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -75,6 +76,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+    <div class="derecha">
+      <div class="contenedor-titulo">
+          <h1 class="empresa"> CZONE </h1>
+          <h2 class="eslogan">Corporation</h2>
+      </div>
     </div>
 </div>
 @endsection
