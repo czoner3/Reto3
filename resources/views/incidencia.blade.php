@@ -6,12 +6,8 @@
     <form action="/incidencia" method="get">
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
         <div>
-            <label for="incidencia">Tipo de incidencia:</label>
-            <input class="form-control" type="text" id="incidencia" name="incidencia">
-        </div>
-        <div>
-            <label for="localizacion">Localizacion:</label>
-            <input class="form-control" type="text" id="localizacion" name="localizacion">
+            <label for="tipoincidencia">Tipo de incidencia:</label>
+            <input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">
         </div>
         <div>
             <label for="estado">Estado:</label>
@@ -54,7 +50,7 @@
             <tr>
                 <td>{{$inci->tipoincidencia }}</td>
                 <td>{{$inci->lugar }}</td>
-                <td> {{$inci->observaciones}}</td>
+                <td>{{$inci->observaciones}}</td>
                 <td>{{$inci->estado}}</td>
                 <td>{{$inci->Cliente_id}}</td>
                 <td>{{$inci->Usuario_id}}</td>

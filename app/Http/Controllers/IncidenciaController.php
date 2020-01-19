@@ -16,18 +16,20 @@ class IncidenciaController extends Controller
      */
     public function index(Request $request){
 
+        $tipoincidencia = $request->get('tipoincidencia');
         $estado = $request->get('estado');
-        $cliente = $request->get('$cliente');
-        $operador = $request->get('$operador');
-        $tecnico = $request->get('$tecnico');
+        $Cliente_id = $request->get('$cliente');
+        $Operador_id = $request->get('$operador');
+        $Tecnico_id = $request->get('$tecnico');
 
         //
         $incidencia = Incidencia::orderBy('id','DESC')
+            ->tipoincidencia($tipoincidencia)
             ->estado($estado)
-            ->cliente($cliente)
-            ->operador($operador)
-            ->tecnico($tecnico)
-            ->paginate(4);
+            ->cliente($Cliente_id)
+            ->operador($Operador_id)
+            ->tecnico($Tecnico_id)
+            ->paginate(5);
         return view('incidencia', compact('incidencia'));
     }
 

@@ -20,27 +20,33 @@ class Incidencia extends Model
     }
 
     //Scope
+    public function scopeTipoincidencia($query,$tipoincidencia){
+        if($tipoincidencia!=null)
+            return $query->Where('tipoincidencia','=', "$tipoincidencia");
+
+    }
+
     public function scopeEstado($query,$estado){
-        if($estado)
-            return $query->where('estado','=', "%estado%");
+        if($estado!=null)
+            return $query->Where('estado','=', "$estado");
 
     }
 
     public function scopeCliente($query,$cliente){
-        if($cliente)
-            return $query->where('$cliente','=', "%$cliente%");
+        if($cliente!=null)
+            return $query->Where('$Cliente_id','=', "$cliente");
 
     }
 
     public function scopeOperador($query,$operador){
-        if($operador)
-            return $query->where('$operador','=', "%$operador%");
+        if($operador!=null)
+            return $query->Where('$Operador_id','=', "$operador");
 
     }
 
     public function scopeTecnico($query,$tecnico){
-        if($tecnico)
-            return $query->where('$tecnico','=', "%$tecnico%");
+        if($tecnico!=null)
+            return $query->Where('$Tecnico_id','=', "$tecnico");
 
     }
 
