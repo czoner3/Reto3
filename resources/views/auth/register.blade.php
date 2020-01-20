@@ -52,11 +52,11 @@
                             <label for="tipo" class="col-md-4 col-form-label text-md-right">Tipo</label>
 
                             <div class="col-md-6">
-                                <select class="form-control">
-                                    <option value="0" name="tipo">Operador</option>
-                                    <option value="1" name="tipo">Técnico</option>
-                                    <option value="1" name="tipo">Gerente</option>
-                                    <option value="1" name="tipo">Administrador</option>
+                                <select name="tipo" class="form-control">
+                                    <option value="0">Operador</option>
+                                    <option value="1">Técnico</option>
+                                    <option value="1">Gerente</option>
+                                    <option value="1">Administrador</option>
                                 </select>
 
 
