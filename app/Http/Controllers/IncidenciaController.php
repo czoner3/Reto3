@@ -6,6 +6,7 @@ use App\Cliente;
 use App\Incidencia;
 use App\Vehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IncidenciaController extends Controller
 {
@@ -22,7 +23,10 @@ class IncidenciaController extends Controller
         $Operador_id = $request->get('$operador');
         $Tecnico_id = $request->get('$tecnico');
 
+
+
         //
+
         $incidencia = Incidencia::orderBy('id','DESC')
             ->tipoincidencia($tipoincidencia)
             ->estado($estado)
@@ -30,7 +34,19 @@ class IncidenciaController extends Controller
             ->operador($Operador_id)
             ->tecnico($Tecnico_id)
             ->paginate(5);
+
         return view('incidencia', compact('incidencia'));
+
+       /* $incidencia = DB::table('incidencias')
+            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
+            ->select('incidencias.*', 'users.nombre')
+            ->orderBy('id','DESC')
+            ->get();*/
+
+
+
+
+
     }
 
     /**

@@ -48,13 +48,34 @@
         <tbody>
         @foreach($incidencia as $inci)
             <tr>
-                <td>{{$inci->tipoincidencia }}</td>
+                <td>
+                    @switch($inci->tipoincidencia)
+                        @case(0)
+                        Pinchazo
+                        @break
+                        @case(1)
+                        Golpe
+                        @break
+                        @case(2)
+                        Averia
+                        @break
+                        @case(3)
+                        Otro
+                        @break
+                    @endswitch
+
+                </td>
                 <td>{{$inci->lugar }}</td>
                 <td>{{$inci->observaciones}}</td>
-                <td>{{$inci->estado}}</td>
-                <td>{{$inci->Cliente_id}}</td>
-                <td>{{$inci->Usuario_id}}</td>
-                <td>{{$inci->Tecnico_id}}</td>
+                <td>{{($inci->estado)?'Yes':'No'}}</td>
+                <td>
+                    {{$inci->Cliente_id}}
+                </td>
+                <td>
+                    {{$inci->Usuario_id}}
+                </td>
+                <td>{{$inci->Tecnico_id}}
+                </td>
             </tr>
         @endforeach
         </tbody>
