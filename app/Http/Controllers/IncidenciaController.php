@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Incidencia;
+use App\Tecnico;
 use App\Vehiculo;
 use Illuminate\Http\Request;
 
@@ -40,9 +41,11 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        {
-            return view('formuIncidencia');
-        }
+        $tecnicos = Tecnico::all();
+        return view('formuIncidencia', [
+            "tecnicos"=> $tecnicos,
+        ]);
+
     }
 
     /**
