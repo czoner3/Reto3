@@ -6,7 +6,6 @@
     <form action="" method="GET">
         @csrf
         <div>
-            <h2>Ficha Cliente</h2>
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
@@ -17,7 +16,7 @@
             </div>
 
             <div id="fichaCliente" style="width: 90%;margin-left: 5%;">
-                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 10px;">
+                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input class="form-control" type="text" id="nombre" name="nombre">
@@ -36,7 +35,7 @@
                     </div>
 
                 </div>
-                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 10px;">
+                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;">
 
                         <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                             <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
@@ -58,15 +57,26 @@
                         <label for="aseguradora">Aseguradora:</label>
                         <input class="form-control" type="text" id="aseguradora" name="aseguradora">
                     </div>
+
+                    <div>
+                        <label for="tipovehiculo">Tipo de vehiculo:</label>
+                        <select class="custom-select">
+                            <option name="tipovehiculo" value="1">Vehículos ligeros</option>
+                            <option name="tipovehiculo" value="2">Vehículos pesados </option>
+                            <option name="tipovehiculo" value="3">Vehículos especiales y agrícolas</option>
+                            <option name="tipovehiculo" value="4">Otros vehículos</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+            <input type="hidden" name="idtecnico" id="idtecnico">
             <input type="hidden" name="idtecnico" id="idtecnico">
         </div>
 
 
-        <div>
+        <div style=" width: 90%;margin: 24% 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
-            <select class="custom-select">
+            <select class="custom-select" >
                 <option name="tipoincidencia" value="1">averia</option>
                 <option name="tipoincidencia" value="2">pinchazo</option>
                 <option name="tipoincidencia" value="3">golpe</option>
@@ -74,15 +84,15 @@
             </select>
         </div>
 
-        <div id="map" style="width: 90%;height: 30%;margin-left: 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
+        <div id="map" style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
 
-        <div>
-            <button class="btn btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button>
+        <div style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;">
+            <button class="btn btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button><a href="/">volver</a>
         </div>
     </form>
 
 
-    <a href="http://homestead.test/">volver</a>
+
     <script>
         let botondni = document.getElementById('botondni');
 
@@ -95,7 +105,8 @@
                 type: "GET",
                 async: false,
                 success: function (result) {
-                    console.log(result);
+                    let contenido = $("<div />").html(result).find( '#jscliente' ).html();
+                    eval(contenido);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     console.log(thrownError);
@@ -108,19 +119,17 @@
 
             botonmatricula.addEventListener("click", function () {
                 let nummatricula = document.getElementById('matricula').value;
-                var prueba = "";
         $.ajax({
             data: nummatricula,
             url: "http://homestead.test/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&matricula="+ nummatricula +"&action=Buscar+matricula",
             type: "GET",
             async: false,
             success: function (result) {
-                prueba=result;
-                console.log(result);
+                let contenido = $("<div />").html(result).find( '#jscoche' ).html();
+                eval(contenido);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log(thrownError);
-                prueba = thrownError;
             }
         });
     });
@@ -239,8 +248,8 @@
             $clienteid =\App\Cliente::select('id')->where('dni',$dnicliente)->first();
             $cliente = \App\Cliente::find($clienteid->id);
 
-        $persona=
-        echo "<script>
+
+        echo "<script id='jscliente'>
             document.getElementById('nombre').value = '{$cliente->nombre}';
             document.getElementById('apellido').value = '{$cliente->apellido}';
             document.getElementById('direccion').value = '{$cliente->direccion}';
@@ -252,7 +261,7 @@
         $cocheid =\App\Vehiculo::select('id')->where('matricula',$matricula)->first();
         $coche = \App\Vehiculo::find($cocheid->id);
 
-        echo "<script>
+        echo "<script id='jscoche'>
             document.getElementById('marca').value = '{$coche->marca}';
             document.getElementById('modelo').value = '{$coche->modelo}';
             document.getElementById('aseguradora').value = '{$coche->aseguradora}';
