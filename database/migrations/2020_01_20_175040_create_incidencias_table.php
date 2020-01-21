@@ -19,7 +19,7 @@ class CreateIncidenciasTable extends Migration
             $table->string('lugar');
             $table->string('observaciones');
             $table->integer("estado");
-            $table->unsignedBigInteger('Cliente_id');
+            $table->integer('Cliente_id');
             $table->unsignedBigInteger('Usuario_id');
             $table->unsignedBigInteger('Tecnico_id');
             $table->timestamps();

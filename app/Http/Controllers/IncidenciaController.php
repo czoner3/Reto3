@@ -19,31 +19,30 @@ class IncidenciaController extends Controller
 
         $tipoincidencia = $request->get('tipoincidencia');
         $estado = $request->get('estado');
-        $Cliente_id = $request->get('$cliente');
-        $Operador_id = $request->get('$operador');
-        $Tecnico_id = $request->get('$tecnico');
-
+        $cliente_id = $request->get('cliente_id');
+        $usuario_id = $request->get('usuario_id');
+        $tecnico_id = $request->get('tecnico_id');
+        print_r ($cliente_id);
 
 
         //
+  /*      $incidencia = DB::table('incidencias')
+        ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
+            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
+            ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
+            ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
+            ->orderBy('id','DESC')
+            ->get();*/
 
         $incidencia = Incidencia::orderBy('id','DESC')
             ->tipoincidencia($tipoincidencia)
             ->estado($estado)
-            ->cliente($Cliente_id)
-            ->operador($Operador_id)
-            ->tecnico($Tecnico_id)
-            ->paginate(5);
+            ->cliente_id($cliente_id)
+            ->usuario_id($usuario_id)
+            ->tecnico_id($tecnico_id)
+            ->paginate(6);
 
         return view('incidencia', compact('incidencia'));
-
-       /* $incidencia = DB::table('incidencias')
-            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
-            ->select('incidencias.*', 'users.nombre')
-            ->orderBy('id','DESC')
-            ->get();*/
-
-
 
 
 
