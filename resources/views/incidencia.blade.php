@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<div class="row col-11"><h1>Gestion de bodegas</h1></div>
+<div class="row col-11"><h1>Incidencias</h1></div>
 <div class="row col-11">
     <form action="/incidencia" method="get">
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
@@ -14,16 +14,16 @@
             <input class="form-control" type="text" id="estado" name="estado">
         </div>
         <div>
-            <label for="cliente">Cliente:</label>
-            <input class="form-control" type="text" id="cliente" name="cliente">
+            <label for="cliente_id">Cliente:</label>
+            <input class="form-control" type="text" id="cliente_id" name="cliente_id">
         </div>
         <div>
-            <label for="operador">Operador:</label>
-            <input class="form-control" type="text" id="operador" name="operador">
+            <label for="usuario_id">Operador:</label>
+            <input class="form-control" type="text" id="usuario_id" name="usuario_id">
         </div>
         <div>
-            <label for="tecnico">Tecnico:</label>
-            <input class="form-control" type="text" id="tecnico" name="tecnico">
+            <label for="tecnico_id">Tecnico:</label>
+            <input class="form-control" type="text" id="tecnico_id" name="tecnico_id">
         </div>
         <div class="row mb-3">
             <input class=" btn btn-primary mr" type="submit" value="Filtrar">
@@ -41,8 +41,12 @@
             <th>Observaciones</th>
             <th>Estado</th>
             <th>Cliente</th>
-            <th>Operador</th>
+            <th>Cliente nombre</th>
+            <th>Usuario</th>
+            <th>Usuario nombre</th>
             <th>Tecnico</th>
+            <th>Tecnico nombre</th>
+
         </tr>
         </thead>
         <tbody>
@@ -72,9 +76,19 @@
                     {{$inci->Cliente_id}}
                 </td>
                 <td>
+                    {{ \App\Cliente::find($inci->Cliente_id)->nombrecli}}
+                </td>
+                <td>
                     {{$inci->Usuario_id}}
                 </td>
-                <td>{{$inci->Tecnico_id}}
+                <td>
+                    {{\App\Users::find($inci->Usuario_id)->nombreusu}}
+                </td>
+                <td>
+                    {{$inci->Tecnico_id}}
+                </td>
+                <td>
+                    {{\App\Tecnico::find($inci->Tecnico_id)->nombretec}}
                 </td>
             </tr>
         @endforeach

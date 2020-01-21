@@ -13,16 +13,15 @@ class CreateIncidenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidencia', function (Blueprint $table) {
+        Schema::create('incidencias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('tipoIncidencia');
+            $table->integer("tipoincidencia");
             $table->string('lugar');
-            $table->time('hora');
-            $table->integer('estado');
+            $table->string('observaciones');
+            $table->integer("estado");
+            $table->integer('Cliente_id');
             $table->unsignedBigInteger('Usuario_id');
             $table->unsignedBigInteger('Tecnico_id');
-            $table->unsignedBigInteger('Cliente_id');
-
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CreateIncidenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incidencia');
+        Schema::dropIfExists('incidencias');
     }
 }
