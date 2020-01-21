@@ -7,23 +7,53 @@
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
         <div>
             <label for="tipoincidencia">Tipo de incidencia:</label>
-            <input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">
+            <select class="custom-select" name="tipoincidencia">
+                <option value="">--</option>
+                <option value="0">Pinchazo</option>
+                <option value="1">Golpe</option>
+                <option value="2">Averia</option>
+                <option value="3">Otro</option>
+            </select>
+            {{--<input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">--}}
         </div>
         <div>
             <label for="estado">Estado:</label>
-            <input class="form-control" type="text" id="estado" name="estado">
+            <select class="custom-select" name="tipoincidencia">
+                <option value="">--</option>
+                <option value="0">Cerrada</option>
+                <option value="1">Abierta</option>
+            </select>
+            {{--<input class="form-control" type="text" id="estado" name="estado">--}}
         </div>
         <div>
             <label for="cliente_id">Cliente:</label>
-            <input class="form-control" type="text" id="cliente_id" name="cliente_id">
+            <select class="custom-select" name="cliente_id">
+                <option value="">--</option>
+                @foreach($clientes as $cliente)
+                <option value="{{$cliente->id}}">{{$cliente->nombrecli}}</option>
+                @endforeach
+            </select>
+            {{--<input class="form-control" type="text" id="cliente_id" name="cliente_id">--}}
         </div>
         <div>
             <label for="usuario_id">Operador:</label>
-            <input class="form-control" type="text" id="usuario_id" name="usuario_id">
+            <select class="custom-select" name="usuario_id">
+                <option value="">--</option>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->nombreusu}}</option>
+                @endforeach
+            </select>
+            {{--<input class="form-control" type="text" id="usuario_id" name="usuario_id">--}}
         </div>
         <div>
             <label for="tecnico_id">Tecnico:</label>
-            <input class="form-control" type="text" id="tecnico_id" name="tecnico_id">
+            <select class="custom-select" name="tecnico_id">
+                <option value="">--</option>
+                @foreach($tecnicos as $tecnico)
+                    <option value="{{$tecnico->id}}">{{$tecnico->nombretec}}</option>
+                @endforeach
+            </select>
+            {{--<input class="form-control" type="text" id="tecnico_id" name="tecnico_id">--}}
         </div>
         <div class="row mb-3">
             <input class=" btn btn-primary mr" type="submit" value="Filtrar">
@@ -46,7 +76,6 @@
             <th>Usuario nombre</th>
             <th>Tecnico</th>
             <th>Tecnico nombre</th>
-
         </tr>
         </thead>
         <tbody>
@@ -71,7 +100,7 @@
                 </td>
                 <td>{{$inci->lugar }}</td>
                 <td>{{$inci->observaciones}}</td>
-                <td>{{($inci->estado)?'Yes':'No'}}</td>
+                <td>{{($inci->estado)?'Abierta':'Cerrada'}}</td>
                 <td>
                     {{$inci->Cliente_id}}
                 </td>

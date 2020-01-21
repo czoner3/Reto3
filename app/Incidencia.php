@@ -38,7 +38,6 @@ class Incidencia extends Model
         if($cliente_id!=null)
             return $query->Where('Cliente_id','=', "$cliente_id");
 
-
     }
 
     public function scopeUsuario_id($query,$usuario_id){

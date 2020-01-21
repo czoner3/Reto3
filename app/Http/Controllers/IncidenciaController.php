@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Incidencia;
+use App\Tecnico;
+use App\Users;
 use App\Vehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -42,7 +44,16 @@ class IncidenciaController extends Controller
             ->tecnico_id($tecnico_id)
             ->paginate(6);
 
-        return view('incidencia', compact('incidencia'));
+       /* $users = DB::table('users')->where('tipo', '=' ,2);
+        foreach ($users as $user) {
+            echo($user->id);
+        }*/
+        $users = Users::all()->where('tipo','=',2);
+
+        $tecnicos = Tecnico::all();
+        $clientes = Cliente::all();
+
+        return view('incidencia', compact('incidencia','users','tecnicos','clientes'));
 
 
 
