@@ -3,7 +3,7 @@
 @section('content')
 
     <h1>Registro incidencia</h1>
-    <form action="homestead.test" method="GET">
+    <form action="" method="GET">
         @csrf
         <div>
             <h2>Ficha Cliente</h2>
@@ -11,7 +11,7 @@
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-outline-secondary" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
+                        <button type="button" class="btn btn-outline-secondary" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                         <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                             <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-outline-secondary" id="botondni" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
+                                <button type="button" class="btn btn-outline-secondary" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
                             </div>
                         </div>
 
@@ -60,6 +60,7 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="idtecnico" id="idtecnico">
         </div>
 
 
@@ -76,25 +77,67 @@
         <div id="map" style="width: 90%;height: 30%;margin-left: 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
 
         <div>
-            <button class="btn btn-primary" type="submit" name="action" value="Generar incidencia">Generar incidencia</button>
+            <button class="btn btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button>
         </div>
     </form>
 
 
     <a href="http://homestead.test/">volver</a>
     <script>
-        let map;
+        let botondni = document.getElementById('botondni');
 
+        botondni.addEventListener("click", function () {
+            let dnicliente = document.getElementById('dniCliente').value;
+
+            $.ajax({
+                data: dnicliente,
+                url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&dniCliente="+ dnicliente +"&action=Buscar+dni",
+                type: "GET",
+                async: false,
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(thrownError);
+                }
+            });
+        });
+
+
+        let botonmatricula = document.getElementById('botonmatricula');
+
+            botonmatricula.addEventListener("click", function () {
+                let nummatricula = document.getElementById('matricula').value;
+                var prueba = "";
+        $.ajax({
+            data: nummatricula,
+            url: "http://homestead.test/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&matricula="+ nummatricula +"&action=Buscar+matricula",
+            type: "GET",
+            async: false,
+            success: function (result) {
+                prueba=result;
+                console.log(result);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(thrownError);
+                prueba = thrownError;
+            }
+        });
+    });
+
+
+    </script>
+    <script>
+
+
+
+        let map;
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 43.1 ,lng: -2.5877665},
                 zoom: 9
             });
-
-
-
-
 
 
             var iconBase =
@@ -132,7 +175,11 @@
                     map: map
                 });
                 google.maps.event.addDomListener(locations, 'click', function() {
-                    alert(locations.title);
+                    let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                    if(confirmar){
+                        document.getElementById('idtecnico').value = locations.title;
+                    }
+
                 });
             };
 
@@ -163,9 +210,12 @@
 
     <?php
     if (isset($_GET['action'])) {
-        $action = $_GET['action'];
+        if($_GET['action'] !=""){
+            $action  = $_GET['action'];
+        }
+
     }
-    switch ($action){
+    switch ($action ?? ''){
         case "Buscar dni":
             if(isset($_GET["dniCliente"])){
                 $dnicliente = $_GET["dniCliente"];
@@ -189,7 +239,7 @@
             $clienteid =\App\Cliente::select('id')->where('dni',$dnicliente)->first();
             $cliente = \App\Cliente::find($clienteid->id);
 
-
+        $persona=
         echo "<script>
             document.getElementById('nombre').value = '{$cliente->nombre}';
             document.getElementById('apellido').value = '{$cliente->apellido}';
