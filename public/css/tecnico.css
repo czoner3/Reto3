@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.cliente{
+    width: 18vw;
+    height: 20vh;
+    margin-right: 10px;
+   /* margin: 0 auto; */
+}
+
+.coche {
+    width: 18vw;
+    height: 20vh;
+    margin-left: 10px;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.form-group2{
+  width: 100%;
+    height: 100%;
+}
+.img{
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.imagen{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation-name: entrada-img;
+    animation-delay: 0s;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+
+}
+
+
+.color-cortina{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 245, 1);
+    z-index: 2;
+}
+
+label{
+    margin-top: 10px;
+}
+
+
+
+.mapa{
+    width: 40vw;
+    height: 20vh;
+    margin-top:30px;
+    display: block;
+  /*  margin: 0 auto; */
+}
+
+
+.boton-tecnico{
+/*   margin: 0 auto; */
+    width: 20vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn{
+    margin: 10px;
+}
+
+.full-container{
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@keyframes entrada-img {
+    0%{    opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 745px){
+    .form-group{
+        flex-direction: column;
+
+    }
+
+    .cliente{
+        width: 40vw;
+        height: auto;
+        margin-right: 0px;
+        /* margin: 0 auto; */
+    }
+
+    .coche {
+        width: 40vw;
+        height: auto;
+        margin-left: 0px;
+    }
+    .mapa{
+
+
+        /*  margin: 0 auto; */
+    }
+    .boton-tecnico{
+        /*   margin: 0 auto; */
+        width: 40vw;
+        height: 10vh;
+
+    }
+
+    .btn{
+        margin:10px
+    }
+
+
+
+}
+

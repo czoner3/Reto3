@@ -26,5 +26,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create/incidencia', 'IncidenciaController@create');
+
 Route::get('/incidencia','IncidenciaController@index');
+
+Route::get('/tecnico','TecnicoController@index');
 
