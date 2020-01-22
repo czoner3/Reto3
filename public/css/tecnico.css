@@ -16,6 +16,14 @@
     height: auto;
     margin-left: 10px;
 }
+#observaciones{
+    width: 100%;
+}
+
+.observacion-tecnico{
+    width: 100%;
+    height: auto;
+}
 
 .form-group-alpha{
     display: flex;
@@ -157,7 +165,10 @@ label{
         margin:10px
     }
 
-
+    .observacion-tecnico{
+        width: 100%;
+        height: auto;
+    }
 
 }
 

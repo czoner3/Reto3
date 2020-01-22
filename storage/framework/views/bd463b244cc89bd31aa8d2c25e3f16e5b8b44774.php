@@ -26,6 +26,12 @@
                     <label for="telefonoCliente">Telefono:</label>
                     <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente">
                 </div>
+                    <div class="observacion-tecnico">
+                        <label for="observaciones">Observaciones:</label>
+                        <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                    </div>
+                </div>
+                  <div>
                 </div>
                 <div class="coche-tecnico">
                 <div>
