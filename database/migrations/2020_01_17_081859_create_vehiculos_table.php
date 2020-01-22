@@ -18,9 +18,9 @@ class CreateVehiculosTable extends Migration
             $table->string('matricula');
             $table->string('marca');
             $table->string('modelo');
-            $table->string('tipo');
-            $table->integer("aseguradora");
-            $table->unsignedBigInteger('Cliente_id');
+            $table->Integer('tipo');
+            $table->string("aseguradora");
+            $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
         });
     }

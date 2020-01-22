@@ -3,14 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Incidencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Incidencia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_20_175040_create_incidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_20_175040_create_incidencias_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/incidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incidencia.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,19 +133,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/dev/czone/Reto3" />
-
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/assets/img" />
       <recent name="$PROJECT_DIR$/public/assets" />
       <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/resources/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -179,10 +180,10 @@
       <workItem from="1579174280359" duration="128000" />
       <workItem from="1579174528719" duration="272000" />
       <workItem from="1579175156763" duration="3896000" />
-
       <workItem from="1579246557882" duration="3697000" />
       <workItem from="1579518938257" duration="139000" />
-
+      <workItem from="1579591363720" duration="11606000" />
+      <workItem from="1579680135917" duration="8608000" />
     </task>
     <servers />
   </component>

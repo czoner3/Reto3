@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Incidencia;
+use App\Tecnico;
+use App\Users;
 use App\Vehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,31 +21,39 @@ class IncidenciaController extends Controller
 
         $tipoincidencia = $request->get('tipoincidencia');
         $estado = $request->get('estado');
-        $Cliente_id = $request->get('$cliente');
-        $Operador_id = $request->get('$operador');
-        $Tecnico_id = $request->get('$tecnico');
-
+        $cliente_id = $request->get('cliente_id');
+        $usuario_id = $request->get('usuario_id');
+        $tecnico_id = $request->get('tecnico_id');
+        print_r ($cliente_id);
 
 
         //
+  /*      $incidencia = DB::table('incidencias')
+        ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
+            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
+            ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
+            ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
+            ->orderBy('id','DESC')
+            ->get();*/
 
         $incidencia = Incidencia::orderBy('id','DESC')
             ->tipoincidencia($tipoincidencia)
             ->estado($estado)
-            ->cliente($Cliente_id)
-            ->operador($Operador_id)
-            ->tecnico($Tecnico_id)
-            ->paginate(5);
+            ->cliente_id($cliente_id)
+            ->usuario_id($usuario_id)
+            ->tecnico_id($tecnico_id)
+            ->paginate(6);
 
-        return view('incidencia', compact('incidencia'));
+       /* $users = DB::table('users')->where('tipo', '=' ,2);
+        foreach ($users as $user) {
+            echo($user->id);
+        }*/
+        $users = Users::all()->where('tipo','=',2);
 
-       /* $incidencia = DB::table('incidencias')
-            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
-            ->select('incidencias.*', 'users.nombre')
-            ->orderBy('id','DESC')
-            ->get();*/
+        $tecnicos = Tecnico::all();
+        $clientes = Cliente::all();
 
-
+        return view('incidencia', compact('incidencia','users','tecnicos','clientes'));
 
 
 
@@ -56,9 +66,11 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        {
-            return view('formuIncidencia');
-        }
+        $tecnicos = Tecnico::all();
+        return view('formuIncidencia', [
+            "tecnicos"=> $tecnicos,
+        ]);
+
     }
 
     /**
@@ -69,41 +81,62 @@ class IncidenciaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $insertClient = request('insertClient');
+        $insertVehicle = request('insertVehicle');
+
+        if($insertClient!=1){
+            $cliente = new Cliente();
+
+            $clientedni = $cliente->dni = request('dniCliente');
+            $cliente->nombrecli = request('nombre');
+            $cliente->apellido = request('apellido');
+            $cliente->direccion = request('direccion');
+            $cliente->telefono = request('telefono');
+
+            $cliente->save();
+
+        }
+
+        $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
+        $cliente = \App\Cliente::find($clienteid->id);
+
         $incidencia = new Incidencia();
 
         $incidencia->tipoincidencia = request('tipoincidencia');
         $incidencia->lugar = request('lugar');
-        $incidencia->observaciones = request('observaciones');
         $incidencia->estado = request('estado');
-        $incidencia->dniCliente = request('dni');
-        $incidencia->idUsuario = request('idUsuario');
-        $incidencia->idTecnico = request('idTecnico');
+        if($insertClient==1) {
+            $incidencia->cliente_id = request('idCliente');
+        }else{
+            $incidencia->cliente_id =  $cliente->id;
+        }
+        $incidencia->usuario_id = request('idUsuario');
+        $incidencia->tecnico_id = request('idTecnico');
 
         $incidencia->save();
 
 
-        $cliente = new Cliente();
 
-        $cliente->dni = request('dni');
-        $cliente->nombre = request('nombre');
-        $cliente->apellido = request('apellido');
-        $cliente->direccion = request('direccion');
-        $cliente->telefono = request('telefono');
+        if($insertVehicle!=1) {
+            $vehiculo = new Vehiculo();
 
-        $cliente->save();
+            $vehiculo->matricula = request('matricula');
+            $vehiculo->marca = request('marca');
+            $vehiculo->modelo = request('modelo');
+            $vehiculo->tipo = request('tipovehiculo');
+            $vehiculo->aseguradora = request('aseguradora');
+            if($insertClient==1) {
+                $vehiculo->cliente_id = request('idCliente');
+            }else{
+                $vehiculo->cliente_id =  $cliente->id;
+            }
 
-        $vehiculo = new Vehiculo();
-
-        $vehiculo->matricula = request('matricula');
-        $vehiculo->marca = request('marca');
-        $vehiculo->modelo = request('modelo');
-        $vehiculo->tipo = request('tipo');
-        $vehiculo->aseguradora = request('aseguradora');
-        $vehiculo->Cliente_id = request('dni');
-
-        $vehiculo->save();
+            $vehiculo->save();
+        }
 
         return redirect('/');
+
 
 
 

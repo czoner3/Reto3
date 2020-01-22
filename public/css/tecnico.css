@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.cliente-tecnico{
+    width: 50%;
+    height: auto;
+    margin-right: 10px;
+   /* margin: 0 auto; */
+}
+
+.coche-tecnico {
+    width: 50%;
+    height: auto;
+    margin-left: 10px;
+}
+#observaciones{
+    width: 100%;
+}
+
+.observacion-tecnico{
+    width: 100%;
+    height: auto;
+}
+
+.form-group-alpha{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.contenedor-cli-coche{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    width: 50%;
+}
+
+.form-group2{
+    width: 100%;
+    height: 100%;
+}
+.img{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.imagen{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation-name: entrada-img;
+    animation-delay: 0s;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+
+}
+
+
+.color-cortina{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 245, 0.8);
+    z-index: 2;
+}
+
+label{
+    margin-top: 10px;
+}
+
+.contenedor-mapa{
+    width: 50%;
+    height: 30vh;
+    margin-top:30px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  margin: 0 auto; */
+}
+
+.mapa{
+    width: 100%;
+    height: 100%;
+}
+
+
+.boton-tecnico{
+/*   margin: 0 auto; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.volver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-alpha{
+    margin:10px
+}
+
+
+.full-container{
+    overflow: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+@keyframes entrada-img {
+    0%{    opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 745px){
+    .contenedor-cli-coche{
+        flex-direction: column;
+
+    }
+
+    .cliente-tecnico{
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+        /* margin: 0 auto; */
+    }
+
+    .coche-tecnico {
+        width: 100%;
+        height: auto;
+        margin-left: 0px;
+    }
+    .mapa{
+
+
+        /*  margin: 0 auto; */
+    }
+    .boton-tecnico{
+        /*   margin: 0 auto; */
+        width: 100%;
+        height: auto;
+    }
+
+    .btn-alpha{
+        margin:10px
+    }
+
+    .observacion-tecnico{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
