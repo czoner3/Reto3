@@ -1,27 +1,57 @@
 <?php $__env->startSection('content'); ?>
-<div class="row col-11"><h1>Gestion de bodegas</h1></div>
+<div class="row col-11"><h1>Incidencias</h1></div>
 <div class="row col-11">
     <form action="/incidencia" method="get">
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
         <div>
             <label for="tipoincidencia">Tipo de incidencia:</label>
-            <input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">
+            <select class="custom-select" name="tipoincidencia">
+                <option value="">--</option>
+                <option value="0">Pinchazo</option>
+                <option value="1">Golpe</option>
+                <option value="2">Averia</option>
+                <option value="3">Otro</option>
+            </select>
+            
         </div>
         <div>
             <label for="estado">Estado:</label>
-            <input class="form-control" type="text" id="estado" name="estado">
+            <select class="custom-select" name="tipoincidencia">
+                <option value="">--</option>
+                <option value="0">Cerrada</option>
+                <option value="1">Abierta</option>
+            </select>
+            
         </div>
         <div>
-            <label for="cliente">Cliente:</label>
-            <input class="form-control" type="text" id="cliente" name="cliente">
+            <label for="cliente_id">Cliente:</label>
+            <select class="custom-select" name="cliente_id">
+                <option value="">--</option>
+                <?php $__currentLoopData = $clientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cliente): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($cliente->id); ?>"><?php echo e($cliente->nombrecli); ?></option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </select>
+            
         </div>
         <div>
-            <label for="operador">Operador:</label>
-            <input class="form-control" type="text" id="operador" name="operador">
+            <label for="usuario_id">Operador:</label>
+            <select class="custom-select" name="usuario_id">
+                <option value="">--</option>
+                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($user->id); ?>"><?php echo e($user->nombreusu); ?></option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </select>
+            
         </div>
         <div>
-            <label for="tecnico">Tecnico:</label>
-            <input class="form-control" type="text" id="tecnico" name="tecnico">
+            <label for="tecnico_id">Tecnico:</label>
+            <select class="custom-select" name="tecnico_id">
+                <option value="">--</option>
+                <?php $__currentLoopData = $tecnicos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tecnico): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombretec); ?></option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </select>
+            
         </div>
         <div class="row mb-3">
             <input class=" btn btn-primary mr" type="submit" value="Filtrar">
@@ -39,8 +69,11 @@
             <th>Observaciones</th>
             <th>Estado</th>
             <th>Cliente</th>
-            <th>Operador</th>
+            <th>Cliente nombre</th>
+            <th>Usuario</th>
+            <th>Usuario nombre</th>
             <th>Tecnico</th>
+            <th>Tecnico nombre</th>
         </tr>
         </thead>
         <tbody>
@@ -65,16 +98,29 @@
                 </td>
                 <td><?php echo e($inci->lugar); ?></td>
                 <td><?php echo e($inci->observaciones); ?></td>
-                <td><?php echo e(($inci->estado)?'Yes':'No'); ?></td>
+                <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
                 <td>
                     <?php echo e($inci->Cliente_id); ?>
+
+                </td>
+                <td>
+                    <?php echo e(\App\Cliente::find($inci->Cliente_id)->nombrecli); ?>
 
                 </td>
                 <td>
                     <?php echo e($inci->Usuario_id); ?>
 
                 </td>
-                <td><?php echo e($inci->Tecnico_id); ?>
+                <td>
+                    <?php echo e(\App\Users::find($inci->Usuario_id)->nombreusu); ?>
+
+                </td>
+                <td>
+                    <?php echo e($inci->Tecnico_id); ?>
+
+                </td>
+                <td>
+                    <?php echo e(\App\Tecnico::find($inci->Tecnico_id)->nombretec); ?>
 
                 </td>
             </tr>
