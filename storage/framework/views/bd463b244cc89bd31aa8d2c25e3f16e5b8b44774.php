@@ -5,16 +5,18 @@
         <div class="img">
             <div class="color-cortina">
             </div>
-
         </div>
 
     <form  action="" method="GET">
         <?php echo csrf_field(); ?>
 
-            <h2>Datos Incidencia</h2>
+
         <div class="form-group2">
-            <div class="form-group">
-                <div class="cliente">
+
+            <div class="form-group form-group-alpha">
+                <h2>Datos Incidencia</h2>
+              <div class="contenedor-cli-coche">
+                <div class="cliente-tecnico">
                     <div>
                        <label for="nombreCliente">Nombre de cliente:</label>
                        <input class="form-control" type="text" id="nombreCliente" name="nombreCliente">
@@ -25,7 +27,7 @@
                     <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente">
                 </div>
                 </div>
-                <div class="coche">
+                <div class="coche-tecnico">
                 <div>
                     <label for="matriculaCoche">Matricula:</label>
                     <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche">
@@ -44,21 +46,23 @@
                     <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche">
                 </div>
                 </div>
+              </div>
+                <div class="contenedor-mapa">
+                    <div class="mapa" id="map">
+                    </div>
+                </div>
 
             </div>
-        <div class="mapa" id="map">
+            <div class="boton-tecnico">
+                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
+                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
+            </div>
+            <div class="volver">
+            <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
+            </div>
         </div>
-        </div>
 
 
-
-    <div class="boton-tecnico">
-        <input class="btn btn-success" type="submit" value="Resuelta garaje">
-        <input class="btn btn-success" type="submit" value="Resuelta insitu">
-        <br>
-        <br>
-        <a class="btn btn-primary" href="http://homestead.test/">volver</a>
-    </div>
 
     </form>
 
