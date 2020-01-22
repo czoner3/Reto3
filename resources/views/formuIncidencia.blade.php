@@ -79,7 +79,7 @@
         </div>
 
 
-        <div style=" width: 90%;margin: 24% 0 2% 5%;">
+        <div style=" width: 90%;margin: 20% 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="1">pinchazo</option>
