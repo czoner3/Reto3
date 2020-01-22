@@ -66,9 +66,11 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        {
-            return view('formuIncidencia');
-        }
+        $tecnicos = Tecnico::all();
+        return view('formuIncidencia', [
+            "tecnicos"=> $tecnicos,
+        ]);
+
     }
 
     /**
@@ -95,7 +97,7 @@ class IncidenciaController extends Controller
         $cliente = new Cliente();
 
         $cliente->dni = request('dni');
-        $cliente->nombre = request('nombre');
+        $cliente->nombrecli = request('nombre');
         $cliente->apellido = request('apellido');
         $cliente->direccion = request('direccion');
         $cliente->telefono = request('telefono');
@@ -114,6 +116,7 @@ class IncidenciaController extends Controller
         $vehiculo->save();
 
         return redirect('/');
+
 
 
 

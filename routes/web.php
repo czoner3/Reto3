@@ -31,3 +31,6 @@ Route::get('/incidencia','IncidenciaController@index');
 
 Route::get('/tecnico','TecnicoController@index');
 
+Route::get('/create/incidencia', 'IncidenciaController@create');
+
+Route::post('/incidencia','IncidenciaController@index');
