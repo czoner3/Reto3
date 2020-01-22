@@ -3,7 +3,7 @@
 @section('content')
 
     <h1>Registro incidencia</h1>
-    <form action="" method="GET">
+    <form action="/incidencia" method="POST">
         @csrf
         <div>
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
@@ -60,27 +60,32 @@
 
                     <div>
                         <label for="tipovehiculo">Tipo de vehiculo:</label>
-                        <select class="custom-select">
-                            <option name="tipovehiculo" value="1">Vehículos ligeros</option>
-                            <option name="tipovehiculo" value="2">Vehículos pesados </option>
-                            <option name="tipovehiculo" value="3">Vehículos especiales y agrícolas</option>
-                            <option name="tipovehiculo" value="4">Otros vehículos</option>
+                        <select class="custom-select" name="tipovehiculo">
+                            <option value="1">Vehículos ligeros</option>
+                            <option value="2">Vehículos pesados </option>
+                            <option value="3">Vehículos especiales y agrícolas</option>
+                            <option value="4">Otros vehículos</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="idtecnico" id="idtecnico">
-            <input type="hidden" name="idtecnico" id="idtecnico">
+            <input type="hidden" name="idTecnico" id="idTecnico">
+            <input type="hidden" name="estado" id="estado" value="1">
+            <input type="hidden" name="lugar" id="lugar">
+            <input type="hidden" name="idUsuario" id="idUsuario" value="1">
+            <input type="hidden" name="idCliente" id="idCliente">
+            <input type="hidden" name="insertClient" id="insertClient">
+            <input type="hidden" name="insertVehicle" id="insertVehicle">
         </div>
 
 
         <div style=" width: 90%;margin: 24% 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
-            <select class="custom-select" >
-                <option name="tipoincidencia" value="1">averia</option>
-                <option name="tipoincidencia" value="2">pinchazo</option>
-                <option name="tipoincidencia" value="3">golpe</option>
-                <option name="tipoincidencia" value="4">otro</option>
+            <select class="custom-select" name="tipoincidencia">
+                <option value="1">pinchazo</option>
+                <option value="2">golpe</option>
+                <option value="3">averia</option>
+                <option value="4">otro</option>
             </select>
         </div>
 
@@ -186,7 +191,7 @@
                 google.maps.event.addDomListener(locations, 'click', function() {
                     let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
                     if(confirmar){
-                        document.getElementById('idtecnico').value = locations.title;
+                        document.getElementById('idTecnico').value = locations.title;
                     }
 
                 });
@@ -207,6 +212,7 @@
             }
             google.maps.event.addListener(map, 'click', function(event) {
                 placeMarker(event.latLng);
+                document.getElementById('lugar').value = event.latLng;
             });
 
 
@@ -250,7 +256,9 @@
 
 
         echo "<script id='jscliente'>
-            document.getElementById('nombre').value = '{$cliente->nombre}';
+            document.getElementById('insertClient').value = 1;
+            document.getElementById('idCliente').value = '{$cliente->id}';
+            document.getElementById('nombre').value = '{$cliente->nombrecli}';
             document.getElementById('apellido').value = '{$cliente->apellido}';
             document.getElementById('direccion').value = '{$cliente->direccion}';
             document.getElementById('telefono').value = '{$cliente->telefono}';
@@ -262,6 +270,7 @@
         $coche = \App\Vehiculo::find($cocheid->id);
 
         echo "<script id='jscoche'>
+            document.getElementById('insertVehicle').value = 1;
             document.getElementById('marca').value = '{$coche->marca}';
             document.getElementById('modelo').value = '{$coche->modelo}';
             document.getElementById('aseguradora').value = '{$coche->aseguradora}';

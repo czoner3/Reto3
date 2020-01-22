@@ -17,11 +17,11 @@ class CreateIncidenciasTable extends Migration
             $table->bigIncrements('id');
             $table->integer("tipoincidencia");
             $table->string('lugar');
-            $table->string('observaciones');
+            $table->string('observaciones')->nullable();
             $table->integer("estado");
-            $table->integer('Cliente_id');
-            $table->unsignedBigInteger('Usuario_id');
-            $table->unsignedBigInteger('Tecnico_id');
+            $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('tecnico_id');
             $table->timestamps();
         });
     }

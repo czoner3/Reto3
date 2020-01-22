@@ -18,6 +18,7 @@ class CreateTecnicosTable extends Migration
             $table->string('nombretec');
             $table->string('password');
             $table->string('localizacion');
+            $table->string('email');
             $table->integer('estado');
             $table->timestamps();
         });
