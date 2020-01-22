@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="img">
         <div class="color-cortina">
         </div>
@@ -80,7 +81,7 @@
         <div class="derecha">
             <div class="contenedor-titulo">
                 <h1 class="empresa"> CZONE </h1>
-                <h2 class="eslogan">Corporation</h2>
+                <h2 class="eslogan">RoadTech</h2>
             </div>
         </div>
     </div>

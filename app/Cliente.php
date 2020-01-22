@@ -14,4 +14,6 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Incidencia');
     }
+
+
 }

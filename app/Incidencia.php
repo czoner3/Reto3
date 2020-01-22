@@ -22,7 +22,8 @@ class Incidencia extends Model
     //Scope
     public function scopeTipoincidencia($query,$tipoincidencia){
         if($tipoincidencia!=null)
-            return $query->Where('tipoincidencia','=', "$tipoincidencia");
+
+        return $query->Where('tipoincidencia','=', "$tipoincidencia");
 
     }
 
@@ -32,21 +33,22 @@ class Incidencia extends Model
 
     }
 
-    public function scopeCliente($query,$cliente){
-        if($cliente!=null)
-            return $query->Where('$Cliente_id','=', "$cliente");
+    public function scopeCliente_id($query,$cliente_id){
+
+        if($cliente_id!=null)
+            return $query->Where('cliente_id','=', "$cliente_id");
 
     }
 
-    public function scopeOperador($query,$operador){
-        if($operador!=null)
-            return $query->Where('$Operador_id','=', "$operador");
+    public function scopeUsuario_id($query,$usuario_id){
+        if($usuario_id!=null)
+            return $query->Where('usuario_id','=', "$usuario_id");
 
     }
 
-    public function scopeTecnico($query,$tecnico){
-        if($tecnico!=null)
-            return $query->Where('$Tecnico_id','=', "$tecnico");
+    public function scopeTecnico_id($query,$tecnico_id){
+        if($tecnico_id!=null)
+            return $query->Where('tecnico_id','=', "$tecnico_id");
 
     }
 

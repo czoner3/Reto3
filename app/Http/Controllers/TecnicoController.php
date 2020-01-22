@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Incidencia;
 use App\Tecnico;
 use Illuminate\Http\Request;
 
 class TecnicoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+       // $posicionCliente = Incidencia::select('lugar')
+        $tecnicos = Tecnico::all();
+        return view('tecnico',['tecnico'=>$tecnicos]);
+
     }
 
     /**
