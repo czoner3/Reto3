@@ -1,13 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
 .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.form-box{
+    animation-name: entrada-form;
+    animation-delay: 0s;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    opacity: 0;
+    margin-right: 200px;
+    margin-bottom: 200px;
+
+}
+
+.izquierda{
+    height: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
 
 }
+.derecha{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.empresa {
+    margin-right: 500px;
+    animation-duration: 1s;
+    animation-name: entrada-empresa;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+
+}
+
+.eslogan{
+
+    margin-left: 500px;
+    animation-duration: 1s;
+    animation-name: entrada-eslogan;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.contenedor-titulo{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.contenedor-titulo h1, .contenedor-titulo h2{
+    font-size: 45px;
+    font-family: 'Roboto', cursive;
+}
+
 
 .form  {
     width: 25vw;
@@ -26,6 +92,12 @@
 .imagen{
     width: 100%;
     height: 100%;
+    opacity: 0;
+    animation-name: entrada-img;
+    animation-delay: 0s;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
 
 }
 
@@ -38,4 +110,43 @@
     z-index: 2;
 }
 
+
+@keyframes entrada-form {
+    0%{    opacity: 0;
+        margin-right: 200px;
+        margin-bottom: 200px;}
+    100%{
+        opacity: 1;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@keyframes entrada-empresa {
+    0%{    opacity: 0;
+        margin-right: 500px;}
+    100%{
+        opacity: 1;
+        margin-right: 70px;
+    }
+}
+
+
+@keyframes entrada-eslogan {
+    0%{    opacity: 0;
+        margin-left: 500px;}
+    100%{
+        opacity: 1;
+        margin-left: 70px;
+    }
+}
+
+
+@keyframes entrada-img {
+    0%{    opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
