@@ -81,39 +81,59 @@ class IncidenciaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $insertClient = request('insertClient');
+        $insertVehicle = request('insertVehicle');
+
+        if($insertClient!=1){
+            $cliente = new Cliente();
+
+            $clientedni = $cliente->dni = request('dniCliente');
+            $cliente->nombrecli = request('nombre');
+            $cliente->apellido = request('apellido');
+            $cliente->direccion = request('direccion');
+            $cliente->telefono = request('telefono');
+
+            $cliente->save();
+
+        }
+
+        $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
+        $cliente = \App\Cliente::find($clienteid->id);
+
         $incidencia = new Incidencia();
 
         $incidencia->tipoincidencia = request('tipoincidencia');
         $incidencia->lugar = request('lugar');
-        $incidencia->observaciones = request('observaciones');
         $incidencia->estado = request('estado');
-        $incidencia->dniCliente = request('dni');
-        $incidencia->idUsuario = request('idUsuario');
-        $incidencia->idTecnico = request('idTecnico');
+        if($insertClient==1) {
+            $incidencia->cliente_id = request('idCliente');
+        }else{
+            $incidencia->cliente_id =  $cliente->id;
+        }
+        $incidencia->usuario_id = request('idUsuario');
+        $incidencia->tecnico_id = request('idTecnico');
 
         $incidencia->save();
 
 
-        $cliente = new Cliente();
 
-        $cliente->dni = request('dni');
-        $cliente->nombrecli = request('nombre');
-        $cliente->apellido = request('apellido');
-        $cliente->direccion = request('direccion');
-        $cliente->telefono = request('telefono');
+        if($insertVehicle!=1) {
+            $vehiculo = new Vehiculo();
 
-        $cliente->save();
+            $vehiculo->matricula = request('matricula');
+            $vehiculo->marca = request('marca');
+            $vehiculo->modelo = request('modelo');
+            $vehiculo->tipo = request('tipovehiculo');
+            $vehiculo->aseguradora = request('aseguradora');
+            if($insertClient==1) {
+                $vehiculo->cliente_id = request('idCliente');
+            }else{
+                $vehiculo->cliente_id =  $cliente->id;
+            }
 
-        $vehiculo = new Vehiculo();
-
-        $vehiculo->matricula = request('matricula');
-        $vehiculo->marca = request('marca');
-        $vehiculo->modelo = request('modelo');
-        $vehiculo->tipo = request('tipo');
-        $vehiculo->aseguradora = request('aseguradora');
-        $vehiculo->Cliente_id = request('dni');
-
-        $vehiculo->save();
+            $vehiculo->save();
+        }
 
         return redirect('/');
 

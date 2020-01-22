@@ -68,7 +68,6 @@
         <tr>
             <th>Tipo de incidencia</th>
             <th>Localizacion</th>
-            <th>Observaciones</th>
             <th>Estado</th>
             <th>Cliente</th>
             <th>Cliente nombre</th>
@@ -76,6 +75,7 @@
             <th>Usuario nombre</th>
             <th>Tecnico</th>
             <th>Tecnico nombre</th>
+            <th>Observaciones</th>
         </tr>
         </thead>
         <tbody>
@@ -83,42 +83,42 @@
             <tr>
                 <td>
                     @switch($inci->tipoincidencia)
-                        @case(0)
+                        @case(1)
                         Pinchazo
                         @break
-                        @case(1)
+                        @case(2)
                         Golpe
                         @break
-                        @case(2)
+                        @case(3)
                         Averia
                         @break
-                        @case(3)
+                        @case(4)
                         Otro
                         @break
                     @endswitch
 
                 </td>
                 <td>{{$inci->lugar }}</td>
-                <td>{{$inci->observaciones}}</td>
                 <td>{{($inci->estado)?'Abierta':'Cerrada'}}</td>
                 <td>
-                    {{$inci->Cliente_id}}
+                    {{$inci->cliente_id}}
                 </td>
                 <td>
-                    {{ \App\Cliente::find($inci->Cliente_id)->nombrecli}}
+                    {{ \App\Cliente::find($inci->cliente_id)->nombrecli}}
                 </td>
                 <td>
-                    {{$inci->Usuario_id}}
+                    {{$inci->usuario_id}}
                 </td>
                 <td>
-                    {{\App\Users::find($inci->Usuario_id)->nombreusu}}
+                    {{\App\Users::find($inci->usuario_id)->nombreusu}}
                 </td>
                 <td>
-                    {{$inci->Tecnico_id}}
+                    {{$inci->tecnico_id}}
                 </td>
                 <td>
-                    {{\App\Tecnico::find($inci->Tecnico_id)->nombretec}}
+                    {{\App\Tecnico::find($inci->tecnico_id)->nombretec}}
                 </td>
+                <td>{{$inci->observaciones}}</td>
             </tr>
         @endforeach
         </tbody>

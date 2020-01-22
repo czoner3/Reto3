@@ -36,19 +36,19 @@ class Incidencia extends Model
     public function scopeCliente_id($query,$cliente_id){
 
         if($cliente_id!=null)
-            return $query->Where('Cliente_id','=', "$cliente_id");
+            return $query->Where('cliente_id','=', "$cliente_id");
 
     }
 
     public function scopeUsuario_id($query,$usuario_id){
         if($usuario_id!=null)
-            return $query->Where('Usuario_id','=', "$usuario_id");
+            return $query->Where('usuario_id','=', "$usuario_id");
 
     }
 
     public function scopeTecnico_id($query,$tecnico_id){
         if($tecnico_id!=null)
-            return $query->Where('Tecnico_id','=', "$tecnico_id");
+            return $query->Where('tecnico_id','=', "$tecnico_id");
 
     }
 
