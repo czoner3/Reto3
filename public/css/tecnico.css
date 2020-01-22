@@ -4,20 +4,20 @@
 }
 
 
-.cliente{
+.cliente-tecnico{
     width: 18vw;
     height: 20vh;
     margin-right: 10px;
    /* margin: 0 auto; */
 }
 
-.coche {
+.coche-tecnico {
     width: 18vw;
     height: 20vh;
     margin-left: 10px;
 }
 
-.form-group{
+.form-group-alpha{
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -82,9 +82,10 @@ label{
     flex-direction: column;
 }
 
-.btn{
-    margin: 10px;
+.btn-alpha{
+    margin:10px
 }
+
 
 .full-container{
     overflow: auto;
@@ -110,14 +111,14 @@ label{
 
     }
 
-    .cliente{
+    .cliente-tecnico{
         width: 40vw;
         height: auto;
         margin-right: 0px;
         /* margin: 0 auto; */
     }
 
-    .coche {
+    .coche-tecnico {
         width: 40vw;
         height: auto;
         margin-left: 0px;
@@ -134,7 +135,7 @@ label{
 
     }
 
-    .btn{
+    .btn-alpha{
         margin:10px
     }
 
