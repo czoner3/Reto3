@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/icons/marker.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,6 +176,7 @@
       <workItem from="1579518938257" duration="139000" />
       <workItem from="1579591363720" duration="11606000" />
       <workItem from="1579680135917" duration="8608000" />
+      <workItem from="1579723948162" duration="2770000" />
     </task>
     <servers />
   </component>
