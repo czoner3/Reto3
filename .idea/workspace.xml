@@ -4,7 +4,6 @@
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +124,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EjerciciosLaravel/articulos-app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
@@ -177,6 +176,7 @@
       <workItem from="1579591363720" duration="11606000" />
       <workItem from="1579680135917" duration="8608000" />
       <workItem from="1579723948162" duration="2770000" />
+      <workItem from="1579765574017" duration="3938000" />
     </task>
     <servers />
   </component>
