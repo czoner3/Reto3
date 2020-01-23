@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="estado">Estado:</label>
-            <select class="custom-select" name="tipoincidencia">
+            <select class="custom-select" name="estado">
                 <option value="">--</option>
                 <option value="0">Cerrada</option>
                 <option value="1">Abierta</option>
