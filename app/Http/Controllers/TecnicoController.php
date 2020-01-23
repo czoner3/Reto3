@@ -13,14 +13,26 @@ class TecnicoController extends Controller
 
     public function index()
     {
-       // $posicionCliente = Incidencia::select('lugar')
-        $incidencia = Incidencia::all();
-       /* $cliente = Cliente::find($incidencia->cliente_id);
-        $vehiculo = Vehiculo::find($cliente->id);*/
+        $incidenciaid = Incidencia::select('id')->where('estado',1)->first();
+        $incidencia = Incidencia::find($incidenciaid->id);
 
-        return view('tecnico',['incidencia'=>$incidencia]);
-        /*return view('tecnico',['tecnico'=>$tecnicos]);*/
+        $clienteid = Incidencia::select('cliente_id')->where('id',$incidenciaid->id)->first();
+        $cliente = Cliente::find($clienteid->cliente_id);
 
+        $tecnicoid = Incidencia::select('tecnico_id')->where('id',$incidenciaid->id)->first();
+        $tecnico = Tecnico::find($tecnicoid->tecnico_id);
+
+        $vehiculoid = Vehiculo::select('id')->where('cliente_id',$clienteid->cliente_id)->first();
+        $vehiculo = Vehiculo::find($vehiculoid->id);
+
+
+        return view('tecnico', [
+            "incidencia"=> $incidencia,
+            "cliente"=> $cliente,
+            "vehiculo"=>$vehiculo,
+            "tecnico"=>$tecnico
+
+        ]);
     }
 
     /**
