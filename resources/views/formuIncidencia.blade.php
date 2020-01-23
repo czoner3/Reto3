@@ -2,21 +2,24 @@
 
 @section('content')
 
-    <h1>Registro incidencia</h1>
+
     <form action="/incidencia" method="POST">
         @csrf
-        <div>
+
+
+            <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 2% 79.1%;">Generar incidencia</button>
+
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
-                <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
+                <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 2%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
                     <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
                 </div>
             </div>
-
+        <div id="fichaIncidencia" style="height: 0%;overflow: hidden">
             <div id="fichaCliente" style="width: 90%;margin-left: 5%;">
-                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;">
+                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;border-bottom-left-radius: 1%;">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input class="form-control" type="text" id="nombre" name="nombre">
@@ -35,7 +38,7 @@
                     </div>
 
                 </div>
-                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;">
+                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;border-bottom-right-radius: 1%;">
 
                     <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                         <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
@@ -79,7 +82,7 @@
         </div>
 
 
-        <div style=" width: 90%;margin: 24% 0 2% 5%;">
+        <div style=" width: 90%;margin: 20px 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="1">pinchazo</option>
@@ -91,9 +94,6 @@
 
         <div id="map" style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
 
-        <div style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;">
-            <button class="btn btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button><a href="/">volver</a>
-        </div>
     </form>
 
 
@@ -102,6 +102,11 @@
         let botondni = document.getElementById('botondni');
 
         botondni.addEventListener("click", function () {
+
+            document.getElementById('fichaIncidencia').style.height="63%";
+            document.getElementById('fichaIncidencia').style.transitionDelay="1s";
+            document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
+
             let dnicliente = document.getElementById('dniCliente').value;
 
             $.ajax({
