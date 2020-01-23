@@ -13427,6 +13427,7 @@
 #51 /home/vagrant/code/czone/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #52 {main}
 "} 
+[2020-01-23 11:36:45] local.ERROR: Route [register-tecnico] not defined. (View: /home/vagrant/code/resources/views/welcome.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Route [register-tecnico] not defined. (View: /home/vagrant/code/resources/views/welcome.blade.php) at /home/vagrant/code/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:420)
 [2020-01-23 08:48:49] local.ERROR: Trying to get property 'nombrecli' of non-object (View: /home/vagrant/czone/resources/views/incidencia.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Trying to get property 'nombrecli' of non-object (View: /home/vagrant/czone/resources/views/incidencia.blade.php) at /home/vagrant/czone/resources/views/incidencia.blade.php:107)
 [stacktrace]
 #0 /home/vagrant/czone/resources/views/incidencia.blade.php(107): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
