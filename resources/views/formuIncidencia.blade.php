@@ -232,6 +232,7 @@
                     if (status == 'OK') {
                         directionsRenderer.setDirections(result);
                         marker.setMap(null);
+                        locations.setMap(null);
                     }
                 });
             }
