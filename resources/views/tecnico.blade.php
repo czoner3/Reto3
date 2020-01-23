@@ -53,6 +53,10 @@
                     <label for="aseguradoraCoche">Aseguradora:</label>
                     <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche">
                 </div>
+                <div>
+                    <label for="tiponicidencia">Tipo de incidencia:</label>
+                    <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}">
+                </div>
                 </div>
               </div>
                 <div class="contenedor-mapa">
