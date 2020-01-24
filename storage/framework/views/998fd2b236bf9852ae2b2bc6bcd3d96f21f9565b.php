@@ -66,7 +66,6 @@
         <tr>
             <th>Tipo de incidencia</th>
             <th>Localizacion</th>
-            <th>Observaciones</th>
             <th>Estado</th>
             <th>Cliente</th>
             <th>Cliente nombre</th>
@@ -74,6 +73,7 @@
             <th>Usuario nombre</th>
             <th>Tecnico</th>
             <th>Tecnico nombre</th>
+            <th>Observaciones</th>
         </tr>
         </thead>
         <tbody>
@@ -81,48 +81,48 @@
             <tr>
                 <td>
                     <?php switch($inci->tipoincidencia):
-                        case (0): ?>
+                        case (1): ?>
                         Pinchazo
                         <?php break; ?>
-                        <?php case (1): ?>
+                        <?php case (2): ?>
                         Golpe
                         <?php break; ?>
-                        <?php case (2): ?>
+                        <?php case (3): ?>
                         Averia
                         <?php break; ?>
-                        <?php case (3): ?>
+                        <?php case (4): ?>
                         Otro
                         <?php break; ?>
                     <?php endswitch; ?>
 
                 </td>
                 <td><?php echo e($inci->lugar); ?></td>
-                <td><?php echo e($inci->observaciones); ?></td>
                 <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
                 <td>
-                    <?php echo e($inci->Cliente_id); ?>
+                    <?php echo e($inci->cliente_id); ?>
 
                 </td>
                 <td>
-                    <?php echo e(\App\Cliente::find($inci->Cliente_id)->nombrecli); ?>
+                    <?php echo e(\App\Cliente::find($inci->cliente_id)->nombrecli); ?>
 
                 </td>
                 <td>
-                    <?php echo e($inci->Usuario_id); ?>
+                    <?php echo e($inci->usuario_id); ?>
 
                 </td>
                 <td>
-                    <?php echo e(\App\Users::find($inci->Usuario_id)->nombreusu); ?>
+                    <?php echo e(\App\Users::find($inci->usuario_id)->nombreusu); ?>
 
                 </td>
                 <td>
-                    <?php echo e($inci->Tecnico_id); ?>
+                    <?php echo e($inci->tecnico_id); ?>
 
                 </td>
                 <td>
-                    <?php echo e(\App\Tecnico::find($inci->Tecnico_id)->nombretec); ?>
+                    <?php echo e(\App\Tecnico::find($inci->tecnico_id)->nombretec); ?>
 
                 </td>
+                <td><?php echo e($inci->observaciones); ?></td>
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
@@ -141,4 +141,5 @@
  * Time: 11:52
  */
 ?>
+
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/resources/views/incidencia.blade.php ENDPATH**/ ?>

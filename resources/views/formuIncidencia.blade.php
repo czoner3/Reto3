@@ -202,22 +202,24 @@
 
             });
 
+            var locations;
             for (var i = 0; i < features.length; i++) {
-                var locations = new google.maps.Marker({
+                     locations = new google.maps.Marker({
                     position: features[i].position,
                     icon: icons[features[i].type].icon,
                     title: features[i].title,
-                    map: map
-                });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                    if(confirmar){
-                        document.getElementById('idTecnico').value = locations.title;
-                        calcRoute(locations.position,marker);
-                    }
+                    map: map,
 
                 });
             };
+            google.maps.event.addDomListener(locations, 'click', function() {
+                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                if(confirmar){
+                    document.getElementById('idTecnico').value = locations.title;
+                    calcRoute(locations.position,marker);
+                }
+
+            });
 
 
             function calcRoute(tecnico,marker) {
