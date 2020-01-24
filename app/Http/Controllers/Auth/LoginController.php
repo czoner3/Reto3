@@ -29,6 +29,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
     protected $table = 'users';
+    protected $tabletec = 'tecnico';
 
     /**
      * Create a new controller instance.
@@ -43,17 +44,20 @@ class LoginController extends Controller
     public function username()
     {
 
-        return 'nombre';
+        return 'nombreusu';
 
     }
 
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('nombre', 'password');
+        $credentials = $request->only('nombreusu', 'password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('dashboard');
         }
     }
+
 }
+
+

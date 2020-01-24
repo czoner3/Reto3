@@ -8,10 +8,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link  rel="stylesheet" href="{{asset('css/login.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
 
 
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+
+    <script src="{{ secure_asset('js/app.js') }}" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>

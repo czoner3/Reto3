@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckRole.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncidenciaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Incidencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Incidencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_081859_create_vehiculos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_20_175040_create_incidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_20_175040_create_incidencias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/incidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incidencia.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tecnico.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tecnico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/b51de385dde6a1fb123f01cb6d1bb4dd4e2fa246.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/b51de385dde6a1fb123f01cb6d1bb4dd4e2fa246.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/c604100e4611fe1a969f94c036a4994389613b76.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/c604100e4611fe1a969f94c036a4994389613b76.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f3576ccb70340ab870b857d5ca59108b94e17bd2.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f3576ccb70340ab870b857d5ca59108b94e17bd2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,6 +34,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -140,11 +144,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/assets/img" />
       <recent name="$PROJECT_DIR$/public/assets" />
-      <recent name="$PROJECT_DIR$/public/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -184,6 +188,7 @@
       <workItem from="1579518938257" duration="139000" />
       <workItem from="1579591363720" duration="11606000" />
       <workItem from="1579680135917" duration="8608000" />
+      <workItem from="1579764762791" duration="9918000" />
     </task>
     <servers />
   </component>
