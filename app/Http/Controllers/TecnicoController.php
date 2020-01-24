@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
 use App\Incidencia;
 use App\Tecnico;
-use App\Vehiculo;
 use Illuminate\Http\Request;
 
 class TecnicoController extends Controller
@@ -13,26 +11,10 @@ class TecnicoController extends Controller
 
     public function index()
     {
-        $incidenciaid = Incidencia::select('id')->where('estado',1)->first();
-        $incidencia = Incidencia::find($incidenciaid->id);
+       // $posicionCliente = Incidencia::select('lugar')
+        $tecnicos = Tecnico::all();
+        return view('tecnico',['tecnico'=>$tecnicos]);
 
-        $clienteid = Incidencia::select('cliente_id')->where('id',$incidenciaid->id)->first();
-        $cliente = Cliente::find($clienteid->cliente_id);
-
-        $tecnicoid = Incidencia::select('tecnico_id')->where('id',$incidenciaid->id)->first();
-        $tecnico = Tecnico::find($tecnicoid->tecnico_id);
-
-        $vehiculoid = Vehiculo::select('id')->where('cliente_id',$clienteid->cliente_id)->first();
-        $vehiculo = Vehiculo::find($vehiculoid->id);
-
-
-        return view('tecnico', [
-            "incidencia"=> $incidencia,
-            "cliente"=> $cliente,
-            "vehiculo"=>$vehiculo,
-            "tecnico"=>$tecnico
-
-        ]);
     }
 
     /**

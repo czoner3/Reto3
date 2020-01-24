@@ -76,13 +76,6 @@ return [
                 'model' => App\Users::class,
             ],
 
-            'tecnicos' => [
-                'driver' => 'eloquent',
-                'model' => App\Tecnico::class,
-            ]
-
-
-
 
           /* 'users' => [
              'driver' => 'database',

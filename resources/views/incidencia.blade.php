@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="estado">Estado:</label>
-            <select class="custom-select" name="estado">
+            <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
                 <option value="0">Cerrada</option>
                 <option value="1">Abierta</option>
@@ -99,18 +99,7 @@
 
                 </td>
                 <td>{{$inci->lugar }}</td>
-                <td>@switch($inci->estado)
-                        @case(1)
-                        Abierta
-                        @break
-                        @case(2)
-                        Cerrada
-                        @break
-                        @case(3)
-                        Cerrada insitu
-                        @break
-                    @endswitch
-                </td>
+                <td>{{($inci->estado)?'Abierta':'Cerrada'}}</td>
                 <td>
                     {{$inci->cliente_id}}
                 </td>
@@ -134,9 +123,7 @@
         @endforeach
         </tbody>
     </table>
-    <span>{{$incidencia->links()}}</span>
 </div>
-
 @endsection
 
 

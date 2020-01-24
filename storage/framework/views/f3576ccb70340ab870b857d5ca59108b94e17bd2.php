@@ -14,7 +14,6 @@
 
 
     <script src="<?php echo e(asset('js/app.js')); ?>" type="text/js"></script>
-  
     <script src="<?php echo e(secure_asset('js/app.js')); ?>" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

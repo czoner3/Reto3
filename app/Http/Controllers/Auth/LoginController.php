@@ -29,7 +29,6 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
     protected $table = 'users';
-    protected $tabletec = 'tecnico';
 
     /**
      * Create a new controller instance.
@@ -57,7 +56,4 @@ class LoginController extends Controller
             return redirect()->intended('dashboard');
         }
     }
-
 }
-
-
