@@ -11,7 +11,8 @@
     <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
-
+    <link  rel="stylesheet" href="{{asset('css/register.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
 
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <script src="{{ secure_asset('js/app.js') }}" type="text/js"></script>
