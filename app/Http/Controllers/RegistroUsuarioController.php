@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tecnico;
 use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegistroUsuarioController extends Controller
 {
@@ -20,7 +21,7 @@ class RegistroUsuarioController extends Controller
                 $usuario = new Users();
                 $usuario->nombreusu = request("nombreusu");
                 $usuario->email = request("email");
-                $usuario->password = request("password");
+                $usuario->password = Hash::make(request("password"));
                 $usuario->tipo = request("tipo");
 
                 $usuario->save();
@@ -44,7 +45,7 @@ class RegistroUsuarioController extends Controller
                 $usuario = new Users();
                 $usuario->nombreusu = request("nombreusu");
                 $usuario->email = request("email");
-                $usuario->password = request("password");
+                $usuario->password =  Hash::make(request("password"));
                 $usuario->tipo = request("tipo");
 
                 $usuario->save();
