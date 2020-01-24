@@ -2,7 +2,15 @@
 
 @section('content')
 
-
+    <section id="nav-test">
+        <div id="nav-container">
+            <ul>
+                <li class="nav-li active-nav"><a href="/home">Home</a></li>
+                <li class="nav-li"><a href="/create/incidencia">Generar incidencia</a></li>
+            </ul>
+            <div id="line"></div>
+        </div>
+    </section>
     <form action="/incidencia" method="POST">
         @csrf
 
@@ -209,17 +217,24 @@
                     title: features[i].title,
                     map: map
                 });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                    if(confirmar){
-                        document.getElementById('idTecnico').value = locations.title;
-                        calcRoute(locations.position,marker);
-                    }
-
+                google.maps.event.addDomListener(locations, 'click', function(event) {
+                    let posicion = event.latLng;
+                    buscarTecnico(posicion,features);
                 });
             };
 
+            function buscarTecnico(posicion,features){
+                for (var i = 0; i < features.length; i++) {
+                    if(features[i].position == posicion){
+                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                        if(confirmar){
+                            document.getElementById('idTecnico').value = features[i].title;
+                            calcRoute(posicion,marker);
+                        }
+                    }
 
+                }
+            }
             function calcRoute(tecnico,marker) {
                 var start = marker.position;
                 var end = tecnico;

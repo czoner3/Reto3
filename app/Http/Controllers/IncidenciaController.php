@@ -96,6 +96,8 @@ class IncidenciaController extends Controller
 
             $cliente->save();
 
+        }else{
+            $clientedni = request('dniCliente');
         }
 
         $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
