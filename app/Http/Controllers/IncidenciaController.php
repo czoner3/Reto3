@@ -116,6 +116,12 @@ class IncidenciaController extends Controller
         $incidencia->usuario_id = request('idUsuario');
         $incidencia->tecnico_id = request('idTecnico');
 
+        $tecnico = Tecnico::find(request("idTecnico"));
+
+        $tecnico->estado=1;
+        $tecnico->save();
+
+
         $incidencia->save();
 
 
