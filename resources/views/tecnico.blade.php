@@ -9,70 +9,74 @@
             </div>
         </div>
 
-    <form  action="" method="GET">
-        @csrf
+        <form  action="" method="GET">
+            @csrf
 
 
-        <div class="form-group2">
+            <div class="form-group2">
 
-            <div class="form-group form-group-alpha">
-                <h2>Datos Incidencia</h2>
-              <div class="contenedor-cli-coche">
-                <div class="cliente-tecnico">
-                    <div>
-                       <label for="nombreCliente">Nombre de cliente:</label>
-                       <input class="form-control" type="text" id="nombreCliente" name="nombreCliente">
-                  </div>
+                <div class="form-group form-group-alpha">
+                    <h2>Datos Incidencia</h2>
+                    <div class="contenedor-cli-coche">
+                        <div class="cliente-tecnico">
+                            <div>
+                                <label for="nombreCliente">Nombre de cliente:</label>
+                                <input class="form-control" type="text" id="nombreCliente" name="nombreCliente" value="{{$cliente->nombrecli}}">
+                            </div>
 
-                <div>
-                    <label for="telefonoCliente">Telefono:</label>
-                    <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente">
-                </div>
-                    <div class="observacion-tecnico">
-                        <label for="observaciones">Observaciones:</label>
-                        <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                            <div>
+                                <label for="telefonoCliente">Telefono:</label>
+                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}">
+                            </div>
+                            <div class="observacion-tecnico">
+                                <label for="observaciones">Observaciones:</label>
+                                <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="coche-tecnico">
+                            <div>
+                                <label for="matriculaCoche">Matricula:</label>
+                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}">
+                            </div>
+                            <div>
+                                <label for="marcaCoche">Marca:</label>
+                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}">
+                            </div>
+                            <div>
+                                <label for="modeloCoche">Modelo:</label>
+                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}">
+                            </div>
+
+                            <div>
+                                <label for="aseguradoraCoche">Aseguradora:</label>
+                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}">
+                            </div>
+                            <div>
+                                <label for="tiponicidencia">Tipo de incidencia:</label>
+                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                  <div>
-                </div>
-                <div class="coche-tecnico">
-                <div>
-                    <label for="matriculaCoche">Matricula:</label>
-                    <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche">
-                </div>
-                <div>
-                    <label for="marcaCoche">Marca:</label>
-                    <input class="form-control" type="text" id="marcaCoche" name="marcaCoche">
-                </div>
-                <div>
-                    <label for="modeloCoche">Modelo:</label>
-                    <input class="form-control" type="text" id="modeloCoche" name="modeloCoche">
-                </div>
-
-                <div>
-                    <label for="aseguradoraCoche">Aseguradora:</label>
-                    <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche">
-                </div>
-                </div>
-              </div>
-                <div class="contenedor-mapa">
-                    <div class="mapa" id="map">
+                    <div class="contenedor-mapa">
+                        <div class="mapa" id="map">
+                        </div>
                     </div>
+
                 </div>
-
+                <div class="boton-tecnico">
+                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
+                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
+                </div>
+                <div class="volver">
+                    <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
+                </div>
             </div>
-            <div class="boton-tecnico">
-                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
-                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
-            </div>
-            <div class="volver">
-            <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
-            </div>
-        </div>
 
 
 
-    </form>
+        </form>
 
     </div>
     <script>
@@ -80,63 +84,60 @@
         let map;
 
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
+            var directionsService = new google.maps.DirectionsService();
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+            let mapOptions = {
                 center: {lat: 42.8811127 ,lng: -2.5877665},
-                zoom: 9
-            });
-
-            var iconBase =
-                'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+                zoom: 8
+            }
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            directionsRenderer.setMap(map);
 
             var icons = {
-                parking: {
-                    icon: iconBase + 'parking_lot_maps.png'
-                },
-                library: {
-                    icon: iconBase + 'library_maps.png'
-                },
-                info: {
-                    icon: iconBase + 'info-i_maps.png'
+                marca: {
+                    icon: "https://img.icons8.com/material/24/000000/circled-x.png"
                 }
             };
 
             var features = [
                 {
-                    position: new google.maps.LatLng(42.8811127, -2.5877665),
-                    type: 'info',
-                    title: "idguay"
+                    position: new google.maps.LatLng{{$incidencia->lugar}},
+                    type: 'marca',
+                },
+                {
+                    position: new google.maps.LatLng({{$tecnico->localizacion}}),
+                    type: 'marca',
                 }
             ];
+            var locations;
 
             for (var i = 0; i < features.length; i++) {
-                var locations = new google.maps.Marker({
+                locations = new google.maps.Marker({
                     position: features[i].position,
                     icon: icons[features[i].type].icon,
-                    title: features[i].title,
                     map: map
-                });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    alert(locations.title);
                 });
             };
 
-            var marker;
+            calcRoute(features);
 
-            function placeMarker(location) {
-                if ( marker ) {
-                    marker.setPosition(location);
-                } else {
-                    marker = new google.maps.Marker({
-                        position: location,
-                        map: map
-                    })
-                    ;
-                }
+            function calcRoute(features) {
+                var start = features[0].position;
+                var end = features[1].position;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: 'DRIVING'
+                };
+                directionsService.route(request, function(result, status) {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
+                        locations.setMap(null);
+
+                    }
+                });
             }
 
-            google.maps.event.addListener(map, 'click', function(event) {
-                placeMarker(event.latLng);
-            });
 
         }
 
