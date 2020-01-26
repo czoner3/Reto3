@@ -2,15 +2,19 @@
 
 @section('content')
 
-    <section id="nav-test">
-        <div id="nav-container">
-            <ul>
-                <li class="nav-li active-nav"><a href="/home">Home</a></li>
-                <li class="nav-li"><a href="/create/incidencia">Generar incidencia</a></li>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="menu collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#">Generar incidencia</a>
+                </li>
             </ul>
-            <div id="line"></div>
         </div>
-    </section>
+    </nav>
     <form action="/incidencia" method="POST">
         @csrf
 
@@ -228,7 +232,7 @@
                 if(confirmar){
                     document.getElementById('idTecnico').value = locations.title;
                     calcRoute(locations.position,marker);
-                }
+                }});
 
             function buscarTecnico(posicion,features){
                 for (var i = 0; i < features.length; i++) {
