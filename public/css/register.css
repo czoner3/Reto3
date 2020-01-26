@@ -2,3 +2,23 @@
     display: none;
     flex-direction: column;
 }
+
+.container-register{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-content-center-register{
+    width: 30% !important;
+
+}
+
+#card-header-register{
+transition: all 0.2s ease-in-out;
+}
+#card-body-register{
+    transition: all 0.2s ease-in-out;
+}

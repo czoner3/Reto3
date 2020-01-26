@@ -1,12 +1,12 @@
 <?php $__env->startSection('content'); ?>
 
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container-register">
+        <div class="row justify-content-center justify-content-center-register">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><?php echo e(__('Register')); ?></div>
+                    <div class="card-header" id="card-header-register"><?php echo e(__('Register')); ?></div>
 
-                    <div class="card-body">
+                    <div class="card-body" id="card-body-register">
                         <form method="POST" action="<?php echo e(route('registerUsuario')); ?>">
                             <?php echo csrf_field(); ?>
 
@@ -117,6 +117,7 @@ unset($__errorArgs, $__bag); ?>
 
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
+                                        <option value="0">-</option>
                                         <option value="1">Gerente</option>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>
@@ -176,14 +177,51 @@ unset($__errorArgs, $__bag); ?>
 
         $("#tipo").on('change', function () {
             var option = this.value;
+
             // alert(option);
 
             var campostecnico = $("#camposTecnico");
 
-            if (option == 4) {
-                campostecnico.css("display", "flex");
-            } else {
-                campostecnico.css("display", "none");
+            switch(option) {
+                case "0":
+                    $("#card-header-register").css("background-color","rgba(0,0,0,.03)");
+                    $("#card-body-register").css("background-color","white");
+                    $("#card-body-register").css("border","1px solid rgba(0,0,0,.125)");
+
+                    campostecnico.css("display", "none");
+
+                    break;
+                case "1":
+                    $("#card-header-register").css("background-color","rgba(249, 44, 44, 0.22)");
+                    $("#card-body-register").css("background-color","rgba(249, 44, 44, 0.02)");
+                    $("#card-body-register").css("border","1px solid rgba(249, 44, 44, 0.22)");
+
+                    campostecnico.css("display", "none");
+                    break;
+                case "2":
+                    $("#card-header-register").css("background-color"," rgba(61, 164, 250, 0.22)");
+                    $("#card-body-register").css("background-color"," rgba(61, 164, 250, 0.02)");
+                    $("#card-body-register").css("border","1px solid rgba(61, 164, 250, 0.22)");
+
+                    campostecnico.css("display", "none");
+                    break;
+                case "3":
+                    $("#card-header-register").css("background-color","rgba(216, 156, 250, 0.22)");
+                    $("#card-body-register").css("background-color","rgba(216, 156, 250, 0.02)");
+                    $("#card-body-register").css("border","1px solid rgba(216, 156, 250, 0.22)");
+
+                    campostecnico.css("display", "none");
+                    break;
+
+
+
+                case "4":
+                    campostecnico.css("display", "flex");
+                    $("#card-header-register").css("background-color","rgba(135, 220, 44, 0.22)");
+                    $("#card-body-register").css("background-color","rgba(135, 220, 44, 0.02)");
+                    $("#card-body-register").css("border","1px solid  rgba(135, 220, 44, 0.22)");
+                    break;
+
             }
         })
 
