@@ -3,16 +3,16 @@
 @section('content')
     <?php
     session_start();
-    $user = \App\Users::find(Auth::id());
-    $_SESSION['nombreusu'] = $user->nombreusu;
-    $_SESSION['idusu'] = $user->id;
-    $_SESSION['estado'] = $user->tipo;
+    $user=\App\Users::find(Auth::id());
+    $_SESSION['nombreusu']= $user->nombreusu;
+    $_SESSION['idusu']= $user->id;
+    $_SESSION['estado']= $user->tipo;
     ?>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -20,15 +20,12 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
-
-                        Estas logeado con:
+                    You are logged in!
                         <?php
                         echo $_SESSION['nombreusu'];
                         echo $_SESSION['idusu'];
                         echo $_SESSION['estado'];
                         ?>
-                    </div>
                 </div>
             </div>
         </div>
