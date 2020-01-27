@@ -132,6 +132,7 @@ echo $_SESSION['estado'];
         </tbody>
     </table>
 </div>
+
 @endsection
 
 

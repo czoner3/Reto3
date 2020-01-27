@@ -1,0 +1,122 @@
+[
+    {
+        "Nombre": "Amara",
+        "Carretera": "GI-20",
+        "PK": "11.000",
+        "Latitud": "43.29769",
+        "Longitud": "-1.986157",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/807.jpg"
+    },
+    {
+        "Nombre": "Anoeta",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.302728",
+        "Longitud": "-1.974848",
+        "Imagen": "/imagenes/trafico/Anoeta/snap_c1.jpg"
+    },
+    {
+        "Nombre": "A�orga",
+        "Carretera": "GI-20",
+        "PK": "12.000",
+        "Latitud": "43.295609",
+        "Longitud": "-1.997044",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/808.jpg"
+    },
+    {
+        "Nombre": "Cervantes",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.318564",
+        "Longitud": "-1.984907",
+        "Imagen": "/imagenes/trafico/Cervantes/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Cervantes 2",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.318830",
+        "Longitud": "-1.984161",
+        "Imagen": "/imagenes/trafico/PlazaCervantes/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Jai Alai",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.32205",
+        "Longitud": "-1.96586",
+        "Imagen": "/imagenes/trafico/JaiAlai/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Loiola",
+        "Carretera": "GI-20",
+        "PK": "8.500",
+        "Latitud": "43.305725",
+        "Longitud": "-1.968328",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/806.jpg"
+    },
+    {
+        "Nombre": "Ondarreta",
+        "Carretera": "GI-20",
+        "PK": "13.000",
+        "Latitud": "43.29824",
+        "Longitud": "-2.009245",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/809.jpg"
+    },
+    {
+        "Nombre": "Ondarreta - Tunel",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.31546",
+        "Longitud": "-2.00082",
+        "Imagen": "/imagenes/trafico/TunelAntiguo/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Pasaia 1",
+        "Carretera": "GI-20",
+        "PK": "5.000",
+        "Latitud": "43.310689",
+        "Longitud": "-1.937903",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/804.jpg"
+    },
+    {
+        "Nombre": "Pasaia 2",
+        "Carretera": "GI-20",
+        "PK": "4.500",
+        "Latitud": "43.3105",
+        "Longitud": "-1.934152",
+        "Imagen": "http://www.trafikoa.net/static/files/tr/camaras/805.jpg"
+    },
+    {
+        "Nombre": "Plaza de Europa",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.30904",
+        "Longitud": "-2.00975",
+        "Imagen": "/imagenes/trafico/PlazaEuropa/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Plaza Euskadi",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.32055",
+        "Longitud": "-1.97943",
+        "Imagen": "/imagenes/trafico/PlazaEuskadi/snap_c1.jpg"
+    },
+    {
+        "Nombre": "Reina Regente",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.32313",
+        "Longitud": "-1.98087",
+        "Imagen": "/imagenes/trafico/ReinaRegente/snap_c1.jpg"
+    },
+    {
+        "Nombre": "San Mart�n - Easo",
+        "Carretera": "",
+        "PK": "",
+        "Latitud": "43.31689",
+        "Longitud": "-1.98364",
+        "Imagen": "/imagenes/trafico/Easo/snap_c1.jpg"
+    }
+]
