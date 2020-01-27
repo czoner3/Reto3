@@ -7,6 +7,7 @@ use App\Incidencia;
 use App\Tecnico;
 use App\Users;
 use App\Vehiculo;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -62,11 +63,11 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responseº
      */
     public function create()
     {
-        $tecnicos = Tecnico::all();
+        $tecnicos = Tecnico::all()->where('estado','=',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
         ]);
@@ -96,6 +97,8 @@ class IncidenciaController extends Controller
 
             $cliente->save();
 
+        }else{
+            $clientedni = request('dniCliente');
         }
 
         $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
@@ -113,6 +116,12 @@ class IncidenciaController extends Controller
         }
         $incidencia->usuario_id = request('idUsuario');
         $incidencia->tecnico_id = request('idTecnico');
+
+        $tecnico = Tecnico::find(request("idTecnico"));
+
+        $tecnico->estado=1;
+        $tecnico->save();
+
 
         $incidencia->save();
 
@@ -135,7 +144,10 @@ class IncidenciaController extends Controller
             $vehiculo->save();
         }
 
-        return redirect('/');
+
+        return redirect()->route('sendMail');
+
+
 
 
 

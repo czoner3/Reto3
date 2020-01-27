@@ -10,20 +10,23 @@
     <link  rel="stylesheet" href="{{asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
+    <link  rel="stylesheet" href="{{asset('css/menu.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
-
+    <link  rel="stylesheet" href="{{asset('css/register.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
 
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
-    <script src="{{ secure_asset('js/app.js') }}" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
+<header style="height: 10%;background-color: rgba(41,165,130,0.7);">
+    <img src="https://roadside-assistance.online/img/logos/en.png" style="height: 65px;margin-left: 4%">
+
+</header>
 <div><!--class="container"-->
 @yield("content")
 </div>
-<footer>
 
-</footer>
 </body>
 </html>
