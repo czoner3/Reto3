@@ -7,19 +7,21 @@
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
-                <option value="0">Pinchazo</option>
-                <option value="1">Golpe</option>
-                <option value="2">Averia</option>
-                <option value="3">Otro</option>
+                <option value="1">Pinchazo</option>
+                <option value="2">Golpe</option>
+                <option value="3">Averia</option>
+                <option value="4">Otro</option>
             </select>
             
         </div>
         <div>
             <label for="estado">Estado:</label>
-            <select class="custom-select" name="tipoincidencia">
+            <select class="custom-select" name="estado">
                 <option value="">--</option>
-                <option value="0">Cerrada</option>
                 <option value="1">Abierta</option>
+                <option value="2">Cerrada garaje</option>
+                <option value="3">Cerrada insitu</option>
+
             </select>
             
         </div>
@@ -48,7 +50,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 <?php $__currentLoopData = $tecnicos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tecnico): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombretec); ?></option>
+                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
             
@@ -119,7 +121,7 @@
 
                 </td>
                 <td>
-                    <?php echo e(\App\Tecnico::find($inci->tecnico_id)->nombretec); ?>
+                    <?php echo e(\App\Tecnico::find($inci->tecnico_id)->nombre); ?>
 
                 </td>
                 <td><?php echo e($inci->observaciones); ?></td>

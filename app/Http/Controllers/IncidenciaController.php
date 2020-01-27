@@ -62,11 +62,11 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responseº
      */
     public function create()
     {
-        $tecnicos = Tecnico::all();
+        $tecnicos = Tecnico::all()->where('estado','=',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
         ]);

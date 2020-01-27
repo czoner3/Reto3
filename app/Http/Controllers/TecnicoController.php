@@ -27,6 +27,8 @@ class TecnicoController extends Controller
         $vehiculo = Vehiculo::find($vehiculoid->id);
 
 
+
+
         return view('tecnico', [
             "incidencia"=> $incidencia,
             "cliente"=> $cliente,
@@ -83,13 +85,27 @@ class TecnicoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tecnico  $tecnico
+     * @param \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tecnico $tecnico)
+    public function update(Request $request, $id)
     {
-        //
+        $incidencia = Incidencia::find($id);
+
+        $incidencia->observaciones = request('observaciones');
+        $incidencia->estado = request('estado');
+
+
+        $tecnicoid = Incidencia::select('tecnico_id')->where('id',$incidencia->id)->first();
+        $tecnico = Tecnico::find($tecnicoid->tecnico_id);
+
+        $tecnico->estado=0;
+        $tecnico->save();
+
+        $incidencia->save();
+
+        return redirect('/');
     }
 
     /**
@@ -102,4 +118,6 @@ class TecnicoController extends Controller
     {
         //
     }
+
+
 }
