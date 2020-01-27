@@ -9,10 +9,10 @@
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
-                <option value="0">Pinchazo</option>
-                <option value="1">Golpe</option>
-                <option value="2">Averia</option>
-                <option value="3">Otro</option>
+                <option value="1">Pinchazo</option>
+                <option value="2">Golpe</option>
+                <option value="3">Averia</option>
+                <option value="4">Otro</option>
             </select>
             {{--<input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">--}}
         </div>
@@ -20,8 +20,10 @@
             <label for="estado">Estado:</label>
             <select class="custom-select" name="estado">
                 <option value="">--</option>
-                <option value="0">Cerrada</option>
                 <option value="1">Abierta</option>
+                <option value="2">Cerrada garaje</option>
+                <option value="3">Cerrada insitu</option>
+
             </select>
             {{--<input class="form-control" type="text" id="estado" name="estado">--}}
         </div>
@@ -50,7 +52,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 @foreach($tecnicos as $tecnico)
-                    <option value="{{$tecnico->id}}">{{$tecnico->nombretec}}</option>
+                    <option value="{{$tecnico->id}}">{{$tecnico->nombre}}</option>
                 @endforeach
             </select>
             {{--<input class="form-control" type="text" id="tecnico_id" name="tecnico_id">--}}
@@ -99,18 +101,7 @@
 
                 </td>
                 <td>{{$inci->lugar }}</td>
-                <td>@switch($inci->estado)
-                        @case(1)
-                        Abierta
-                        @break
-                        @case(2)
-                        Cerrada
-                        @break
-                        @case(3)
-                        Cerrada insitu
-                        @break
-                    @endswitch
-                </td>
+                <td>{{($inci->estado)?'Abierta':'Cerrada'}}</td>
                 <td>
                     {{$inci->cliente_id}}
                 </td>
@@ -127,16 +118,14 @@
                     {{$inci->tecnico_id}}
                 </td>
                 <td>
-                    {{\App\Tecnico::find($inci->tecnico_id)->nombretec}}
+                    {{\App\Tecnico::find($inci->tecnico_id)->nombre}}
                 </td>
                 <td>{{$inci->observaciones}}</td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    <span>{{$incidencia->links()}}</span>
 </div>
-
 @endsection
 
 

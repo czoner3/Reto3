@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Users;
+use http\Env\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -41,6 +42,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        //auth
     }
 
     /**
@@ -53,7 +55,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
            'nombreusu' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+           // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:2', 'confirmed'],
             'tipo' =>['required','integer']
         ]);
@@ -65,16 +67,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+   protected function create(array $data)
     {
         return Users::create([
             //'name' => $data['name'],
-
+           // 'email' => $data['email'],
             'nombreusu' => $data['nombreusu'],
-            'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'tipo' =>$data['tipo']
 
         ]);
     }
+
+
 }

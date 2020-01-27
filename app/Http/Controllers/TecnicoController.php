@@ -13,6 +13,7 @@ class TecnicoController extends Controller
 
     public function index()
     {
+
         $incidenciaid = Incidencia::select('id')->where('estado',1)->first();
         $incidencia = Incidencia::find($incidenciaid->id);
 
@@ -33,6 +34,7 @@ class TecnicoController extends Controller
             "tecnico"=>$tecnico
 
         ]);
+
     }
 
     /**

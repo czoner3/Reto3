@@ -2,10 +2,25 @@
 
 @section('content')
 
-    <h1>Registro incidencia</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="menu collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#">Generar incidencia</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <form action="/incidencia" method="POST">
         @csrf
-        <div>
+
+
+            <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 1% 87.5%;">Generar incidencia</button>
+
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
@@ -14,9 +29,9 @@
                     </div>
                 </div>
             </div>
-
+        <div id="fichaIncidencia" style="height: 0px;overflow: hidden">
             <div id="fichaCliente" style="width: 90%;margin-left: 5%;">
-                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;">
+                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;border-bottom-left-radius: 1%;">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input class="form-control" type="text" id="nombre" name="nombre">
@@ -35,7 +50,7 @@
                     </div>
 
                 </div>
-                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;">
+                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;border-bottom-right-radius: 1%;">
 
                     <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                         <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
@@ -79,7 +94,7 @@
         </div>
 
 
-        <div style=" width: 90%;margin: 24% 0 2% 5%;">
+        <div style=" width: 90%;margin: 2px 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="1">pinchazo</option>
@@ -91,9 +106,6 @@
 
         <div id="map" style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
 
-        <div style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;">
-            <button class="btn btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button><a href="/">volver</a>
-        </div>
     </form>
 
 
@@ -102,6 +114,11 @@
         let botondni = document.getElementById('botondni');
 
         botondni.addEventListener("click", function () {
+
+            document.getElementById('fichaIncidencia').style.height="414px";
+            document.getElementById('fichaIncidencia').style.transitionDelay="1s";
+            document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
+
             let dnicliente = document.getElementById('dniCliente').value;
 
             $.ajax({
@@ -148,25 +165,20 @@
         let map;
 
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 43.1 ,lng: -2.5877665},
-                zoom: 9
-            });
+            var directionsService = new google.maps.DirectionsService();
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+            let mapOptions = {
+                center: {lat: 42.8811127 ,lng: -2.5877665},
+                zoom: 8
+            }
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            directionsRenderer.setMap(map);
 
-
-            var iconBase =
-                'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
 
 
             var icons = {
-                parking: {
-                    icon: iconBase + 'parking_lot_maps.png'
-                },
-                library: {
-                    icon: iconBase + 'library_maps.png'
-                },
                 info: {
-                    icon: iconBase + 'info-i_maps.png'
+                    icon: "https://img.icons8.com/ios-glyphs/30/000000/marker.png"
                 }
             };
 
@@ -175,27 +187,13 @@
             @foreach($tecnicos as $tecnico)
                 tecnico ={
                 position: new google.maps.LatLng({{$tecnico->localizacion}}),
-                type: 'info',
+                type:"info",
                 title: "{{$tecnico->id}}"
             }
             features.push(tecnico);
                 @endforeach
 
-            for (var i = 0; i < features.length; i++) {
-                var locations = new google.maps.Marker({
-                    position: features[i].position,
-                    icon: icons[features[i].type].icon,
-                    title: features[i].title,
-                    map: map
-                });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                    if(confirmar){
-                        document.getElementById('idTecnico').value = locations.title;
-                    }
 
-                });
-            };
 
             var marker;
 
@@ -213,8 +211,57 @@
             google.maps.event.addListener(map, 'click', function(event) {
                 placeMarker(event.latLng);
                 document.getElementById('lugar').value = event.latLng;
+
             });
 
+            var locations;
+            for (var i = 0; i < features.length; i++) {
+                     locations = new google.maps.Marker({
+                    position: features[i].position,
+                    icon: icons[features[i].type].icon,
+                    title: features[i].title,
+                    map: map
+                });
+                google.maps.event.addDomListener(locations, 'click', function(event) {
+                    let posicion = event.latLng;
+                    buscarTecnico(posicion,features);
+                });
+            };
+            google.maps.event.addDomListener(locations, 'click', function() {
+                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                if(confirmar){
+                    document.getElementById('idTecnico').value = locations.title;
+                    calcRoute(locations.position,marker);
+                }});
+
+            function buscarTecnico(posicion,features){
+                for (var i = 0; i < features.length; i++) {
+                    if(features[i].position == posicion){
+                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                        if(confirmar){
+                            document.getElementById('idTecnico').value = features[i].title;
+                            calcRoute(posicion,marker);
+                        }
+                    }
+
+                }
+            }
+            function calcRoute(tecnico,marker) {
+                var start = marker.position;
+                var end = tecnico;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: 'DRIVING'
+                };
+                directionsService.route(request, function(result, status) {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
+                        marker.setMap(null);
+                        locations.setMap(null);
+                    }
+                });
+            }
 
         }
 

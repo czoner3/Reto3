@@ -80,7 +80,9 @@
 
     </div>
     <script>
+
         let map;
+
         function initMap() {
             var directionsService = new google.maps.DirectionsService();
             var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -90,11 +92,13 @@
             }
             var map = new google.maps.Map(document.getElementById('map'), mapOptions);
             directionsRenderer.setMap(map);
+
             var icons = {
                 marca: {
                     icon: "https://img.icons8.com/material/24/000000/circled-x.png"
                 }
             };
+
             var features = [
                 {
                     position: new google.maps.LatLng{{$incidencia->lugar}},
@@ -106,6 +110,7 @@
                 }
             ];
             var locations;
+
             for (var i = 0; i < features.length; i++) {
                 locations = new google.maps.Marker({
                     position: features[i].position,
@@ -113,7 +118,9 @@
                     map: map
                 });
             };
+
             calcRoute(features);
+
             function calcRoute(features) {
                 var start = features[0].position;
                 var end = features[1].position;
@@ -126,12 +133,19 @@
                     if (status == 'OK') {
                         directionsRenderer.setDirections(result);
                         locations.setMap(null);
+
                     }
                 });
             }
+
+
         }
+
+
+
+
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMapa"
-            sync defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMap"
+            async defer></script>
 
 @endsection

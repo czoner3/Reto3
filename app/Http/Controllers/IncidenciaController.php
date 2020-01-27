@@ -42,7 +42,7 @@ class IncidenciaController extends Controller
             ->cliente_id($cliente_id)
             ->usuario_id($usuario_id)
             ->tecnico_id($tecnico_id)
-            ->paginate(5);
+            ->paginate(6);
 
        /* $users = DB::table('users')->where('tipo', '=' ,2);
         foreach ($users as $user) {
@@ -62,7 +62,7 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responseº
      */
     public function create()
     {
@@ -96,6 +96,8 @@ class IncidenciaController extends Controller
 
             $cliente->save();
 
+        }else{
+            $clientedni = request('dniCliente');
         }
 
         $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
@@ -114,10 +116,11 @@ class IncidenciaController extends Controller
         $incidencia->usuario_id = request('idUsuario');
         $incidencia->tecnico_id = request('idTecnico');
 
-        $tecnico = Tecnico::find(request('idTecnico'));
+        $tecnico = Tecnico::find(request("idTecnico"));
 
         $tecnico->estado=1;
         $tecnico->save();
+
 
         $incidencia->save();
 
