@@ -10,22 +10,24 @@
     <link  rel="stylesheet" href="<?php echo e(asset('css/login.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(secure_asset('css/login.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(asset('css/tecnico.css')); ?>">
+    <link  rel="stylesheet" href="<?php echo e(asset('css/menu.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(secure_asset('css/tecnico.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(asset('css/register.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(secure_asset('css/register.css')); ?>">
 
     <script src="<?php echo e(asset('js/app.js')); ?>" type="text/js"></script>
-    <script src="<?php echo e(secure_asset('js/app.js')); ?>" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
+<header style="height: 10%;background-color: rgba(41,165,130,0.7);">
+    <img src="https://roadside-assistance.online/img/logos/en.png" style="height: 65px;margin-left: 4%">
+
+</header>
 <div><!--class="container"-->
 <?php echo $__env->yieldContent("content"); ?>
 </div>
-<footer>
-
-</footer>
+<script src="<?php echo e(asset('js/menu.js')); ?>"></script>
 </body>
 </html>
 <?php /**PATH /home/vagrant/code/resources/views/layout.blade.php ENDPATH**/ ?>

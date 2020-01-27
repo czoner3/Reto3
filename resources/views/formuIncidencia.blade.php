@@ -18,7 +18,6 @@
     <form action="/incidencia" method="POST">
         @csrf
 
-
             <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 1% 87.5%;">Generar incidencia</button>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
@@ -159,8 +158,6 @@
 
     </script>
     <script>
-
-
 
         let map;
 

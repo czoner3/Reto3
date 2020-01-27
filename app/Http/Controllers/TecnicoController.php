@@ -90,6 +90,18 @@ class TecnicoController extends Controller
     public function update(Request $request, Tecnico $tecnico)
     {
         //
+
+        $incidenciaid = Incidencia::select('id')->where('estado',1)->first();
+        $incidencia = Incidencia::find($incidenciaid->id);
+
+        $incidencia->observaciones = request('observaciones');
+        $incidencia->estado = request('action');
+
+
+        $tecnicoid = Incidencia::select('tecnico_id')->where('id',$incidenciaid->id)->first();
+        $tecnico = Tecnico::find($tecnicoid->tecnico_id);
+
+
     }
 
     /**
@@ -102,4 +114,6 @@ class TecnicoController extends Controller
     {
         //
     }
+
+
 }
