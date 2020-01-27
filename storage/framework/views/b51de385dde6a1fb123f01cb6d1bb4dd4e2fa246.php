@@ -169,9 +169,12 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
+
+
     </div>
     <script>
 
@@ -212,9 +215,6 @@ unset($__errorArgs, $__bag); ?>
 
                     campostecnico.css("display", "none");
                     break;
-
-
-
                 case "4":
                     campostecnico.css("display", "flex");
                     $("#card-header-register").css("background-color","rgba(135, 220, 44, 0.22)");
@@ -224,7 +224,6 @@ unset($__errorArgs, $__bag); ?>
 
             }
         })
-
 
     </script>
 <?php $__env->stopSection(); ?>

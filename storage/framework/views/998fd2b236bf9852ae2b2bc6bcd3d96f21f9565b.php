@@ -130,6 +130,7 @@
         </tbody>
     </table>
 </div>
+
 <?php $__env->stopSection(); ?>
 
 

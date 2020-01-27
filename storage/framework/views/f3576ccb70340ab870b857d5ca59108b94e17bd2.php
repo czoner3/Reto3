@@ -27,7 +27,7 @@
 <div><!--class="container"-->
 <?php echo $__env->yieldContent("content"); ?>
 </div>
-<script src="<?php echo e(asset('js/menu.js')); ?>"></script>
+
 </body>
 </html>
 <?php /**PATH /home/vagrant/code/resources/views/layout.blade.php ENDPATH**/ ?>
