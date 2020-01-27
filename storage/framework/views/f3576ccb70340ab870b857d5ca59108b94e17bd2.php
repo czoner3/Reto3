@@ -11,7 +11,8 @@
     <link  rel="stylesheet" href="<?php echo e(secure_asset('css/login.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(asset('css/tecnico.css')); ?>">
     <link  rel="stylesheet" href="<?php echo e(secure_asset('css/tecnico.css')); ?>">
-
+    <link  rel="stylesheet" href="<?php echo e(asset('css/register.css')); ?>">
+    <link  rel="stylesheet" href="<?php echo e(secure_asset('css/register.css')); ?>">
 
     <script src="<?php echo e(asset('js/app.js')); ?>" type="text/js"></script>
     <script src="<?php echo e(secure_asset('js/app.js')); ?>" type="text/js"></script>

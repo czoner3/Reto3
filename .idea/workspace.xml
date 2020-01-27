@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf77359f-a91d-4979-ac89-96d66df2f31d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckRole.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/formuIncidencia.blade.php" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tecnico.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tecnico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_16_074036_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_17_105324_create_tecnicos_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/37/9a/379abbceb41a7b6b102f84ad5833b496200f377d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/74/81/74814c7516ed9a13d18946b82700aa513a0e9071" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/b51de385dde6a1fb123f01cb6d1bb4dd4e2fa246.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/b51de385dde6a1fb123f01cb6d1bb4dd4e2fa246.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/c604100e4611fe1a969f94c036a4994389613b76.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/c604100e4611fe1a969f94c036a4994389613b76.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/f3576ccb70340ab870b857d5ca59108b94e17bd2.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f3576ccb70340ab870b857d5ca59108b94e17bd2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -200,6 +195,7 @@
       <workItem from="1579723948162" duration="2770000" />
       <workItem from="1579765574017" duration="3938000" />
       <workItem from="1579764762791" duration="10047000" />
+      <workItem from="1579855003580" duration="7781000" />
     </task>
     <servers />
   </component>
