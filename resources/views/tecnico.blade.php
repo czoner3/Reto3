@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <form  action="" method="GET">
+        <form action="" method="GET">
             @csrf
 
 
@@ -66,8 +66,9 @@
 
                 </div>
                 <div class="boton-tecnico">
-                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
-                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
+                    <button type="button" class="btn btn-success btn-alpha" id="resultagaraje" name="action" value="2" formaction=" ">Resuelta Garaje</button>
+                    <button type="button" class="btn btn-success btn-alpha" id="resultainsitu" name="action" value="3" formaction=" ">Resuelta insitu</button>
+
                 </div>
                 <div class="volver">
                     <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
@@ -148,4 +149,14 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMap"
             async defer></script>
 
+
+    <?php
+    if (isset($_GET['action'])) {
+        if($_GET['action'] !=""){
+            $action  = $_GET['action'];
+            echo "sjsjsjsjsjsj";
+        }
+    }
+
+    ?>
 @endsection
