@@ -1,7 +1,14 @@
 @extends('layout')
 
 @section('content')
+
 <div class="row col-11"><h1>Incidencias</h1></div>
+<?php
+session_start();
+echo $_SESSION['nombreusu'];
+echo $_SESSION['idusu'];
+echo $_SESSION['estado'];
+?>
 <div class="row col-11">
     <form action="/incidencia" method="get">
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
