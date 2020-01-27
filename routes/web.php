@@ -36,3 +36,5 @@ Route::get('/create/incidencia', 'IncidenciaController@create');
 Route::post('/incidencia','IncidenciaController@store');
 
 Route::post('/registerUsuario', 'RegistroUsuarioController@store')->name('registerUsuario');
+
+Route::post('/tecnico/{id}','TecnicoController@update');
