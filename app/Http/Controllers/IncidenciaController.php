@@ -67,7 +67,7 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        $tecnicos = Tecnico::all();
+        $tecnicos = Tecnico::all()->where('estado','=',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
         ]);

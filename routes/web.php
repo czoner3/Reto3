@@ -38,5 +38,8 @@ Route::post('/incidencia','IncidenciaController@store');
 
 Route::post('/registerUsuario', 'RegistroUsuarioController@store')->name('registerUsuario');
 
+
 Route::get('/send-mail','UserController@sendEmail') ->name('sendMail');
+
+Route::post('/tecnico/{id}','TecnicoController@update');
 

@@ -28,7 +28,7 @@ class RegistroUsuarioController extends Controller
 
                 $tecnico = new Tecnico();
 
-                $tecnico->localizacion = "42.38,-2.38";
+                $tecnico->localizacion = request("localizaciontecnico");
                 $tecnico->estado = 0;
                 $tecnico->nombre = request("nombretecnico");
                 $tecnico->apellido = request("apellidotecnico");

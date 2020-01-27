@@ -18,7 +18,6 @@
     <form action="/incidencia" method="POST">
         @csrf
 
-
             <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 1% 87.5%;">Generar incidencia</button>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
@@ -160,8 +159,6 @@
     </script>
     <script>
 
-
-
         let map;
 
         function initMap() {
@@ -186,7 +183,7 @@
             let tecnico;
             @foreach($tecnicos as $tecnico)
                 tecnico ={
-                position: new google.maps.LatLng({{$tecnico->localizacion}}),
+                position: new google.maps.LatLng{{$tecnico->localizacion}},
                 type:"info",
                 title: "{{$tecnico->id}}"
             }
@@ -237,12 +234,9 @@
             function buscarTecnico(posicion,features){
                 for (var i = 0; i < features.length; i++) {
                     if(features[i].position == posicion){
-                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                        if(confirmar){
                             document.getElementById('idTecnico').value = features[i].title;
                             calcRoute(posicion,marker);
                         }
-                    }
 
                 }
             }
