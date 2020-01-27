@@ -186,7 +186,7 @@
             let tecnico;
             @foreach($tecnicos as $tecnico)
                 tecnico ={
-                position: new google.maps.LatLng({{$tecnico->localizacion}}),
+                position: new google.maps.LatLng{{$tecnico->localizacion}},
                 type:"info",
                 title: "{{$tecnico->id}}"
             }

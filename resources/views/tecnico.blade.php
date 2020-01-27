@@ -105,7 +105,7 @@
                     type: 'marca',
                 },
                 {
-                    position: new google.maps.LatLng({{$tecnico->localizacion}}),
+                    position: new google.maps.LatLng{{$tecnico->localizacion}},
                     type: 'marca',
                 }
             ];
