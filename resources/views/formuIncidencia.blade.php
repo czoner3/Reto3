@@ -3,6 +3,18 @@
 @section('content')
 
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="menu collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#">Generar incidencia</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <form action="/incidencia" method="POST">
         @csrf
 
@@ -202,24 +214,38 @@
 
             });
 
+            var locations;
             for (var i = 0; i < features.length; i++) {
-                var locations = new google.maps.Marker({
+                     locations = new google.maps.Marker({
                     position: features[i].position,
                     icon: icons[features[i].type].icon,
                     title: features[i].title,
                     map: map
                 });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                    if(confirmar){
-                        document.getElementById('idTecnico').value = locations.title;
-                        calcRoute(locations.position,marker);
-                    }
-
+                google.maps.event.addDomListener(locations, 'click', function(event) {
+                    let posicion = event.latLng;
+                    buscarTecnico(posicion,features);
                 });
             };
+            google.maps.event.addDomListener(locations, 'click', function() {
+                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                if(confirmar){
+                    document.getElementById('idTecnico').value = locations.title;
+                    calcRoute(locations.position,marker);
+                }});
 
+            function buscarTecnico(posicion,features){
+                for (var i = 0; i < features.length; i++) {
+                    if(features[i].position == posicion){
+                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                        if(confirmar){
+                            document.getElementById('idTecnico').value = features[i].title;
+                            calcRoute(posicion,marker);
+                        }
+                    }
 
+                }
+            }
             function calcRoute(tecnico,marker) {
                 var start = marker.position;
                 var end = tecnico;
