@@ -27,6 +27,6 @@
 <div><!--class="container"-->
 @yield("content")
 </div>
-<script src="{{ asset('js/menu.js') }}"></script>
+
 </body>
 </html>
