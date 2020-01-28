@@ -186,7 +186,7 @@
                 position: new google.maps.LatLng{{$tecnico->localizacion}},
                 type:"info",
                 title: "{{$tecnico->id}}"
-            }
+            };
             features.push(tecnico);
                 @endforeach
 
@@ -229,7 +229,8 @@
                 if(confirmar){
                     document.getElementById('idTecnico').value = locations.title;
                     calcRoute(locations.position,marker);
-                }});
+                }
+            });
 
             function buscarTecnico(posicion,features){
                 for (var i = 0; i < features.length; i++) {

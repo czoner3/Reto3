@@ -43,6 +43,10 @@ Route::get('/send-mail','UserController@sendEmail') ->name('sendMail');
 
 Route::post('/tecnico/{id}','TecnicoController@update');
 
-Route::get('/estadisticas','EstadisticasController@index');
+Route::get('/estadisticas','EstadisticasController@index')->name("estadisticas");
+
+Route::get('/estadisticas/cargar' , 'EstadisticasController@comprobarChart');
+
+
 
 
