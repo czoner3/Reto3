@@ -4,9 +4,18 @@
     <?php
     session_start();
     $user=\App\Users::find(Auth::id());
-    $_SESSION['nombreusu']= $user->nombreusu;
+
+    if ($user->tipo == 3){
+        echo $user->tipo;
+
+
+       /* return redirect()->action('/incidencia');*/
+    }
+    /*$request->session()->put('nombreusu', $user->nombreusu);*/
+
+  /*  $_SESSION['nombreusu']= $user->nombreusu;
     $_SESSION['idusu']= $user->id;
-    $_SESSION['estado']= $user->tipo;
+    $_SESSION['estado']= $user->tipo;*/
     ?>
 <div class="container">
     <div class="row justify-content-center">
@@ -22,9 +31,10 @@
                         @endif
                     You are logged in!
                         <?php
-                        echo $_SESSION['nombreusu'];
+
+                     /*   echo $_SESSION['nombreusu'];
                         echo $_SESSION['idusu'];
-                        echo $_SESSION['estado'];
+                        echo $_SESSION['estado'];*/
                         ?>
                 </div>
             </div>

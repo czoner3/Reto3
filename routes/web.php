@@ -31,7 +31,7 @@ Route::get('/incidencia','IncidenciaController@index');
 
 Route::get('/tecnico','TecnicoController@index');
 
-Route::get('/create/incidencia', 'IncidenciaController@create');
+Route::get('/create/incidencia', 'IncidenciaController@create')->name('crearIncidencia');
 
 Route::post('/incidencia','IncidenciaController@store');
 
@@ -42,4 +42,7 @@ Route::post('/registerUsuario', 'RegistroUsuarioController@store')->name('regist
 Route::get('/send-mail','UserController@sendEmail') ->name('sendMail');
 
 Route::post('/tecnico/{id}','TecnicoController@update');
+
+Route::get('/estadisticas','EstadisticasController@index');
+
 
