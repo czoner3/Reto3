@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <?php
-    session_start();
-    $user=\App\Users::find(Auth::id());
 
-    if ($user->tipo == 3){
-        echo $user->tipo;
+    <?php
+
+   /* $user=\App\Users::find(Auth::id());*/
+   /* echo $usuario->tipo;
+
+
+    if ($usuario->tipo == 3){
+        echo $usuario->tipo;*/
 
 
        /* return redirect()->action('/incidencia');*/

@@ -3,22 +3,11 @@
 @section('content')
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="menu collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Generar incidencia</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <form action="/incidencia" method="POST">
         @csrf
 
             <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 1% 87.5%;">Generar incidencia</button>
+            <button class="btn btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/inicio">Volver</button>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
@@ -86,7 +75,7 @@
             <input type="hidden" name="idTecnico" id="idTecnico">
             <input type="hidden" name="estado" id="estado" value="1">
             <input type="hidden" name="lugar" id="lugar">
-            <input type="hidden" name="idUsuario" id="idUsuario" value="1">
+            <input type="hidden" name="idUsuario" id="idUsuario" value="{{$userid}}">
             <input type="hidden" name="idCliente" id="idCliente">
             <input type="hidden" name="insertClient" id="insertClient">
             <input type="hidden" name="insertVehicle" id="insertVehicle">
