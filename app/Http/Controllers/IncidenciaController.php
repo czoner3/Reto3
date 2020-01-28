@@ -9,6 +9,7 @@ use App\Users;
 use App\Vehiculo;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class IncidenciaController extends Controller
@@ -25,7 +26,6 @@ class IncidenciaController extends Controller
         $cliente_id = $request->get('cliente_id');
         $usuario_id = $request->get('usuario_id');
         $tecnico_id = $request->get('tecnico_id');
-        print_r ($cliente_id);
 
 
         //
@@ -67,9 +67,13 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
+        $usuario=Users::find(Auth::id());
+        $userid = $usuario->id;
+
         $tecnicos = Tecnico::all()->where('estado','=',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
+            "userid" => $userid
         ]);
 
     }

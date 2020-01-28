@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <?php
-    session_start();
+
     $user=\App\Users::find(Auth::id());
 
     if ($user->tipo == 3){

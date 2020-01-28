@@ -30,13 +30,13 @@ class RegistroUsuarioController extends Controller
 
                 $tecnico->localizacion = request("localizaciontecnico");
                 $tecnico->estado = 0;
+                $tecnico->email = request("email");
                 $tecnico->nombre = request("nombretecnico");
                 $tecnico->apellido = request("apellidotecnico");
                 $tecnico->telefono = request("telefonotecnico");
 
                 $tecnico->save();
 
-                return view('welcome');
             }
 
         } else {
@@ -51,5 +51,6 @@ class RegistroUsuarioController extends Controller
                 $usuario->save();
             }
         }
+        return redirect('/');
     }
 }
