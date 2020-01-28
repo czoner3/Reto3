@@ -14,9 +14,13 @@
     <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
     <link  rel="stylesheet" href="{{asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
-
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    {{-- ChartScript --}}
+
 
 </head>
 <body>
@@ -26,7 +30,9 @@
 </header>
 <div><!--class="container"-->
 @yield("content")
+
 </div>
+
 
 </body>
 </html>
