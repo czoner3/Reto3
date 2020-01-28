@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="row col-11"><h1>Incidencias</h1></div>
+
 <div class="row col-11">
     <form action="/incidencia" method="get">
     <div class="incidencia" class="form-group" style="width: 50%;float: left;">
@@ -127,6 +128,7 @@
         </tbody>
     </table>
 </div>
+
 @endsection
 
 

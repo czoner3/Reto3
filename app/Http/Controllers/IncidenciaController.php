@@ -7,6 +7,7 @@ use App\Incidencia;
 use App\Tecnico;
 use App\Users;
 use App\Vehiculo;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -147,7 +148,10 @@ class IncidenciaController extends Controller
             $vehiculo->save();
         }
 
-        return redirect('/');
+
+        return redirect()->route('sendMail');
+
+
 
 
 
