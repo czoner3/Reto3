@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <?php
-    session_start();
+
     $user=\App\Users::find(Auth::id());
     $_SESSION['nombreusu']= $user->nombreusu;
     $_SESSION['idusu']= $user->id;
