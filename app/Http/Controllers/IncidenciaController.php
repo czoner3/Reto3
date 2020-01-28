@@ -21,6 +21,10 @@ class IncidenciaController extends Controller
      */
     public function index(Request $request){
 
+        if(Auth::check()==false){
+            return redirect('/login');
+        }
+
         $tipoincidencia = $request->get('tipoincidencia');
         $estado = $request->get('estado');
         $cliente_id = $request->get('cliente_id');
@@ -67,6 +71,10 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
+        if(Auth::check()==false){
+            return redirect('/login');
+        }
+
         $usuario=Users::find(Auth::id());
         $userid = $usuario->id;
 
@@ -86,6 +94,10 @@ class IncidenciaController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(Auth::check()==false){
+            return redirect('/login');
+        }
 
         $insertClient = request('insertClient');
         $insertVehicle = request('insertVehicle');

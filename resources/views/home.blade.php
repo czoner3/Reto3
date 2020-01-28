@@ -4,10 +4,12 @@
 
     <?php
 
-    $user=\App\Users::find(Auth::id());
+   /* $user=\App\Users::find(Auth::id());*/
+   /* echo $usuario->tipo;
 
-    if ($user->tipo == 3){
-        echo $user->tipo;
+
+    if ($usuario->tipo == 3){
+        echo $usuario->tipo;*/
 
 
        /* return redirect()->action('/incidencia');*/
