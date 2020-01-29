@@ -11,9 +11,6 @@
         <th>Cliente</th>
         <th>Cliente nombre</th>
         <th>Usuario</th>
-        <th>Usuario nombre</th>
-        <th>Tecnico</th>
-        <th>Tecnico nombre</th>
         <th>Observaciones</th>
     </tr>
     </thead>
@@ -22,7 +19,18 @@
         <tr>
             <td>{{$incidencia->tipoincidencia}}</td>
             <td>{{$incidencia->lugar}}</td>
-            <td>{{($incidencia->estado)?'Abierta':'Cerrada'}}</td>
+            <td> @switch($incidencia->estado)
+                    @case(1)
+                    Abierta
+                    @break
+                    @case(2)
+                    Cerrada en garaje
+                    @break
+                    @case(3)
+                    Cerrada insitu
+                    @break
+                @endswitch
+            </td>
             <td>
                 {{$incidencia->cliente_id}}
             </td>
@@ -31,15 +39,6 @@
             </td>
             <td>
                 {{$incidencia->usuario_id}}
-            </td>
-            <td>
-                {{\App\Users::find($incidencia->usuario_id)->nombreusu}}
-            </td>
-            <td>
-                {{$incidencia->tecnico_id}}
-            </td>
-            <td>
-                {{\App\Tecnico::find($incidencia->tecnico_id)->nombre}}
             </td>
             <td>{{$incidencia->observaciones}}</td>
         </tr>

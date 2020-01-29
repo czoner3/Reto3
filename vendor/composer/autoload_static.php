@@ -467,6 +467,7 @@ class ComposerStaticInit48a70324bf2d21e3d330d7828bfa6771
     );
 
     public static $classMap = array (
+        'App\\Charts\\IncidenciasChart' => __DIR__ . '/../..' . '/app/Charts/IncidenciasChart.php',
         'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
         'App\\Comentario' => __DIR__ . '/../..' . '/app/Comentario.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -483,6 +484,7 @@ class ComposerStaticInit48a70324bf2d21e3d330d7828bfa6771
         'App\\Http\\Controllers\\EstadisticasController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstadisticasController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IncidenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/IncidenciaController.php',
+        'App\\Http\\Controllers\\IncidenciasChartController' => __DIR__ . '/../..' . '/app/Http/Controllers/IncidenciasChartController.php',
         'App\\Http\\Controllers\\RegistroUsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistroUsuarioController.php',
         'App\\Http\\Controllers\\TecnicoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TecnicoController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',

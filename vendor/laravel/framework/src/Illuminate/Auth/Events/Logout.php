@@ -34,5 +34,4 @@ class Logout
         $this->user = $user;
         $this->guard = $guard;
     }
-
 }

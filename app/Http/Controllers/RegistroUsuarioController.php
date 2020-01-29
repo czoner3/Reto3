@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tecnico;
 use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegistroUsuarioController extends Controller
