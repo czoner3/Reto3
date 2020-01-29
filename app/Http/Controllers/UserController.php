@@ -22,12 +22,13 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $usuario=Users::find(Auth::id());
+       /*$usuario=\App\Users::find(Auth::id());
         if($usuario) {
             $idusuario = $usuario->id;
 
             switch ($usuario->tipo) {
                 case "1":
+
                     return view("estadisticas");
                     break;
                 case "2":
@@ -89,7 +90,7 @@ class UserController extends Controller
         }
         else{
             return view('auth/login');
-        }
+        }*/
     }
 
     /**
@@ -160,6 +161,10 @@ class UserController extends Controller
 
     public function sendEmail(Request $request)
     {
+
+        if(Auth::check()==false){
+            return redirect('/login');
+        }
 
         require '../vendor/autoload.php';
 
