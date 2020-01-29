@@ -23,6 +23,7 @@ class IncidenciaController extends Controller
 
         $usuario=Users::find(Auth::id());
 
+
         if($usuario->tipo!='4') {
             $tipoincidencia = $request->get('tipoincidencia');
             $estado = $request->get('estado');

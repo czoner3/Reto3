@@ -10,7 +10,72 @@
 }
 .filtros:hover{
     background-color: rgba(41, 166, 131, 0.13);
+}
 
+.cliente{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.cliente input{
+    border: 1px solid rgba(9, 182, 185, 0.16);
+}
+.coche{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.customed{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    margin: 0 !important;
+}
+
+.customed:hover{
+
+    box-shadow: inset -340px 0 0 0 #32cc98;
+}
+.customed2{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    background-color:#32cc98 !important;
+    color: white !important;
+
+}
+
+
+
+customed2 input{
+    border: 1px solid rgba(165, 163, 35, 0.7) !important;
+    background-color:rgba(41,165,130,0.7) !important;
+    color: white;
+}
+
+
+#matricula{
+    padding: 20px;
+}
+#marca{
+
+}
+
+.botones-incidencia{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    flex-direction: row-reverse;
+
+}
+
+.pagination{
+   justify-content: center !important;
+}
+
+
+#dniCliente{
+    padding: 27px;
+    border: 1px solid rgba(41,165,130,0.7) !important;
+}
+
+customed-div{
+    height: 100% !important;
 }
 
 .selection-div{
@@ -46,6 +111,7 @@ tr:hover{
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
+
 }
 .tabla{
     display: flex;
@@ -129,7 +195,7 @@ margin-top: 10px;
 
 /* Button 1 */
 .btn-1 {
-    background-color: rgba(41,165,130,0.7);
+    background-color: #32cc98;
     color: #fff;
 }
 

@@ -278,7 +278,7 @@
 
                 var ctx = document.getElementById('myChart').getContext('2d');
                 myChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: ['Enero', 'Febrero', 'Marzo', 'Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
                         datasets: [{

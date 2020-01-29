@@ -69,12 +69,12 @@
 </div>
 
 <div class="row col-11 tabla">
-    <table class="table " border="1">
+    <table class="table" style="overflow-x: auto" border="1">
         <thead class="thead-dark ">
         <tr>
             <th>Tipo incidencia</th>
-            <th>Fecha incidencia</th>
             <th>Estado</th>
+            <th>Fecha incidencia</th>
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
@@ -104,8 +104,23 @@
                     <?php endswitch; ?>
 
                 </td>
+
+                <td>
+                    <?php switch($inci->estado):
+                        case (1): ?>
+                        Abierta
+                        <?php break; ?>
+                        <?php case (2): ?>
+                        Cerrada en garaje
+                        <?php break; ?>
+                        <?php case (3): ?>
+                        Cerrada insitu
+                        <?php break; ?>
+                    <?php endswitch; ?>
+                    </td>
+
                 <td><?php echo e($inci->created_at); ?></td>
-                <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
+
                 <td>
                     <?php echo e($inci->cliente_id); ?>
 
@@ -137,7 +152,10 @@
     </table>
 </div>
 </div>
+<div class="paginacion">
+<?php echo e($incidencia->links()); ?>
 
+</div>
 <?php $__env->stopSection(); ?>
 
 

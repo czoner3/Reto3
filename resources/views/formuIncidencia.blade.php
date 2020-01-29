@@ -5,15 +5,16 @@
 
     <form action="/incidencia" method="POST">
         @csrf
-
-            <button class="btn btn-primary" type="submit" value="Generar incidencia" style="margin:10px 0 1% 87.5%;">Generar incidencia</button>
-            <button class="btn btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/inicio">Volver</button>
+    <div class="botones-incidencia">
+            <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia" style="">Generar incidencia</button>
+            <button class="btn btn-3  btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/inicio">Volver</button>
+    </div>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-outline-secondary" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
+                        <button type="button" class="btn btn-outline-secondary customed" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
                 </div>
             </div>
@@ -42,14 +43,14 @@
 
                     <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                         <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-outline-secondary" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
+                        <div class="input-group-append customed-div">
+                            <button type="button" class="btn btn-outline-secondary customed2" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
                         </div>
                     </div>
 
 
                     <div>
-                        <label for="marca">Marca:</label>
+                        <label id="marca" for="marca">Marca:</label>
                         <input class="form-control" type="text" id="marca" name="marca">
                     </div>
                     <div>
@@ -106,6 +107,8 @@
             document.getElementById('fichaIncidencia').style.height="414px";
             document.getElementById('fichaIncidencia').style.transitionDelay="1s";
             document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
+            botondni.style.backgroundColor="#32cc98";
+            botondni.style.color="white";
 
             let dnicliente = document.getElementById('dniCliente').value;
 
