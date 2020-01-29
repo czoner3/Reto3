@@ -487,8 +487,6 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     public function logout()
     {
-       /* session_start();
-        $_SESSION = array();*/
         $user = $this->user();
 
         $this->clearUserDataFromStorage();
@@ -510,7 +508,6 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
         $this->user = null;
 
         $this->loggedOut = true;
-
     }
 
     /**

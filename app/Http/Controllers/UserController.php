@@ -8,6 +8,7 @@ use App\Tecnico;
 use App\Vehiculo;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -162,9 +163,9 @@ class UserController extends Controller
     public function sendEmail(Request $request)
     {
 
-        if(Auth::check()==false){
+        /*if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         require '../vendor/autoload.php';
 

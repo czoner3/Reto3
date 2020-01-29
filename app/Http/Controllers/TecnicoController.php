@@ -16,9 +16,9 @@ class TecnicoController extends Controller
 
     public function index()
     {
-        if(Auth::check()==false){
+     /*   if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         $usuario=Users::find(Auth::id());
 
@@ -129,9 +129,9 @@ class TecnicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(Auth::check()==false){
+       /* if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         $incidencia = Incidencia::find($id);
 

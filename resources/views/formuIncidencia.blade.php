@@ -212,20 +212,16 @@
                     let posicion = event.latLng;
                     buscarTecnico(posicion,features);
                 });
-            };
-            google.maps.event.addDomListener(locations, 'click', function() {
-                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                if(confirmar){
-                    document.getElementById('idTecnico').value = locations.title;
-                    calcRoute(locations.position,marker);
-                }
-            });
+            }
 
             function buscarTecnico(posicion,features){
                 for (var i = 0; i < features.length; i++) {
                     if(features[i].position == posicion){
+                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                        if(confirmar==true) {
                             document.getElementById('idTecnico').value = features[i].title;
-                            calcRoute(posicion,marker);
+                            calcRoute(posicion, marker);
+                        }
                         }
 
                 }
@@ -242,7 +238,10 @@
                     if (status == 'OK') {
                         directionsRenderer.setDirections(result);
                         marker.setMap(null);
-                        locations.setMap(null);
+                        for(let x=0;x<features.length;x++){
+                            features[x].setMap(null);
+                        }
+
                     }
                 });
             }
