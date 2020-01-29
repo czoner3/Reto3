@@ -16,39 +16,41 @@ class TecnicoController extends Controller
 
     public function index()
     {
-     /*   if(Auth::check()==false){
-            return redirect('/login');
-        }*/
 
         $usuario=Users::find(Auth::id());
 
-        $tecnicoid = Tecnico::select('id')->where('email', $usuario->email)->get();
-        $tecnico = Tecnico::find($tecnicoid)->first();
-        $incidenciaid = Incidencia::select('id')->where('estado', 1)->where('tecnico_id', $tecnico->id)->first();
+        if($usuario->tipo=='4') {
+            $tecnicoid = Tecnico::select('id')->where('email', $usuario->email)->get();
+            $tecnico = Tecnico::find($tecnicoid)->first();
+            $incidenciaid = Incidencia::select('id')->where('estado', 1)->where('tecnico_id', $tecnico->id)->first();
 
-        if ($incidenciaid) {
-            $incidencia = Incidencia::find($incidenciaid->id);
+            if ($incidenciaid) {
+                $incidencia = Incidencia::find($incidenciaid->id);
 
-            $clienteid = Incidencia::select('cliente_id')->where('id', $incidenciaid->id)->first();
-            $cliente = Cliente::find($clienteid->cliente_id);
+                $clienteid = Incidencia::select('cliente_id')->where('id', $incidenciaid->id)->first();
+                $cliente = Cliente::find($clienteid->cliente_id);
 
-            $tecnicoid = Incidencia::select('tecnico_id')->where('id', $incidenciaid->id)->first();
-            $tecnico = Tecnico::find($tecnicoid->tecnico_id);
+                $tecnicoid = Incidencia::select('tecnico_id')->where('id', $incidenciaid->id)->first();
+                $tecnico = Tecnico::find($tecnicoid->tecnico_id);
 
-            $vehiculoid = Vehiculo::select('id')->where('cliente_id', $clienteid->cliente_id)->first();
-            $vehiculo = Vehiculo::find($vehiculoid->id);
+                $vehiculoid = Vehiculo::select('id')->where('cliente_id', $clienteid->cliente_id)->first();
+                $vehiculo = Vehiculo::find($vehiculoid->id);
 
 
-            return view('tecnico', [
-                "incidencia" => $incidencia,
-                "cliente" => $cliente,
-                "vehiculo" => $vehiculo,
-                "tecnico" => $tecnico
+                return view('tecnico', [
+                    "incidencia" => $incidencia,
+                    "cliente" => $cliente,
+                    "vehiculo" => $vehiculo,
+                    "tecnico" => $tecnico
 
-            ]);
-        } else {
-            $misincidencias = Incidencia::select("*")->where('tecnico_id', $tecnico->id)->get();
-            return view('misIncidencias', ["misincidencias" => $misincidencias]);
+                ]);
+            } else {
+                $misincidencias = Incidencia::select("*")->where('tecnico_id', $tecnico->id)->get();
+                return view('misIncidencias', ["misincidencias" => $misincidencias]);
+            }
+        }
+        else{
+            return redirect("/");
         }
 
 

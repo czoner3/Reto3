@@ -10,7 +10,7 @@
         <th>Estado</th>
         <th>Cliente</th>
         <th>Cliente nombre</th>
-        <th>Usuario</th>
+        <th>Operador</th>
         <th>Observaciones</th>
     </tr>
     </thead>
@@ -38,7 +38,7 @@
                 {{ \App\Cliente::find($incidencia->cliente_id)->nombrecli}}
             </td>
             <td>
-                {{$incidencia->usuario_id}}
+                {{\App\Users::find($incidencia->usuario_id)->nombreusu}}
             </td>
             <td>{{$incidencia->observaciones}}</td>
         </tr>
