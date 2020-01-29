@@ -32,16 +32,29 @@
 <header style="height: 7%;background-color: rgba(41,165,130,0.7);">
     <img src="https://roadside-assistance.online/img/logos/en.png" style="height: 65px;margin-left: 4%">
     <div class="dropdown" style="position:absolute;right: 5%;top: 1%;">
+
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="https://img.icons8.com/material-rounded/24/000000/settings.png">
         </button>
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
-            <a class="dropdown-item" href="/create/incidencia">Generar incidencia</a>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+           document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+        <?php
+
+            use Illuminate\Support\Facades\Auth;
+            $usuario=App\Users::find(Auth::id());
+            if($usuario->tipo==3){
+                echo '<a class="dropdown-item" href="/create/incidencia">Generar incidencia</a>';
+            }
+            if($usuario->tipo==1 ||$usuario->tipo==2){
+                echo '<a class="dropdown-item" href="/register">Registrar un usuario</a>';
+            }
+
+        ?>
         </div>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
