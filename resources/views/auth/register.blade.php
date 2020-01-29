@@ -1,6 +1,18 @@
 @extends('layout')
 
 @section('content')
+    <?php
+    use Illuminate\Support\Facades\Auth;
+    $usuario=App\Users::find(Auth::id());
+    if($usuario->tipo!="1"||$usuario->tipo!="2"){
+
+        echo "<h1>No tienes acceso al registro de usuario</h1>";
+        echo '<form action="/" method="get">
+                <input type="submit" value="Volver">
+              </form>';
+        return redirect("/");
+    }
+        ?>
 
     <div class="container-register">
         <div class="row justify-content-center justify-content-center-register">
@@ -78,7 +90,12 @@
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
                                         <option value="0">-</option>
-                                        <option value="1">Gerente</option>
+                                    <?php
+                                        $usuario=App\Users::find(Auth::id());
+                                        if($usuario->tipo==1){
+                                            echo '<option value="1">Gerente</option>';
+                                        }
+                                        ?>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>
                                         <option value="4">Técnico</option>
@@ -129,9 +146,12 @@
                                 </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
+
+
     </div>
     <script>
 
@@ -181,7 +201,6 @@
 
             }
         })
-
 
     </script>
     <script>

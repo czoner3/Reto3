@@ -5,11 +5,17 @@ namespace App\Http\Controllers;
 use App\Tecnico;
 use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegistroUsuarioController extends Controller
 {
     protected function store(Request $request){
+
+       /* if(Auth::check()==false){
+            return redirect('/login');
+        }*/
+
         $tipo = request("tipo");
         $password = request("password");
         $password_confirmation = request("password_confirmation");
@@ -30,13 +36,13 @@ class RegistroUsuarioController extends Controller
 
                 $tecnico->localizacion = request("localizaciontecnico");
                 $tecnico->estado = 0;
+                $tecnico->email = request("email");
                 $tecnico->nombre = request("nombretecnico");
                 $tecnico->apellido = request("apellidotecnico");
                 $tecnico->telefono = request("telefonotecnico");
 
                 $tecnico->save();
 
-                return view('welcome');
             }
 
         } else {
@@ -51,5 +57,6 @@ class RegistroUsuarioController extends Controller
                 $usuario->save();
             }
         }
+        return redirect('/');
     }
 }

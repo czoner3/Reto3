@@ -1,9 +1,12 @@
 <?php $__env->startSection('content'); ?>
-<div class="row col-11"><h1>Incidencias</h1></div>
-<div class="row col-11">
+<div class="contenedor">
+<div class="row col-11 titulo-incidencias"><h1>Incidencias</h1></div>
+
+<div class="row col-11 filtros">
     <form action="/incidencia" method="get">
-    <div class="incidencia" class="form-group" style="width: 50%;float: left;">
-        <div>
+    <div class="incidencia" class="form-group" style="">
+        <div class="selection-div">
+        <div class="selection">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
@@ -14,18 +17,18 @@
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="estado">Estado:</label>
             <select class="custom-select" name="estado">
                 <option value="">--</option>
-                <option value="1">Abierta</option>
-                <option value="2">Cerrada garaje</option>
-                <option value="3">Cerrada insitu</option>
+                <option class="normal" value="1">Abierta</option>
+                <option class="resuelta" value="2">Cerrada garaje</option>
+                <option class="resuelta" value="3">Cerrada insitu</option>
 
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="cliente_id">Cliente:</label>
             <select class="custom-select" name="cliente_id">
                 <option value="">--</option>
@@ -35,7 +38,7 @@
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="usuario_id">Operador:</label>
             <select class="custom-select" name="usuario_id">
                 <option value="">--</option>
@@ -45,7 +48,7 @@
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="tecnico_id">Tecnico:</label>
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
@@ -55,26 +58,29 @@
             </select>
             
         </div>
-        <div class="row mb-3">
-            <input class=" btn btn-primary mr" type="submit" value="Filtrar">
         </div>
-    </div>
+            <div class="button-div">
+                    <div class="row mb-3">
+                        <button type="submit" class="btn btn-1 btn-sep icon-send">Filtrar</button>
+                    </div>
+            </div>
+                </div>
     </form>
 </div>
 
-<div class="row col-11">
+<div class="row col-11 tabla">
     <table class="table " border="1">
         <thead class="thead-dark ">
         <tr>
-            <th>Tipo de incidencia</th>
-            <th>Localizacion</th>
+            <th>Tipo incidencia</th>
+            <th>Fecha incidencia</th>
             <th>Estado</th>
-            <th>Cliente</th>
-            <th>Cliente nombre</th>
-            <th>Usuario</th>
-            <th>Usuario nombre</th>
-            <th>Tecnico</th>
-            <th>Tecnico nombre</th>
+            <th>ID Cliente</th>
+            <th>Nombre cliente</th>
+            <th>ID Usuario</th>
+            <th>Nombre usuario</th>
+            <th>ID Tecnico</th>
+            <th>Nombre tecnico</th>
             <th>Observaciones</th>
         </tr>
         </thead>
@@ -98,7 +104,7 @@
                     <?php endswitch; ?>
 
                 </td>
-                <td><?php echo e($inci->lugar); ?></td>
+                <td><?php echo e($inci->created_at); ?></td>
                 <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
                 <td>
                     <?php echo e($inci->cliente_id); ?>
@@ -130,6 +136,8 @@
         </tbody>
     </table>
 </div>
+</div>
+
 <?php $__env->stopSection(); ?>
 
 
