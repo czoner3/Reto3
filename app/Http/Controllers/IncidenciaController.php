@@ -21,9 +21,9 @@ class IncidenciaController extends Controller
      */
     public function index(Request $request){
 
-        if(Auth::check()==false){
+       /* if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         $tipoincidencia = $request->get('tipoincidencia');
         $estado = $request->get('estado');
@@ -47,7 +47,7 @@ class IncidenciaController extends Controller
             ->cliente_id($cliente_id)
             ->usuario_id($usuario_id)
             ->tecnico_id($tecnico_id)
-            ->paginate(6);
+            ->paginate(10);
 
        /* $users = DB::table('users')->where('tipo', '=' ,2);
         foreach ($users as $user) {
@@ -71,9 +71,9 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        if(Auth::check()==false){
+      /*  if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         $usuario=Users::find(Auth::id());
         $userid = $usuario->id;
@@ -95,9 +95,9 @@ class IncidenciaController extends Controller
     public function store(Request $request)
     {
 
-        if(Auth::check()==false){
+       /* if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         $insertClient = request('insertClient');
         $insertVehicle = request('insertVehicle');

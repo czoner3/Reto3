@@ -11,9 +11,9 @@ class EstadisticasController extends Controller
     //
     public function index(){
 
-        if(Auth::check()==false){
+        /*if(Auth::check()==false){
             return redirect('/login');
-        }
+        }*/
 
         return view('estadisticas');
     }
