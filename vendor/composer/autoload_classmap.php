@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Charts\\IncidenciasChart' => $baseDir . '/app/Charts/IncidenciasChart.php',
     'App\\Cliente' => $baseDir . '/app/Cliente.php',
     'App\\Comentario' => $baseDir . '/app/Comentario.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -22,6 +23,7 @@ return array(
     'App\\Http\\Controllers\\EstadisticasController' => $baseDir . '/app/Http/Controllers/EstadisticasController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IncidenciaController' => $baseDir . '/app/Http/Controllers/IncidenciaController.php',
+    'App\\Http\\Controllers\\IncidenciasChartController' => $baseDir . '/app/Http/Controllers/IncidenciasChartController.php',
     'App\\Http\\Controllers\\RegistroUsuarioController' => $baseDir . '/app/Http/Controllers/RegistroUsuarioController.php',
     'App\\Http\\Controllers\\TecnicoController' => $baseDir . '/app/Http/Controllers/TecnicoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',

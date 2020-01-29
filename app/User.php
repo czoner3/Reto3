@@ -14,11 +14,6 @@ class User extends Authenticatable
         return $this->hasMany('App\Incidencia');
     }
 
-    public function Comentario()
-    {
-        return $this->hasMany('App\Comentario');
-    }
-
 
     use Notifiable;
 

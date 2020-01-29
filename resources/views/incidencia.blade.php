@@ -103,7 +103,19 @@
 
                 </td>
                 <td>{{$inci->lugar }}</td>
-                <td>{{($inci->estado)?'Abierta':'Cerrada'}}</td>
+                <td>
+                    @switch($inci->estado)
+                        @case(1)
+                        Abierta
+                        @break
+                        @case(2)
+                        Cerrada en garaje
+                        @break
+                        @case(3)
+                        Cerrada insitu
+                        @break
+                    @endswitch
+                    </td>
                 <td>
                     {{$inci->cliente_id}}
                 </td>
