@@ -15,8 +15,14 @@ return [
     |            "postmark", "log", "array"
     |
     */
+    'mailgun' => [
+        'domain' => 'your-mailgun-domain',
+        'secret' => 'your-mailgun-key',
+    ],
 
     'driver' => env('MAIL_DRIVER', 'smtp'),
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +62,9 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'czoner3@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Paco el chocolatero'),
+
     ],
 
     /*

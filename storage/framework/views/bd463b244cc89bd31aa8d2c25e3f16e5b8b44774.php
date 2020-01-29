@@ -7,70 +7,74 @@
             </div>
         </div>
 
-    <form  action="" method="GET">
-        <?php echo csrf_field(); ?>
+        <form action="tecnico/<?php echo e($incidencia->id); ?>" method="POST">
+            <?php echo csrf_field(); ?>
 
 
-        <div class="form-group2">
+            <div class="form-group2">
 
-            <div class="form-group form-group-alpha">
-                <h2>Datos Incidencia</h2>
-              <div class="contenedor-cli-coche">
-                <div class="cliente-tecnico">
-                    <div>
-                       <label for="nombreCliente">Nombre de cliente:</label>
-                       <input class="form-control" type="text" id="nombreCliente" name="nombreCliente">
-                  </div>
+                <div class="form-group form-group-alpha">
+                    <h2>Datos Incidencia</h2>
+                    <div class="contenedor-cli-coche">
+                        <div class="cliente-tecnico">
+                            <div>
+                                <label for="nombreCliente">Nombre de cliente:</label>
+                                <input class="form-control" type="text" id="nombreCliente" name="nombreCliente" value="<?php echo e($cliente->nombrecli); ?>" disabled>
+                            </div>
 
-                <div>
-                    <label for="telefonoCliente">Telefono:</label>
-                    <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente">
-                </div>
-                    <div class="observacion-tecnico">
-                        <label for="observaciones">Observaciones:</label>
-                        <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                            <div>
+                                <label for="telefonoCliente">Telefono:</label>
+                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="<?php echo e($cliente->telefono); ?>"disabled>
+                            </div>
+                            <div class="observacion-tecnico">
+                                <label for="observaciones">Observaciones:</label>
+                                <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="coche-tecnico">
+                            <div>
+                                <label for="matriculaCoche">Matricula:</label>
+                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="<?php echo e($vehiculo->matricula); ?>"disabled>
+                            </div>
+                            <div>
+                                <label for="marcaCoche">Marca:</label>
+                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="<?php echo e($vehiculo->marca); ?>"disabled>
+                            </div>
+                            <div>
+                                <label for="modeloCoche">Modelo:</label>
+                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="<?php echo e($vehiculo->modelo); ?>"disabled>
+                            </div>
+
+                            <div>
+                                <label for="aseguradoraCoche">Aseguradora:</label>
+                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="<?php echo e($vehiculo->aseguradora); ?>"disabled>
+                            </div>
+                            <div>
+                                <label for="tiponicidencia">Tipo de incidencia:</label>
+                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="<?php echo e($incidencia->tipoincidencia); ?>"disabled>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                  <div>
-                </div>
-                <div class="coche-tecnico">
-                <div>
-                    <label for="matriculaCoche">Matricula:</label>
-                    <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche">
-                </div>
-                <div>
-                    <label for="marcaCoche">Marca:</label>
-                    <input class="form-control" type="text" id="marcaCoche" name="marcaCoche">
-                </div>
-                <div>
-                    <label for="modeloCoche">Modelo:</label>
-                    <input class="form-control" type="text" id="modeloCoche" name="modeloCoche">
-                </div>
-
-                <div>
-                    <label for="aseguradoraCoche">Aseguradora:</label>
-                    <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche">
-                </div>
-                </div>
-              </div>
-                <div class="contenedor-mapa">
-                    <div class="mapa" id="map">
+                    <div class="contenedor-mapa">
+                        <div class="mapa" id="map">
+                        </div>
                     </div>
+
                 </div>
-
+                <select class="custom-select" name="estado">
+                    <option value="2">Resuelta en garaje</option>
+                    <option value="3">Resuelta insitu</option>
+                </select>
+                    <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
+                <div class="volver">
+                    <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
+                </div>
             </div>
-            <div class="boton-tecnico">
-                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
-                <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
-            </div>
-            <div class="volver">
-            <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
-            </div>
-        </div>
 
 
-
-    </form>
+        </form>
 
     </div>
     <script>
@@ -78,63 +82,60 @@
         let map;
 
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
+            var directionsService = new google.maps.DirectionsService();
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+            let mapOptions = {
                 center: {lat: 42.8811127 ,lng: -2.5877665},
-                zoom: 9
-            });
-
-            var iconBase =
-                'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+                zoom: 8
+            }
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            directionsRenderer.setMap(map);
 
             var icons = {
-                parking: {
-                    icon: iconBase + 'parking_lot_maps.png'
-                },
-                library: {
-                    icon: iconBase + 'library_maps.png'
-                },
-                info: {
-                    icon: iconBase + 'info-i_maps.png'
+                marca: {
+                    icon: "https://img.icons8.com/material/24/000000/circled-x.png"
                 }
             };
 
             var features = [
                 {
-                    position: new google.maps.LatLng(42.8811127, -2.5877665),
-                    type: 'info',
-                    title: "idguay"
+                    position: new google.maps.LatLng<?php echo e($incidencia->lugar); ?>,
+                    type: 'marca',
+                },
+                {
+                    position: new google.maps.LatLng<?php echo e($tecnico->localizacion); ?>,
+                    type: 'marca',
                 }
             ];
+            var locations;
 
             for (var i = 0; i < features.length; i++) {
-                var locations = new google.maps.Marker({
+                locations = new google.maps.Marker({
                     position: features[i].position,
                     icon: icons[features[i].type].icon,
-                    title: features[i].title,
                     map: map
-                });
-                google.maps.event.addDomListener(locations, 'click', function() {
-                    alert(locations.title);
                 });
             };
 
-            var marker;
+            calcRoute(features);
 
-            function placeMarker(location) {
-                if ( marker ) {
-                    marker.setPosition(location);
-                } else {
-                    marker = new google.maps.Marker({
-                        position: location,
-                        map: map
-                    })
-                    ;
-                }
+            function calcRoute(features) {
+                var start = features[0].position;
+                var end = features[1].position;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: 'DRIVING'
+                };
+                directionsService.route(request, function(result, status) {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
+                        locations.setMap(null);
+
+                    }
+                });
             }
 
-            google.maps.event.addListener(map, 'click', function(event) {
-                placeMarker(event.latLng);
-            });
 
         }
 
@@ -144,7 +145,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMap"
             async defer></script>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/resources/views/tecnico.blade.php ENDPATH**/ ?>

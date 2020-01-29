@@ -1,0 +1,313 @@
+.filtros {
+    display: flex;
+    flex-direction: column;
+    border:2px solid rgba(39, 157, 124, 0.22);
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(47, 188, 148, 0.11);
+    transition: all 0.2s ease-in-out;
+}
+.filtros:hover{
+    background-color: rgba(41, 166, 131, 0.13);
+}
+
+.cliente{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.cliente input{
+    border: 1px solid rgba(9, 182, 185, 0.16);
+}
+.coche{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.customed{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    margin: 0 !important;
+}
+
+.customed:hover{
+
+    box-shadow: inset -340px 0 0 0 #32cc98;
+}
+.customed2{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    background-color:#32cc98 !important;
+    color: white !important;
+
+}
+
+
+
+customed2 input{
+    border: 1px solid rgba(165, 163, 35, 0.7) !important;
+    background-color:rgba(41,165,130,0.7) !important;
+    color: white;
+}
+
+
+#matricula{
+    padding: 20px;
+}
+#marca{
+
+}
+
+.botones-incidencia{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    flex-direction: row-reverse;
+
+}
+
+.pagination{
+   justify-content: center !important;
+}
+
+
+#dniCliente{
+    padding: 27px;
+    border: 1px solid rgba(41,165,130,0.7) !important;
+}
+
+customed-div{
+    height: 100% !important;
+}
+
+.selection-div{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+.selection{
+    width: 18%;
+}
+
+td{
+    height: 65px;
+
+}
+tr{
+    transition: all 0.3s ease-in-out;
+
+}
+
+tr:hover{
+    background-color: rgba(41, 166, 131, 0.13);
+    cursor: pointer;
+}
+
+.incidencia{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+}
+.tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.normal{
+    color: #ff5569;
+
+}
+
+.resuelta{
+    color: #60ff56;
+}
+
+
+
+
+.titulo-incidencias{
+ display: flex;
+    justify-content: center;
+}
+
+.btn {
+    border: none;
+    font-family: 'Roboto';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 15px 60px;
+    display: inline-block;
+    margin: 0px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+    font-family: 'Roboto';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.button-div{
+margin-top: 10px;
+}
+
+
+/* Icon separator */
+.btn-sep {
+    padding: 25px 40px 15px 80px;
+}
+
+.btn-sep:before {
+    background: rgba(0,0,0,0.15);
+}
+
+/* Button 1 */
+.btn-1 {
+    background-color: #32cc98;
+    color: #fff;
+}
+
+.btn-1:hover {
+    background-color: rgba(47, 188, 148, 0.7);
+    color: #ffffff;
+}
+
+.btn-1:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+.btn-1:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 2 */
+.btn-2 {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.btn-2:hover {
+    background: #27ae60;
+}
+
+.btn-2:active {
+    background: #27ae60;
+    top: 2px;
+}
+
+.btn-2:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 3 */
+.btn-3 {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-3:hover {
+    background: #c0392b;
+}
+
+.btn-3:active {
+    background: #c0392b;
+    top: 2px;
+}
+
+.btn-3:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 3 */
+.btn-4 {
+    background: #34495e;
+    color: #fff;
+}
+
+.btn-4:hover {
+    background: #2c3e50;
+}
+
+.btn-4:active {
+    background: #2c3e50;
+    top: 2px;
+}
+
+.btn-4:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 130%;
+    width: 60px;
+}
+
+/* Icons */
+
+.icon-cart:before {
+    content: "\f07a";
+}
+
+.icon-heart:before {
+    content: "\f55a";
+}
+
+.icon-info:before {
+    content: "\f05a";
+}
+
+.icon-send:before {
+    content: "\f1d8";
+}

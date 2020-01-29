@@ -1,29 +1,34 @@
 <?php $__env->startSection('content'); ?>
-<div class="row col-11"><h1>Incidencias</h1></div>
-<div class="row col-11">
+<div class="contenedor">
+<div class="row col-11 titulo-incidencias"><h1>Incidencias</h1></div>
+
+<div class="row col-11 filtros">
     <form action="/incidencia" method="get">
-    <div class="incidencia" class="form-group" style="width: 50%;float: left;">
-        <div>
+    <div class="incidencia" class="form-group" style="">
+        <div class="selection-div">
+        <div class="selection">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
-                <option value="0">Pinchazo</option>
-                <option value="1">Golpe</option>
-                <option value="2">Averia</option>
-                <option value="3">Otro</option>
+                <option value="1">Pinchazo</option>
+                <option value="2">Golpe</option>
+                <option value="3">Averia</option>
+                <option value="4">Otro</option>
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="estado">Estado:</label>
-            <select class="custom-select" name="tipoincidencia">
+            <select class="custom-select" name="estado">
                 <option value="">--</option>
-                <option value="0">Cerrada</option>
-                <option value="1">Abierta</option>
+                <option class="normal" value="1">Abierta</option>
+                <option class="resuelta" value="2">Cerrada garaje</option>
+                <option class="resuelta" value="3">Cerrada insitu</option>
+
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="cliente_id">Cliente:</label>
             <select class="custom-select" name="cliente_id">
                 <option value="">--</option>
@@ -33,7 +38,7 @@
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="usuario_id">Operador:</label>
             <select class="custom-select" name="usuario_id">
                 <option value="">--</option>
@@ -43,37 +48,40 @@
             </select>
             
         </div>
-        <div>
+        <div class="selection">
             <label for="tecnico_id">Tecnico:</label>
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 <?php $__currentLoopData = $tecnicos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tecnico): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombretec); ?></option>
+                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
             
         </div>
-        <div class="row mb-3">
-            <input class=" btn btn-primary mr" type="submit" value="Filtrar">
         </div>
-    </div>
+            <div class="button-div">
+                    <div class="row mb-3">
+                        <button type="submit" class="btn btn-1 btn-sep icon-send">Filtrar</button>
+                    </div>
+            </div>
+                </div>
     </form>
 </div>
 
-<div class="row col-11">
-    <table class="table " border="1">
+<div class="row col-11 tabla">
+    <table class="table" style="overflow-x: auto" border="1">
         <thead class="thead-dark ">
         <tr>
-            <th>Tipo de incidencia</th>
-            <th>Localizacion</th>
-            <th>Observaciones</th>
+            <th>Tipo incidencia</th>
             <th>Estado</th>
-            <th>Cliente</th>
-            <th>Cliente nombre</th>
-            <th>Usuario</th>
-            <th>Usuario nombre</th>
-            <th>Tecnico</th>
-            <th>Tecnico nombre</th>
+            <th>Fecha incidencia</th>
+            <th>ID Cliente</th>
+            <th>Nombre cliente</th>
+            <th>ID Usuario</th>
+            <th>Nombre usuario</th>
+            <th>ID Tecnico</th>
+            <th>Nombre tecnico</th>
+            <th>Observaciones</th>
         </tr>
         </thead>
         <tbody>
@@ -81,52 +89,72 @@
             <tr>
                 <td>
                     <?php switch($inci->tipoincidencia):
-                        case (0): ?>
+                        case (1): ?>
                         Pinchazo
                         <?php break; ?>
-                        <?php case (1): ?>
+                        <?php case (2): ?>
                         Golpe
                         <?php break; ?>
-                        <?php case (2): ?>
+                        <?php case (3): ?>
                         Averia
                         <?php break; ?>
-                        <?php case (3): ?>
+                        <?php case (4): ?>
                         Otro
                         <?php break; ?>
                     <?php endswitch; ?>
 
                 </td>
-                <td><?php echo e($inci->lugar); ?></td>
+
+                <td>
+                    <?php switch($inci->estado):
+                        case (1): ?>
+                        Abierta
+                        <?php break; ?>
+                        <?php case (2): ?>
+                        Cerrada en garaje
+                        <?php break; ?>
+                        <?php case (3): ?>
+                        Cerrada insitu
+                        <?php break; ?>
+                    <?php endswitch; ?>
+                    </td>
+
+                <td><?php echo e($inci->created_at); ?></td>
+
+                <td>
+                    <?php echo e($inci->cliente_id); ?>
+
+                </td>
+                <td>
+                    <?php echo e(\App\Cliente::find($inci->cliente_id)->nombrecli); ?>
+
+                </td>
+                <td>
+                    <?php echo e($inci->usuario_id); ?>
+
+                </td>
+                <td>
+                    <?php echo e(\App\Users::find($inci->usuario_id)->nombreusu); ?>
+
+                </td>
+                <td>
+                    <?php echo e($inci->tecnico_id); ?>
+
+                </td>
+                <td>
+                    <?php echo e(\App\Tecnico::find($inci->tecnico_id)->nombre); ?>
+
+                </td>
                 <td><?php echo e($inci->observaciones); ?></td>
-                <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
-                <td>
-                    <?php echo e($inci->Cliente_id); ?>
-
-                </td>
-                <td>
-                    <?php echo e(\App\Cliente::find($inci->Cliente_id)->nombrecli); ?>
-
-                </td>
-                <td>
-                    <?php echo e($inci->Usuario_id); ?>
-
-                </td>
-                <td>
-                    <?php echo e(\App\Users::find($inci->Usuario_id)->nombreusu); ?>
-
-                </td>
-                <td>
-                    <?php echo e($inci->Tecnico_id); ?>
-
-                </td>
-                <td>
-                    <?php echo e(\App\Tecnico::find($inci->Tecnico_id)->nombretec); ?>
-
-                </td>
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
+</div>
+</div>
+<div class="paginacion">
+<?php echo e($incidencia->links()); ?>
+
 </div>
 <?php $__env->stopSection(); ?>
 
@@ -141,4 +169,5 @@
  * Time: 11:52
  */
 ?>
+
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/resources/views/incidencia.blade.php ENDPATH**/ ?>

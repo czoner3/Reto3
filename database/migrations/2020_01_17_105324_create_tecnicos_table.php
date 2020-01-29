@@ -15,11 +15,13 @@ class CreateTecnicosTable extends Migration
     {
         Schema::create('tecnicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombretec');
-            $table->string('password');
             $table->string('localizacion');
-            $table->string('email');
             $table->integer('estado');
+            $table->string('email');
+            $table->string("nombre");
+            $table->string("apellido");
+            $table->string('telefono');
+
             $table->timestamps();
         });
     }

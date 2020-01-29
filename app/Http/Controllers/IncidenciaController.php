@@ -7,7 +7,9 @@ use App\Incidencia;
 use App\Tecnico;
 use App\Users;
 use App\Vehiculo;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class IncidenciaController extends Controller
@@ -19,42 +21,48 @@ class IncidenciaController extends Controller
      */
     public function index(Request $request){
 
-        $tipoincidencia = $request->get('tipoincidencia');
-        $estado = $request->get('estado');
-        $cliente_id = $request->get('cliente_id');
-        $usuario_id = $request->get('usuario_id');
-        $tecnico_id = $request->get('tecnico_id');
-        print_r ($cliente_id);
+        $usuario=Users::find(Auth::id());
 
 
-        //
-  /*      $incidencia = DB::table('incidencias')
-        ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
-            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
-            ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
-            ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
-            ->orderBy('id','DESC')
-            ->get();*/
+        if($usuario->tipo!='4') {
+            $tipoincidencia = $request->get('tipoincidencia');
+            $estado = $request->get('estado');
+            $cliente_id = $request->get('cliente_id');
+            $usuario_id = $request->get('usuario_id');
+            $tecnico_id = $request->get('tecnico_id');
 
-        $incidencia = Incidencia::orderBy('id','DESC')
-            ->tipoincidencia($tipoincidencia)
-            ->estado($estado)
-            ->cliente_id($cliente_id)
-            ->usuario_id($usuario_id)
-            ->tecnico_id($tecnico_id)
-            ->paginate(6);
 
-       /* $users = DB::table('users')->where('tipo', '=' ,2);
-        foreach ($users as $user) {
-            echo($user->id);
-        }*/
-        $users = Users::all()->where('tipo','=',2);
+            //
+            /*      $incidencia = DB::table('incidencias')
+                  ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
+                      ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
+                      ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
+                      ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
+                      ->orderBy('id','DESC')
+                      ->get();*/
 
-        $tecnicos = Tecnico::all();
-        $clientes = Cliente::all();
+            $incidencia = Incidencia::orderBy('id', 'DESC')
+                ->tipoincidencia($tipoincidencia)
+                ->estado($estado)
+                ->cliente_id($cliente_id)
+                ->usuario_id($usuario_id)
+                ->tecnico_id($tecnico_id)
+                ->paginate(10);
 
-        return view('incidencia', compact('incidencia','users','tecnicos','clientes'));
+            /* $users = DB::table('users')->where('tipo', '=' ,2);
+             foreach ($users as $user) {
+                 echo($user->id);
+             }*/
+            $users = Users::all()->where('tipo', '=', 2);
 
+            $tecnicos = Tecnico::all();
+            $clientes = Cliente::all();
+
+            return view('incidencia', compact('incidencia', 'users', 'tecnicos', 'clientes'));
+        }
+        else{
+            return redirect("/");
+        }
 
 
     }
@@ -62,13 +70,21 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responseº
      */
     public function create()
     {
-        $tecnicos = Tecnico::all();
+      /*  if(Auth::check()==false){
+            return redirect('/login');
+        }*/
+
+        $usuario=Users::find(Auth::id());
+        $userid = $usuario->id;
+
+        $tecnicos = Tecnico::all()->where('estado','=',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
+            "userid" => $userid
         ]);
 
     }
@@ -81,6 +97,10 @@ class IncidenciaController extends Controller
      */
     public function store(Request $request)
     {
+
+       /* if(Auth::check()==false){
+            return redirect('/login');
+        }*/
 
         $insertClient = request('insertClient');
         $insertVehicle = request('insertVehicle');
@@ -96,6 +116,8 @@ class IncidenciaController extends Controller
 
             $cliente->save();
 
+        }else{
+            $clientedni = request('dniCliente');
         }
 
         $clienteid =\App\Cliente::select('id')->where('dni',$clientedni)->first();
@@ -113,6 +135,12 @@ class IncidenciaController extends Controller
         }
         $incidencia->usuario_id = request('idUsuario');
         $incidencia->tecnico_id = request('idTecnico');
+
+        $tecnico = Tecnico::find(request("idTecnico"));
+
+        $tecnico->estado=1;
+        $tecnico->save();
+
 
         $incidencia->save();
 
@@ -135,7 +163,10 @@ class IncidenciaController extends Controller
             $vehiculo->save();
         }
 
-        return redirect('/');
+
+        return redirect()->route('sendMail');
+
+
 
 
 

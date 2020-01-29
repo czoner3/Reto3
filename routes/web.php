@@ -11,26 +11,34 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-/*Route::get('/login', function () {
-    return view('login');
-});*/
-
-//Route::get('/');
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/create/incidencia', 'IncidenciaController@create');
+Route::get('/', 'HomeController@index');
 
 Route::get('/incidencia','IncidenciaController@index');
 
 Route::get('/tecnico','TecnicoController@index');
 
-Route::get('/create/incidencia', 'IncidenciaController@create');
+Route::get('/create/incidencia', 'IncidenciaController@create')->name('crearIncidencia');
 
 Route::post('/incidencia','IncidenciaController@store');
+
+
+Route::post('/registerUsuario', 'RegistroUsuarioController@store')->name('registerUsuario');
+
+
+Route::get('/send-mail','UserController@sendEmail') ->name('sendMail');
+
+Route::post('/tecnico/{id}','TecnicoController@update');
+
+Route::get('/estadisticas','EstadisticasController@index')->name("estadisticas");
+
+Route::get('/estadisticas/cargar' , 'EstadisticasController@comprobarChart');
+
+
+
+
