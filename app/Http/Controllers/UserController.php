@@ -163,10 +163,6 @@ class UserController extends Controller
     public function sendEmail(Request $request)
     {
 
-        /*if(Auth::check()==false){
-            return redirect('/login');
-        }*/
-
         require '../vendor/autoload.php';
 
 //Create a new PHPMailer instance

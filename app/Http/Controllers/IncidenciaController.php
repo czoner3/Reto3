@@ -21,45 +21,48 @@ class IncidenciaController extends Controller
      */
     public function index(Request $request){
 
-       /* if(Auth::check()==false){
-            return redirect('/login');
-        }*/
-
-        $tipoincidencia = $request->get('tipoincidencia');
-        $estado = $request->get('estado');
-        $cliente_id = $request->get('cliente_id');
-        $usuario_id = $request->get('usuario_id');
-        $tecnico_id = $request->get('tecnico_id');
+        $usuario=Users::find(Auth::id());
 
 
-        //
-  /*      $incidencia = DB::table('incidencias')
-        ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
-            ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
-            ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
-            ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
-            ->orderBy('id','DESC')
-            ->get();*/
+        if($usuario->tipo!='4') {
+            $tipoincidencia = $request->get('tipoincidencia');
+            $estado = $request->get('estado');
+            $cliente_id = $request->get('cliente_id');
+            $usuario_id = $request->get('usuario_id');
+            $tecnico_id = $request->get('tecnico_id');
 
-        $incidencia = Incidencia::orderBy('id','DESC')
-            ->tipoincidencia($tipoincidencia)
-            ->estado($estado)
-            ->cliente_id($cliente_id)
-            ->usuario_id($usuario_id)
-            ->tecnico_id($tecnico_id)
-            ->paginate(5);
 
-       /* $users = DB::table('users')->where('tipo', '=' ,2);
-        foreach ($users as $user) {
-            echo($user->id);
-        }*/
-        $users = Users::all()->where('tipo','=',2);
+            //
+            /*      $incidencia = DB::table('incidencias')
+                  ->select('incidencias.*', 'users.nombreusu','tecnicos.nombretec','clientes.nombrecli')
+                      ->join('users', 'incidencias.Usuario_id', '=', 'users.id')
+                      ->join('tecnicos', 'incidencias.Tecnico_id', '=', 'tecnicos.id')
+                      ->join('clientes', 'incidencias.Cliente_id', '=', 'clientes.id')
+                      ->orderBy('id','DESC')
+                      ->get();*/
 
-        $tecnicos = Tecnico::all();
-        $clientes = Cliente::all();
+            $incidencia = Incidencia::orderBy('id', 'DESC')
+                ->tipoincidencia($tipoincidencia)
+                ->estado($estado)
+                ->cliente_id($cliente_id)
+                ->usuario_id($usuario_id)
+                ->tecnico_id($tecnico_id)
+                ->paginate(10);
 
-        return view('incidencia', compact('incidencia','users','tecnicos','clientes'));
+            /* $users = DB::table('users')->where('tipo', '=' ,2);
+             foreach ($users as $user) {
+                 echo($user->id);
+             }*/
+            $users = Users::all()->where('tipo', '=', 2);
 
+            $tecnicos = Tecnico::all();
+            $clientes = Cliente::all();
+
+            return view('incidencia', compact('incidencia', 'users', 'tecnicos', 'clientes'));
+        }
+        else{
+            return redirect("/");
+        }
 
 
     }
