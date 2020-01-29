@@ -71,12 +71,12 @@
 </div>
 
 <div class="row col-11 tabla">
-    <table class="table " border="1">
+    <table class="table" style="overflow-x: auto" border="1">
         <thead class="thead-dark ">
         <tr>
             <th>Tipo incidencia</th>
-            <th>Fecha incidencia</th>
             <th>Estado</th>
+            <th>Fecha incidencia</th>
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
@@ -106,7 +106,7 @@
                     @endswitch
 
                 </td>
-                
+
                 <td>
                     @switch($inci->estado)
                         @case(1)
@@ -122,7 +122,7 @@
                     </td>
 
                 <td>{{$inci->created_at }}</td>
- 
+
                 <td>
                     {{$inci->cliente_id}}
                 </td>
@@ -148,7 +148,9 @@
     </table>
 </div>
 </div>
-
+<div class="paginacion">
+{{$incidencia->links()}}
+</div>
 @endsection
 
 

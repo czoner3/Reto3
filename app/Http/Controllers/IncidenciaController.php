@@ -47,7 +47,7 @@ class IncidenciaController extends Controller
             ->cliente_id($cliente_id)
             ->usuario_id($usuario_id)
             ->tecnico_id($tecnico_id)
-            ->paginate(10);
+            ->paginate(5);
 
        /* $users = DB::table('users')->where('tipo', '=' ,2);
         foreach ($users as $user) {
