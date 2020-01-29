@@ -1,18 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <?php
-    use Illuminate\Support\Facades\Auth;
-    $usuario=App\Users::find(Auth::id());
-    if($usuario->tipo!="1"||$usuario->tipo!="2"){
 
-        echo "<h1>No tienes acceso al registro de usuario</h1>";
-        echo '<form action="/" method="get">
-                <input type="submit" value="Volver">
-              </form>';
-        return redirect("/");
-    }
-        ?>
 
     <div class="container-register">
         <div class="row justify-content-center justify-content-center-register">
