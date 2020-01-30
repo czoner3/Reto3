@@ -53,7 +53,7 @@ class IncidenciaController extends Controller
              foreach ($users as $user) {
                  echo($user->id);
              }*/
-            $users = Users::all()->where('tipo', '=', 2);
+            $users = Users::all()->where('tipo', '=', 3);
 
             $tecnicos = Tecnico::all();
             $clientes = Cliente::all();
