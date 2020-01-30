@@ -55,7 +55,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 @foreach($tecnicos as $tecnico)
-                    <option value="{{$tecnico->id}}">{{$tecnico->nombre}}</option>
+                    <option value="{{$tecnico->id}}">{{$tecnico->nombre . ' ' . $tecnico->apellido}}</option>
                 @endforeach
             </select>
             {{--<input class="form-control" type="text" id="tecnico_id" name="tecnico_id">--}}

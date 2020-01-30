@@ -36,7 +36,9 @@
     border: 1px solid rgba(41,165,130,0.7) !important;
     background-color:#32cc98 !important;
     color: white !important;
-
+    height: 42.3px;
+    margin: 0 !important;
+    padding-top: 9px !important;;
 }
 
 
@@ -118,6 +120,14 @@ tr:hover{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.mitabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .normal{
