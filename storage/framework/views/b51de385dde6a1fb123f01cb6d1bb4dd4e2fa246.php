@@ -118,6 +118,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
                                         <option value="0">-</option>
+
                                         <option value="1">Gerente</option>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>

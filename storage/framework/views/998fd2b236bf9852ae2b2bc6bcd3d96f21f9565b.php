@@ -78,7 +78,7 @@
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
-            <th>Nombre usuario</th>
+            <th>Nombre Operador</th>
             <th>ID Tecnico</th>
             <th>Nombre tecnico</th>
             <th>Observaciones</th>

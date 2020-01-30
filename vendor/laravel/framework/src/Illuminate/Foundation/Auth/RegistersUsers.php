@@ -18,9 +18,11 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $usuario=Users::find(Auth::id());
+       /* return view('auth.register');*/
+      /* $usuario=Users::find(Auth::id());*/
+       $usuario=5;
 
-        if($usuario->tipo=='1'||$usuario->tipo=='1') {
+        if( $usuario==5) {
             return view('auth.register');
         }
         else{
