@@ -8,6 +8,7 @@ use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class EstadisticasController extends Controller
 {
     //

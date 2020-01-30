@@ -107,6 +107,11 @@
 
                 </td>
 
+
+
+              {{--  <td>{{$inci->lugar }}</td>--}}
+
+
                 <td>
                     @switch($inci->estado)
                         @case(1)
@@ -117,6 +122,7 @@
                         @break
                         @case(3)
                         Cerrada insitu
+
                         @break
                     @endswitch
                     </td>
@@ -144,13 +150,21 @@
                 <td>{{$inci->observaciones}}</td>
             </tr>
         @endforeach
+
         </tbody>
     </table>
 </div>
+
 </div>
 <div class="paginacion">
 {{$incidencia->links()}}
 </div>
+
+
+
+</div>
+{{ $incidencia->links() }}
+
 @endsection
 
 
