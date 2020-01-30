@@ -78,8 +78,12 @@
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
                                         <option value="0">-</option>
-
-                                        <option value="1">Gerente</option>
+                                    <?php
+                                        $usuario=App\Users::find(Auth::id());
+                                        if($usuario->tipo==1){
+                                            echo '<option value="1">Gerente</option>';
+                                        }
+                                        ?>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>
                                         <option value="4">Técnico</option>

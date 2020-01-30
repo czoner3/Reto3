@@ -43,7 +43,18 @@
            document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
         </a>
+        <?php
 
+            use Illuminate\Support\Facades\Auth;
+            $usuario=App\Users::find(Auth::id());
+            if($usuario->tipo==3){
+                echo '<a class="dropdown-item" href="/create/incidencia">Generar incidencia</a>';
+            }
+            if($usuario->tipo==1 ||$usuario->tipo==2){
+                echo '<a class="dropdown-item" href="/register">Registrar un usuario</a>';
+            }
+
+        ?>
         </div>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
