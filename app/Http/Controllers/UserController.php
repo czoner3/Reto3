@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cliente;
 use App\Incidencia;
 use App\Tecnico;
+use App\Users;
 use App\Vehiculo;
 use Illuminate\Http\Request;
 use App\User;
@@ -251,5 +252,9 @@ class UserController extends Controller
 
 
         }
+    }
+    public function buscaremails(Request $request){
+        $usuarios = Users::all();
+        return $usuarios;
     }
 }

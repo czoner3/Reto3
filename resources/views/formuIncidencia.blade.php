@@ -7,12 +7,12 @@
         @csrf
     <div class="botones-incidencia">
             <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia" style="">Generar incidencia</button>
-            <button class="btn btn-3  btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/inicio">Volver</button>
+            <button class="btn btn-3  btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/">Volver</button>
     </div>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
                 <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
-                    <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente">
+                    <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente" REQUIRED>
                     <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary customed" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
@@ -23,26 +23,26 @@
                 <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;border-bottom-left-radius: 1%;">
                     <div>
                         <label for="nombre">Nombre:</label>
-                        <input class="form-control" type="text" id="nombre" name="nombre">
+                        <input class="form-control" type="text" id="nombre" name="nombre" REQUIRED>
                     </div>
                     <div>
                         <label for="apellido">Apellido:</label>
-                        <input class="form-control" type="text" id="apellido" name="apellido">
+                        <input class="form-control" type="text" id="apellido" name="apellido" REQUIRED>
                     </div>
                     <div>
                         <label for="direccion">Direccion:</label>
-                        <input class="form-control" type="text" id="direccion" name="direccion">
+                        <input class="form-control" type="text" id="direccion" name="direccion" REQUIRED>
                     </div>
                     <div>
                         <label for="telefono">Telefono:</label>
-                        <input class="form-control" type="text" id="telefono" name="telefono">
+                        <input class="form-control" type="text" id="telefono" name="telefono" REQUIRED>
                     </div>
 
                 </div>
                 <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;border-bottom-right-radius: 1%;">
 
                     <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
-                        <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula">
+                        <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula" REQUIRED>
                         <div class="input-group-append customed-div">
                             <button type="button" class="btn btn-outline-secondary customed2" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
                         </div>
@@ -51,20 +51,20 @@
 
                     <div>
                         <label id="marca" for="marca">Marca:</label>
-                        <input class="form-control" type="text" id="marca" name="marca">
+                        <input class="form-control" type="text" id="marca" name="marca" REQUIRED>
                     </div>
                     <div>
                         <label for="modelo">Modelo:</label>
-                        <input class="form-control" type="text" id="modelo" name="modelo">
+                        <input class="form-control" type="text" id="modelo" name="modelo" REQUIRED>
                     </div>
                     <div>
                         <label for="aseguradora">Aseguradora:</label>
-                        <input class="form-control" type="text" id="aseguradora" name="aseguradora">
+                        <input class="form-control" type="text" id="aseguradora" name="aseguradora" REQUIRED>
                     </div>
 
                     <div>
                         <label for="tipovehiculo">Tipo de vehiculo:</label>
-                        <select class="custom-select" name="tipovehiculo">
+                        <select class="custom-select" name="tipovehiculo"  REQUIRED>
                             <option value="1">Vehículos ligeros</option>
                             <option value="2">Vehículos pesados </option>
                             <option value="3">Vehículos especiales y agrícolas</option>
@@ -85,7 +85,7 @@
 
         <div style=" width: 90%;margin: 2px 0 2% 5%;">
             <label for="tipoincidencia">Tipo de incidencia:</label>
-            <select class="custom-select" name="tipoincidencia">
+            <select class="custom-select" name="tipoincidencia"  REQUIRED>
                 <option value="1">pinchazo</option>
                 <option value="2">golpe</option>
                 <option value="3">averia</option>
@@ -104,27 +104,52 @@
 
         botondni.addEventListener("click", function () {
 
-            document.getElementById('fichaIncidencia').style.height="414px";
-            document.getElementById('fichaIncidencia').style.transitionDelay="1s";
-            document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
-            botondni.style.backgroundColor="#32cc98";
-            botondni.style.color="white";
 
             let dnicliente = document.getElementById('dniCliente').value;
+            comprobarDni(dnicliente);
 
-            $.ajax({
-                data: dnicliente,
-                url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&dniCliente="+ dnicliente +"&action=Buscar+dni",
-                type: "GET",
-                async: false,
-                success: function (result) {
-                    let contenido = $("<div />").html(result).find( '#jscliente' ).html();
-                    eval(contenido);
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    console.log(thrownError);
+            function comprobarDni(dni){
+                let numero;
+                let letr;
+                let letra;
+                let regexpdni = /^\d{8}[a-zA-Z]$/;
+
+                if(regexpdni.test (dni)){
+                    numero = dni.substr(0,dni.length-1);
+                    letr = dni.substr(dni.length-1,1);
+                    numero = numero % 23;
+                    letra='TRWAGMYFPDXBNJZSQVHLCKET';
+                    letra=letra.substring(numero,numero+1);
+                    if (letra!=letr.toUpperCase()) {
+                        alert('Dni erroneo, la letra del NIF no se corresponde');
+                    }else{
+                        buscarDni(dnicliente)
+                    }
+                }else{
+                    alert('Dni erroneo, formato no válido');
                 }
-            });
+            }
+            function buscarDni(dnicliente){
+                document.getElementById('fichaIncidencia').style.height="414px";
+                document.getElementById('fichaIncidencia').style.transitionDelay="1s";
+                document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
+                botondni.style.backgroundColor="#32cc98";
+                botondni.style.color="white";
+
+                $.ajax({
+                    data: dnicliente,
+                    url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&dniCliente=" + dnicliente + "&action=Buscar+dni",
+                    type: "GET",
+                    async: false,
+                    success: function (result) {
+                        let contenido = $("<div />").html(result).find('#jscliente').html();
+                        eval(contenido);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError);
+                    }
+                });
+            }
         });
 
 
@@ -134,7 +159,7 @@
             let nummatricula = document.getElementById('matricula').value;
             $.ajax({
                 data: nummatricula,
-                url: "http://homestead.test/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&matricula="+ nummatricula +"&action=Buscar+matricula",
+                url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&matricula="+ nummatricula +"&action=Buscar+matricula",
                 type: "GET",
                 async: false,
                 success: function (result) {

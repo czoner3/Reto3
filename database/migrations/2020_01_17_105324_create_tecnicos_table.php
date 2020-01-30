@@ -17,7 +17,7 @@ class CreateTecnicosTable extends Migration
             $table->bigIncrements('id');
             $table->string('localizacion');
             $table->integer('estado');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string("nombre");
             $table->string("apellido");
             $table->string('telefono');
