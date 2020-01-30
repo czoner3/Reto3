@@ -53,6 +53,12 @@
             if($usuario->tipo==1 ||$usuario->tipo==2){
                 echo '<a class="dropdown-item" href="/register">Registrar un usuario</a>';
             }
+            if($usuario->tipo==1 ||$usuario->tipo==2||$usuario->tipo==3){
+                echo '<a class="dropdown-item" href="/incidencia">Historico</a>';
+            }
+            if($usuario->tipo==1 ||$usuario->tipo==2){
+                echo '<a class="dropdown-item" href="/estadisticas">Ver estadisticas</a>';
+            }
 
         ?>
         </div>

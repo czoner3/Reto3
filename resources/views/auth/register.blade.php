@@ -189,8 +189,28 @@
                     break;
 
             }
-        })
-
+        });
+        let campoemail = document.getElementById("email");
+            campoemail.addEventListener("focusout",function () {
+                let email = document.getElementById("email").value;
+                $.ajax({
+                    data: email,
+                    url: "/users/buscaremails",
+                    type: "GET",
+                    async: false,
+                    success: function (result) {
+                         console.log(result)
+                        for(let x=0;x<result.length;x++){
+                            if(result[x]['email'] == email){
+                                alert("El correo introducido ya esta en uso");
+                            }
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError);
+                    }
+                });
+        });
     </script>
     <script>
 
