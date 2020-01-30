@@ -12,12 +12,14 @@
     <link  rel="stylesheet" href="{{asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
-    <link  rel="stylesheet" href="{{asset('css/menu.css')}}">
-    <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
+
+    <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}"><link  rel="stylesheet" href="{{asset('css/menu.css')}}">
     <link  rel="stylesheet" href="{{asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{asset('css/incidencias.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/incidencias.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/estadisticas.css')}}">
+    <link  rel="stylesheet" href="{{asset('css/estadisticas.css')}}">
 
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +31,7 @@
 
 </head>
 <body>
-<header style="height: 7%;background-color: rgba(41,165,130,0.7);">
+<header style="height:auto;background-color: rgba(41,165,130,0.7)";>
     <img src="https://roadside-assistance.online/img/logos/en.png" style="height: 65px;margin-left: 4%">
     <div class="dropdown" style="position:absolute;right: 5%;top: 1%;">
 

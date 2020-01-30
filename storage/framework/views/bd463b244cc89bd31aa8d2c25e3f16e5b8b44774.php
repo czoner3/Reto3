@@ -63,14 +63,18 @@
                     </div>
 
                 </div>
+                <div class="botones-incidencia">
                 <select class="custom-select" name="estado">
                     <option value="2">Resuelta en garaje</option>
                     <option value="3">Resuelta insitu</option>
                 </select>
-                    <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
+                    <div class="resolver">
+                      <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
+                    </div>
                 <div class="volver">
-                    <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
+                    <a class="btn btn-primary btn-alpha" id="resueltainsuto" href="http://homestead.test/">volver</a>
                 </div>
+            </div>
             </div>
 
 
