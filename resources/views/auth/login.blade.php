@@ -37,11 +37,11 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
-                                <div class="form-group row">
+                                <div class="form-group row contenedor-input">
                                     <label for="nombreusu" class="col-md-4 col-form-label text-md-right label-login">Nombre</label>
 
-                                    <div class="col-md-6">
-                                        <input id="nombreusu" type="text" class="form-control input-loginmargin: 0 !important; @error('nombreusu') is-invalid @enderror" name="nombreusu" value="{{ old('nombreusu') }}" required autocomplete="nombreusu" autofocus>
+                                    <div class="col-md-6 contenedor-input-label">
+                                        <input id="nombreusu" type="text" class="form-control input-login" style="margin: 0 !important;" @error('nombreusu') is-invalid @enderror" name="nombreusu" value="{{ old('nombreusu') }}" required autocomplete="nombreusu" autofocus>
 
                                         @error('nombreusu')
                                         <span class="invalid-feedback" role="alert">
@@ -51,10 +51,10 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <div class="form-group row contenedor-input">
                                     <label for="password" class="col-md-4 col-form-label text-md-right label-login">{{ __('Password') }}</label>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 contenedor-input-label">
                                         <input id="password" type="password" class="form-control input-login @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                         @error('password')
@@ -78,8 +78,8 @@
                                 </div>
 
                                 <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                    <div class="col-md-8 offset-md-4 contenedor-logineo">
+                                        <button type="submit" class="btn btn-primary btn-logineo">
                                             {{ __('Login') }}
                                         </button>
 
