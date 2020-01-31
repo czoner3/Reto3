@@ -206,14 +206,14 @@ class UserController extends Controller
         $mail->addReplyTo('julencastillo98@gmail.com', 'Julen Castillo');
 
 //Set who the message is to be sent to
-        $mail->addAddress('eric.munoz@ikasle.egibide.org', 'julen castillo');
+        $mail->addAddress('julen.castillo@ikasle.egibide.org', 'julen castillo');
 
 //Set the subject line
         $mail->Subject = 'PHPMailer GMail SMTP test';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-        $mail->msgHTML("Luego un smite?");
+        $mail->msgHTML("Tienes una nueva incidencia! ");
 
 //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';

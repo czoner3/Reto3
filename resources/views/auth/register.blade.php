@@ -6,7 +6,7 @@
 
         <div class="row justify-content-center justify-content-center-register">
 
-             <div class="col-md-12">
+             <div class="col-md-12 regInput">
                 <div class="card">
                     <div class="card-header" id="card-header-register">{{ __('Register') }}</div>
 
@@ -15,8 +15,8 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="nombreusu"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="nombreusu "
+                                       class="col-md-4 col-form-label text-md-right label-register">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="nombreusu" type="text"
@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right label-register">{{ __('E-Mail') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -49,7 +49,7 @@
 
                             <div class="form-group row">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                       class="col-md-4 col-form-label text-md-right label-register">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -66,7 +66,7 @@
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                       class="col-md-4 col-form-label label-register text-md-right">{{ __('Confirm Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -75,7 +75,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="tipo" class="col-md-4 col-form-label text-md-right">Tipo</label>
+                                <label for="tipo" class="col-md-4 col-form-label text-md-right label-register">Tipo</label>
 
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
@@ -98,21 +98,22 @@
                                     @enderror
                                 </div>
                             </div>
+
                             <div id="camposTecnico">
                             <div class="form-group row">
-                                    <label for="nombretecnico" class="col-md-4 col-form-label text-md-right">Nombre </label>
+                                    <label for="nombretecnico" class="col-md-4 col-form-label text-md-right label-register">Nombre </label>
                                  <div class="col-md-6">
                                      <input id="nombretecnico" type="text" name="nombretecnico" class="form-control">
                                  </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="apellidotecnico" class="col-md-4 col-form-label text-md-right">Apellido </label>
+                                <label for="apellidotecnico" class="col-md-4 col-form-label text-md-right label-register">Apellido </label>
                                 <div class="col-md-6">
                                     <input id="apellidotecnico" type="text" name="apellidotecnico" class="form-control">
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="localizaciontecnico" class="col-md-4 col-form-label text-md-right">Localizacion </label>
+                                <label for="localizaciontecnico" class="col-md-4 col-form-label text-md-right label-register">Localizacion </label>
                                 <div class="col-md-6">
                                     <input id="pac-input" type="text" name="localizacion" class="form-control" placeholder=" ">
                                     <input type="hidden" name="localizaciontecnico" id="localizaciontecnico">
@@ -120,7 +121,7 @@
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="telefonotecnico" class="col-md-4 col-form-label text-md-right">Telefono </label>
+                                <label for="telefonotecnico" class="col-md-4 col-form-label text-md-right label-register">Telefono </label>
                                 <div class="col-md-6">
                                     <input id="telefonotecnico" type="text" name="telefonotecnico" class="form-control">
                                 </div>

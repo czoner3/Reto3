@@ -38,7 +38,7 @@
                                 <?php echo csrf_field(); ?>
 
                                 <div class="form-group row contenedor-input">
-                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right label-login">Nombre</label>
+                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right label-register">Nombre</label>
 
                                     <div class="col-md-6 contenedor-input-label">
                                         <input id="nombreusu" type="text" class="form-control input-login" style="margin: 0 !important;" <?php $__errorArgs = ['nombreusu'];
