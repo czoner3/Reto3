@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <div class="contenedor">
 <div class="row col-11 titulo-incidencias"><h1>Incidencias</h1></div>
@@ -53,7 +55,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 <?php $__currentLoopData = $tecnicos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tecnico): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre); ?></option>
+                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre . ' ' . $tecnico->apellido); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
             
@@ -78,7 +80,7 @@
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
-            <th>Nombre usuario</th>
+            <th>Nombre Operador</th>
             <th>ID Tecnico</th>
             <th>Nombre tecnico</th>
             <th>Observaciones</th>
