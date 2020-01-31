@@ -1,3 +1,4 @@
+
 .buscador{
     height: 40px;
     margin-top: 10px;
@@ -5,6 +6,7 @@
     border: 1px solid transparent;
     box-shadow: 0px 0px 5px 0px rgba(128,118,128,1);
 }
+
 .filtros {
     display: flex;
     flex-direction: column;
@@ -60,8 +62,8 @@ customed2 input{
 #matricula{
     padding: 20px;
 }
-#marca{
-
+.tabla{
+    overflow-x: auto;
 }
 
 .botones-incidencia{
@@ -196,6 +198,20 @@ tr:hover{
     -webkit-font-smoothing: antialiased;
 }
 
+.page-item.active .page-link{
+  background-color: #32cc98; !important;
+    border:1px solid #32cc98;
+}
+
+.page-link{
+    color:#32cc98; !important;
+
+}
+
+.edited-header th{
+    background-color: #32cc98;  !important;;
+}
+
 .button-div{
 margin-top: 10px;
 }
@@ -311,6 +327,8 @@ margin-top: 10px;
     width: 60px;
 }
 
+
+
 /* Icons */
 
 .icon-cart:before {
@@ -328,6 +346,7 @@ margin-top: 10px;
 .icon-send:before {
     content: "\f1d8";
 }
+
 @media screen and (max-width: 1400px){
     .customed{
         width: 120px;
@@ -382,3 +401,163 @@ margin-top: 10px;
     }
 
 }
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+table tbody tr td:last-child {
+    margin-bottom: 0;
+
+
+}
+tr:first-child{
+    animation-duration:2s;
+    animation-delay: 0s;
+   /* animation-name: parpadeo-last-child;*/
+    animation-iteration-count: infinite;
+}
+
+label{
+    text-overflow: ellipsis;
+
+
+}
+
+table * {
+    position: relative;
+}
+table td, table th {
+    padding-left: 8px;
+    margin-bottom: 0px !important;
+
+}
+table thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+}
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+table td, table th {
+    text-align: left;
+}
+table td.l, table th.l {
+    text-align: right;
+}
+table td.c, table th.c {
+    text-align: center;
+}
+table td.r, table th.r {
+    text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+    .incidencia{
+        flex-direction: column;
+    }
+
+    .selection-div{
+        flex-direction: column;
+        width: 100%;
+    }
+    .selection{
+        width: 60%;
+    }
+
+}
+@media screen and (max-width: 35.5em) {
+    table {
+        display: block;
+    }
+    table > *, table tr, table td, table th {
+        display: block;
+
+    }
+    table thead {
+        display: none;
+    }
+    table tbody tr {
+        height: auto;
+        padding: 8px 0;
+    }
+    table tbody tr td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+    }
+    table tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+    tr:first-child{
+    /* animation-name: parpadeo-last-child;*/
+    }
+    table tbody tr td:before {
+        position: absolute;
+        font-weight: 700;
+        width: 40%;
+        left: 10px;
+        top: 0;
+    }
+
+    table td{
+        display: flex  !important;;
+        justify-content: center  !important;;
+        align-items: center  !important;;
+        border-top: 1px solid #dee2e6 !important;
+    }
+    table tbody tr td:nth-child(1):before {
+        content: "Tipo incidencia";
+    }
+    table tbody tr td:nth-child(2):before {
+        content: "Estado";
+    }
+    table tbody tr td:nth-child(3):before {
+        content: "Fecha Incidencia";
+    }
+    table tbody tr td:nth-child(4):before {
+        content: "ID Cliente";
+    }
+    table tbody tr td:nth-child(6):before {
+        content: "Nombre Cliente";
+    }
+    table tbody tr td:nth-child(7):before {
+        content: "ID Usuario";
+    }
+    table tbody tr td:nth-child(8):before {
+        content: "Nombre Operador";
+    }
+    table tbody tr td:nth-child(9):before {
+        content: "ID Tecnico";
+    }
+    table tbody tr td:nth-child(10):before {
+        content: "Nombre Tecnico";
+    }
+    table tbody tr td:nth-child(10):before {
+        content: "Observaciones";
+    }
+}
+
+
+blockquote {
+    color: white;
+    text-align: center;
+}
+
+
+@keyframes parpadeo-last-child {
+
+    50%{
+        background-color: rgba(101, 255, 107, 0.33);
+       }
+    }
+

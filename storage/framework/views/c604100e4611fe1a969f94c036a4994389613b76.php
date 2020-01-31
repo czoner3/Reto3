@@ -29,7 +29,7 @@
     <div class="container">
         <div class="izquierda">
             <div class="row justify-content-center form-box">
-                <div class="col-md-12">
+                <div class="col-md-12 login-col">
                     <div class="card">
                         <div class="card-header"><?php echo e(__('Login')); ?></div>
 
@@ -37,11 +37,11 @@
                             <form method="POST" action="<?php echo e(route('login')); ?>">
                                 <?php echo csrf_field(); ?>
 
-                                <div class="form-group row">
-                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right">Nombre</label>
+                                <div class="form-group row contenedor-input">
+                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right label-register">Nombre</label>
 
-                                    <div class="col-md-6">
-                                        <input id="nombreusu" type="text" class="form-control <?php $__errorArgs = ['nombreusu'];
+                                    <div class="col-md-6 contenedor-input-label">
+                                        <input id="nombreusu" type="text" class="form-control input-login" style="margin: 0 !important;" <?php $__errorArgs = ['nombreusu'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -65,11 +65,11 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Password')); ?></label>
+                                <div class="form-group row contenedor-input">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right label-login"><?php echo e(__('Password')); ?></label>
 
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control <?php $__errorArgs = ['password'];
+                                    <div class="col-md-6 contenedor-input-label">
+                                        <input id="password" type="password" class="form-control input-login <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -93,12 +93,12 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <div class="form-group row remember">
                                     <div class="col-md-6 offset-md-4">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
 
-                                            <label class="form-check-label" for="remember">
+                                            <label class="form-check-label label-login" for="remember">
                                                 <?php echo e(__('Remember Me')); ?>
 
                                             </label>
@@ -107,8 +107,8 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
 
                                 <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                    <div class="col-md-8 offset-md-4 contenedor-logineo">
+                                        <button type="submit" class="btn btn-primary btn-logineo">
                                             <?php echo e(__('Login')); ?>
 
                                         </button>

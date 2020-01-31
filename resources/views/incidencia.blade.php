@@ -9,7 +9,7 @@
     <div class="incidencia" class="form-group" style="">
         <div class="selection-div">
         <div class="selection">
-            <label for="tipoincidencia">Tipo de incidencia:</label>
+            <label for="tipoincidencia">Tipo:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
                 <option value="1">Pinchazo</option>
@@ -71,8 +71,8 @@
 </div>
 
 <div class="row col-11 tabla">
-    <table class="table" style="overflow-x: auto" border="1">
-        <thead class="thead-dark ">
+    <table class="table table-inci" style="overflow-x: auto" border="1">
+        <thead class="thead edited-header">
         <tr>
             <th>Tipo incidencia</th>
             <th>Estado</th>
@@ -88,7 +88,7 @@
         </thead>
         <tbody>
         @foreach($incidencia as $inci)
-            <tr>
+            <tr class="brillo">
                 <td>
                     @switch($inci->tipoincidencia)
                         @case(1)
@@ -143,6 +143,7 @@
                 </td>
                 <td>{{$inci->observaciones}}</td>
             </tr>
+
         @endforeach
         </tbody>
     </table>
@@ -151,6 +152,17 @@
 <div class="paginacion">
 {{$incidencia->links()}}
 </div>
+
+        @foreach($incidencia as $inci)
+
+        @if($inci->estado==1)
+        <script>
+            $(".brillo").css("animation-name", "parpadeo-last-child");
+
+        </script>
+        @endif
+        @endforeach
+
 @endsection
 
 
@@ -164,3 +176,5 @@
  * Time: 11:52
  */
 ?>
+
+
