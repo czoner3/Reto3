@@ -11,7 +11,7 @@
     </div>
 
             <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
-                <div class="input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
+                <div class="campodni input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente" REQUIRED>
                     <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary customed" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
@@ -50,7 +50,7 @@
 
 
                     <div>
-                        <label id="marca" for="marca">Marca:</label>
+                        <label for="marca">Marca:</label>
                         <input class="form-control" type="text" id="marca" name="marca" REQUIRED>
                     </div>
                     <div>
@@ -93,6 +93,7 @@
             </select>
         </div>
 
+        <input id="pac-input" type="text" name="localizacion" class="buscador" placeholder=" ">
         <div id="map" style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
 
     </form>
@@ -163,6 +164,7 @@
                 type: "GET",
                 async: false,
                 success: function (result) {
+                    console.log(result);
                     let contenido = $("<div />").html(result).find( '#jscoche' ).html();
                     eval(contenido);
                 },
@@ -176,9 +178,7 @@
     </script>
     <script>
 
-        let map;
-
-        function initMap() {
+        function initAutoscomplete() {
             var directionsService = new google.maps.DirectionsService();
             var directionsRenderer = new google.maps.DirectionsRenderer();
             let mapOptions = {
@@ -188,99 +188,135 @@
             var map = new google.maps.Map(document.getElementById('map'), mapOptions);
             directionsRenderer.setMap(map);
 
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-
-            var icons = {
-                info: {
-                    icon: "https://img.icons8.com/ios-glyphs/30/000000/marker.png"
-                }
-            };
-
-            var features = [];
-            let tecnico;
-            @foreach($tecnicos as $tecnico)
-                tecnico ={
-                position: new google.maps.LatLng{{$tecnico->localizacion}},
-                type:"info",
-                title: "{{$tecnico->id}}"
-            };
-            features.push(tecnico);
-                @endforeach
-
-
-
-            var marker;
-
-            function placeMarker(location) {
-                if ( marker ) {
-                    marker.setPosition(location);
-                } else {
-                    marker = new google.maps.Marker({
-                        position: location,
-                        map: map
-                    })
-                    ;
-                }
-            }
-            google.maps.event.addListener(map, 'click', function(event) {
-                placeMarker(event.latLng);
-                document.getElementById('lugar').value = event.latLng;
-
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function() {
+                searchBox.setBounds(map.getBounds());
             });
 
-            var locations;
-            for (var i = 0; i < features.length; i++) {
-                     locations = new google.maps.Marker({
-                    position: features[i].position,
-                    icon: icons[features[i].type].icon,
-                    title: features[i].title,
-                    map: map
-                });
-                google.maps.event.addDomListener(locations, 'click', function(event) {
-                    let posicion = event.latLng;
-                    buscarTecnico(posicion,features);
-                });
-            }
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
 
-            function buscarTecnico(posicion,features){
-                for (var i = 0; i < features.length; i++) {
-                    if(features[i].position == posicion){
-                        let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
-                        if(confirmar==true) {
-                            document.getElementById('idTecnico').value = features[i].title;
-                            calcRoute(posicion, marker);
-                        }
-                        }
-
+                if (places.length == 0) {
+                    return;
                 }
-            }
-            function calcRoute(tecnico,marker) {
-                var start = marker.position;
-                var end = tecnico;
-                var request = {
-                    origin: start,
-                    destination: end,
-                    travelMode: 'DRIVING'
-                };
-                directionsService.route(request, function(result, status) {
-                    if (status == 'OK') {
-                        directionsRenderer.setDirections(result);
-                        marker.setMap(null);
-                        for(let x=0;x<features.length;x++){
-                            features[x].setMap(null);
-                        }
 
+                // Clear out the old markers.
+                markers.forEach(function(marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+                    var marker;
+                    // Create a marker for each place.
+                    marker = markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+
+                    }));
+                    let lugarIncidencia = {lat:places[0].geometry.location.lat(), lng:places[0].geometry.location.lng()};
+                    console.log(lugarIncidencia);
+                    let incidencia = ('(' + lugarIncidencia['lat'] + ',' + lugarIncidencia['lng'] + ')');
+
+                    document.getElementById('lugar').value = incidencia;
+                    var icons = {
+                        info: {
+                            icon: "https://img.icons8.com/ios-glyphs/30/000000/marker.png"
+                        }
+                    };
+
+                    var features = [];
+                    let tecnico;
+                    @foreach($tecnicos as $tecnico)
+                        tecnico ={
+                        position: new google.maps.LatLng{{$tecnico->localizacion}},
+                        type:"info",
+                        title: "{{$tecnico->id}}"
+                    };
+                    features.push(tecnico);
+                    @endforeach
+
+                    var locations;
+                    for (var i = 0; i < features.length; i++) {
+                        locations = new google.maps.Marker({
+                            position: features[i].position,
+                            icon: icons[features[i].type].icon,
+                            title: features[i].title,
+                            map: map
+                        });
+                        google.maps.event.addDomListener(locations, 'click', function(event) {
+                            let posicion = event.latLng;
+                            buscarTecnico(posicion,features);
+                        });
+                    }
+
+                    function buscarTecnico(posicion,features){
+                        for (var i = 0; i < features.length; i++) {
+                            if(features[i].position == posicion){
+                                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                                if(confirmar==true) {
+                                    document.getElementById('idTecnico').value = features[i].title;
+                                    calcRoute(posicion, lugarIncidencia);
+                                }
+                            }
+
+                        }
+                    }
+                    function calcRoute(tecnico,marker) {
+                        var start = marker;
+                        var end = tecnico;
+                        var request = {
+                            origin: start,
+                            destination: end,
+                            travelMode: 'DRIVING'
+                        };
+                        directionsService.route(request, function(result, status) {
+                            if (status == 'OK') {
+                                directionsRenderer.setDirections(result);
+                            }
+                        });
+                    }
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
                     }
                 });
-            }
 
+
+                map.fitBounds(bounds);
+            });
         }
 
-
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMap"async defer></script>
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&libraries=places&callback=initAutoscomplete"
+            async defer></script>
     <?php
     if (isset($_GET['action'])) {
         if($_GET['action'] !=""){
