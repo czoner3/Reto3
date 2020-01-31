@@ -29,7 +29,7 @@
     <div class="container">
         <div class="izquierda">
             <div class="row justify-content-center form-box">
-                <div class="col-md-12">
+                <div class="col-md-12 login-col">
                     <div class="card">
                         <div class="card-header"><?php echo e(__('Login')); ?></div>
 
