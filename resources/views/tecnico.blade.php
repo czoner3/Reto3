@@ -73,9 +73,6 @@
                     <div class="resolver">
                       <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
                     </div>
-                <div class="volver">
-                    <a class="btn btn-primary btn-alpha" id="resueltainsuto" href="http://homestead.test/">volver</a>
-                </div>
             </div>
             </div>
 
