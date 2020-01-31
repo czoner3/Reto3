@@ -1,13 +1,15 @@
 <?php $__env->startSection('content'); ?>
 
     <div class="container-register">
+
         <div class="row justify-content-center justify-content-center-register">
-            <div class="col-md-12">
+
+             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="card-header-register"><?php echo e(__('Register')); ?></div>
 
                     <div class="card-body" id="card-body-register">
-                        <form method="POST" action="<?php echo e(route('registerUsuario')); ?>">
+                        <form method="POST" class="formulito" action="<?php echo e(route('registerUsuario')); ?>">
                             <?php echo csrf_field(); ?>
 
                             <div class="form-group row">
@@ -118,7 +120,12 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
                                         <option value="0">-</option>
-                                        <option value="1">Gerente</option>
+                                    <?php
+                                        $usuario=App\Users::find(Auth::id());
+                                        if($usuario->tipo==1){
+                                            echo '<option value="1">Gerente</option>';
+                                        }
+                                        ?>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>
                                         <option value="4">Técnico</option>
@@ -169,7 +176,7 @@ unset($__errorArgs, $__bag); ?>
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary especialito">
                                             <?php echo e(__('Register')); ?>
 
                                         </button>
@@ -231,8 +238,28 @@ unset($__errorArgs, $__bag); ?>
                     break;
 
             }
-        })
-
+        });
+        let campoemail = document.getElementById("email");
+            campoemail.addEventListener("focusout",function () {
+                let email = document.getElementById("email").value;
+                $.ajax({
+                    data: email,
+                    url: "/users/buscaremails",
+                    type: "GET",
+                    async: false,
+                    success: function (result) {
+                         console.log(result)
+                        for(let x=0;x<result.length;x++){
+                            if(result[x]['email'] == email){
+                                alert("El correo introducido ya esta en uso");
+                            }
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError);
+                    }
+                });
+        });
     </script>
     <script>
 

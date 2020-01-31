@@ -2,15 +2,16 @@
 
 @section('content')
 
-
     <div class="container-register">
+
         <div class="row justify-content-center justify-content-center-register">
-            <div class="col-md-12">
+
+             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="card-header-register">{{ __('Register') }}</div>
 
                     <div class="card-body" id="card-body-register">
-                        <form method="POST" action="{{ route('registerUsuario') }}">
+                        <form method="POST" class="formulito" action="{{ route('registerUsuario') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -128,7 +129,7 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary especialito">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
