@@ -63,7 +63,7 @@
         </div>
             <div class="button-div">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-1 btn-sep icon-send">Filtrar</button>
+                        <button type="submit" class="btn btn-1-alpha btn-sep icon-send">Filtrar</button>
                     </div>
             </div>
                 </div>
