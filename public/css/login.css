@@ -181,9 +181,6 @@
 
     .login-col{
         width: 90% !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .card-body{
@@ -194,52 +191,17 @@
         -webkit-box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
         box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
-        width: 60%;
-    }
-    .label-login{
-        padding: 10px !important;
-        width: 200px;
-        display: flex;
-        justify-content: center;
-
-    }
-
-    .contenedor-logineo{
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        margin: 0 auto;
-        align-items: center;
-        flex-direction: column-reverse;
-    }
-
-    .btn-logineo{
-
     }
 
 
-    .input-login{
-        padding: 0px !important;
-        width: 200px;
-
-    }
+    
     .remember{
         display: none;
     }
 
-    .contenedor-input{
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        margin: 0 auto;
+
     }
-    .contenedor-input-label{
-        margin: 0 auto;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 }
 
 
