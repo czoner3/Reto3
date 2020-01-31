@@ -188,29 +188,49 @@
         -moz-box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
         box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
     }
+    .label-login{
+        padding: 10px !important;
 
+    }
 
+    .input-login{
+        padding: 0px !important;
+
+    }
+    .remember{
+        display: none;
+    }
 }
 
 
+
+
+
 @media screen and (max-width: 361px) {
-    .derecha{
+    .derecha {
         display: none;
     }
-    .izquierda{
+
+    .izquierda {
         width: 100%;
     }
-    .img{
+
+    .img {
         height: 0;
     }
-    .container{
+
+    .container {
         background-color: rgba(47, 99, 98, 0.54);
     }
 
-    .card-body{
+    .card-body {
         padding: 10px;
 
     }
 
-}
+    .card-body input {
 
+    }
+
+
+}

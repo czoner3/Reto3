@@ -38,10 +38,10 @@
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right">Nombre</label>
+                                    <label for="nombreusu" class="col-md-4 col-form-label text-md-right label-login">Nombre</label>
 
                                     <div class="col-md-6">
-                                        <input id="nombreusu" type="text" class="form-control @error('nombreusu') is-invalid @enderror" name="nombreusu" value="{{ old('nombreusu') }}" required autocomplete="nombreusu" autofocus>
+                                        <input id="nombreusu" type="text" class="form-control input-loginmargin: 0 !important; @error('nombreusu') is-invalid @enderror" name="nombreusu" value="{{ old('nombreusu') }}" required autocomplete="nombreusu" autofocus>
 
                                         @error('nombreusu')
                                         <span class="invalid-feedback" role="alert">
@@ -52,10 +52,10 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right label-login">{{ __('Password') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        <input id="password" type="password" class="form-control input-login @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -65,12 +65,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <div class="form-group row remember">
                                     <div class="col-md-6 offset-md-4">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                            <label class="form-check-label" for="remember">
+                                            <label class="form-check-label label-login" for="remember">
                                                 {{ __('Remember Me') }}
                                             </label>
                                         </div>
