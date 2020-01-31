@@ -1,9 +1,4 @@
-/* Error: expected "{".
- *   ,
- * 2 | $color-principal: #76c6bc;
- *   |                          ^
- *   '
- *   customed.scss 2:26  root stylesheet */
+
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
