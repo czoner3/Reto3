@@ -26,7 +26,7 @@
 
                             <div>
                                 <label for="telefonoCliente">Telefono:</label>
-                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}"disabled>
+                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}" disabled>
                             </div>
                             <div class="observacion-tecnico">
                                 <label for="observaciones">Observaciones:</label>
@@ -38,24 +38,24 @@
                         <div class="coche-tecnico">
                             <div>
                                 <label for="matriculaCoche">Matricula:</label>
-                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}"disabled>
+                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}" disabled>
                             </div>
                             <div>
                                 <label for="marcaCoche">Marca:</label>
-                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}"disabled>
+                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}" disabled>
                             </div>
                             <div>
                                 <label for="modeloCoche">Modelo:</label>
-                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}"disabled>
+                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}" disabled>
                             </div>
 
                             <div>
                                 <label for="aseguradoraCoche">Aseguradora:</label>
-                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}"disabled>
+                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}" disabled>
                             </div>
                             <div>
                                 <label for="tiponicidencia">Tipo de incidencia:</label>
-                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}"disabled>
+                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}" disabled>
                             </div>
                         </div>
                     </div>
