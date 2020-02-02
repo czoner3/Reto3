@@ -6,21 +6,21 @@
     <form action="/incidencia" method="POST">
         @csrf
     <div class="botones-incidencia">
-            <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia" style="">Generar incidencia</button>
+            <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button>
             <button class="btn btn-3  btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/">Volver</button>
     </div>
 
-            <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
-                <div class="campodni input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
+            <div class="border border-secondary rounded-top contdni">
+                <div class="campodni input-group mb-3">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente" REQUIRED>
                     <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary customed" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
                 </div>
             </div>
-        <div id="fichaIncidencia" style="height: 0px;overflow: hidden">
-            <div id="fichaCliente" style="width: 90%;margin-left: 5%;">
-                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;border-bottom-left-radius: 1%;">
+        <div id="fichaIncidencia">
+            <div id="fichaCliente">
+                <div class="cliente border border-secondary">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input class="form-control" type="text" id="nombre" name="nombre" REQUIRED>
@@ -39,9 +39,9 @@
                     </div>
 
                 </div>
-                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;border-bottom-right-radius: 1%;">
+                <div class="coche border border-secondary">
 
-                    <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
+                    <div class="matricula input-group mb-3">
                         <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula" REQUIRED>
                         <div class="input-group-append customed-div">
                             <button type="button" class="btn btn-outline-secondary customed2" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
@@ -83,7 +83,7 @@
         </div>
 
 
-        <div style=" width: 90%;margin: 2px 0 2% 5%;">
+        <div id="conttipo">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia"  REQUIRED>
                 <option value="1">pinchazo</option>

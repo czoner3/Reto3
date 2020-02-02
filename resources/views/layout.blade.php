@@ -13,7 +13,8 @@
     <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
 
-    <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}"><link  rel="stylesheet" href="{{asset('css/menu.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
+    <link  rel="stylesheet" href="{{asset('css/incidenciaform.css')}}">
     <link  rel="stylesheet" href="{{asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{asset('css/incidencias.css')}}">
