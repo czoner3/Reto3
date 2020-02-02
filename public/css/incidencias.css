@@ -252,6 +252,32 @@ margin-top: 10px;
     width: 60px;
 }
 
+.btn-1-alpha {
+    background-color: #32cc98;
+    color: #fff;
+}
+
+.btn-1-alpha:hover {
+    background-color: rgba(47, 188, 148, 0.7);
+    color: #ffffff;
+}
+
+.btn-1-alpha:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+.btn-1-alpha:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+
 /* Button 2 */
 .btn-2 {
     background: #2ecc71;
