@@ -60,9 +60,22 @@
     animation-direction:normal;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-
 }
 
+.botones-incidencia{
+    width: 90%;
+    align-items: center;
+    margin:0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#resueltainsuto{
+padding: 10px !important;
+}
+#resueltagareja{
+    padding: 10px !important;
+}
 
 .color-cortina{
     width: 100%;
@@ -170,5 +183,15 @@ label{
         height: auto;
     }
 
+}
+@media screen and (max-width: 570px){
+    .btn-alpha{
+        padding-left:0 !important;
+        padding-right:0 !important;
+        margin-left: 0 !important;
+    }
+    .contenedor-mapa{
+        width: 90%;
+    }
 }
 

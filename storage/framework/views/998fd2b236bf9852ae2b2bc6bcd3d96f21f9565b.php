@@ -7,7 +7,7 @@
     <div class="incidencia" class="form-group" style="">
         <div class="selection-div">
         <div class="selection">
-            <label for="tipoincidencia">Tipo de incidencia:</label>
+            <label for="tipoincidencia">Tipo:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
                 <option value="1">Pinchazo</option>
@@ -53,7 +53,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 <?php $__currentLoopData = $tecnicos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tecnico): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre); ?></option>
+                    <option value="<?php echo e($tecnico->id); ?>"><?php echo e($tecnico->nombre . ' ' . $tecnico->apellido); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
             
@@ -61,7 +61,7 @@
         </div>
             <div class="button-div">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-1 btn-sep icon-send">Filtrar</button>
+                        <button type="submit" class="btn btn-1-alpha btn-sep icon-send">Filtrar</button>
                     </div>
             </div>
                 </div>
@@ -69,16 +69,16 @@
 </div>
 
 <div class="row col-11 tabla">
-    <table class="table " border="1">
-        <thead class="thead-dark ">
+    <table class="table table-inci" style="overflow-x: auto" border="1">
+        <thead class="thead edited-header">
         <tr>
             <th>Tipo incidencia</th>
-            <th>Fecha incidencia</th>
             <th>Estado</th>
+            <th>Fecha incidencia</th>
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
-            <th>Nombre usuario</th>
+            <th>Nombre Operador</th>
             <th>ID Tecnico</th>
             <th>Nombre tecnico</th>
             <th>Observaciones</th>
@@ -86,7 +86,7 @@
         </thead>
         <tbody>
         <?php $__currentLoopData = $incidencia; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $inci): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <tr>
+            <tr class="brillo">
                 <td>
                     <?php switch($inci->tipoincidencia):
                         case (1): ?>
@@ -104,8 +104,23 @@
                     <?php endswitch; ?>
 
                 </td>
+
+                <td>
+                    <?php switch($inci->estado):
+                        case (1): ?>
+                        Abierta
+                        <?php break; ?>
+                        <?php case (2): ?>
+                        Cerrada en garaje
+                        <?php break; ?>
+                        <?php case (3): ?>
+                        Cerrada insitu
+                        <?php break; ?>
+                    <?php endswitch; ?>
+                    </td>
+
                 <td><?php echo e($inci->created_at); ?></td>
-                <td><?php echo e(($inci->estado)?'Abierta':'Cerrada'); ?></td>
+
                 <td>
                     <?php echo e($inci->cliente_id); ?>
 
@@ -132,11 +147,26 @@
                 </td>
                 <td><?php echo e($inci->observaciones); ?></td>
             </tr>
+
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 </div>
 </div>
+<div class="paginacion">
+<?php echo e($incidencia->links()); ?>
+
+</div>
+
+        <?php $__currentLoopData = $incidencia; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $inci): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+        <?php if($inci->estado==1): ?>
+        <script>
+            $(".brillo").css("animation-name", "parpadeo-last-child");
+
+        </script>
+        <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -151,5 +181,7 @@
  * Time: 11:52
  */
 ?>
+
+
 
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/resources/views/incidencia.blade.php ENDPATH**/ ?>

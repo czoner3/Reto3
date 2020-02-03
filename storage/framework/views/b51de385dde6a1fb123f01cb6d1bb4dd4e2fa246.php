@@ -1,18 +1,20 @@
 <?php $__env->startSection('content'); ?>
 
     <div class="container-register">
+
         <div class="row justify-content-center justify-content-center-register">
-            <div class="col-md-12">
+
+             <div class="col-md-12 regInput">
                 <div class="card">
                     <div class="card-header" id="card-header-register"><?php echo e(__('Register')); ?></div>
 
                     <div class="card-body" id="card-body-register">
-                        <form method="POST" action="<?php echo e(route('registerUsuario')); ?>">
+                        <form method="POST" class="formulito" action="<?php echo e(route('registerUsuario')); ?>">
                             <?php echo csrf_field(); ?>
 
                             <div class="form-group row">
-                                <label for="nombreusu"
-                                       class="col-md-4 col-form-label text-md-right"><?php echo e(__('Name')); ?></label>
+                                <label for="nombreusu "
+                                       class="col-md-4 col-form-label text-md-right label-register"><?php echo e(__('Name')); ?></label>
 
                                 <div class="col-md-6">
                                     <input id="nombreusu" type="text"
@@ -43,7 +45,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right"><?php echo e(__('E-Mail')); ?></label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right label-register"><?php echo e(__('E-Mail')); ?></label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control <?php $__errorArgs = ['email'];
@@ -73,7 +75,7 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="form-group row">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-right"><?php echo e(__('Password')); ?></label>
+                                       class="col-md-4 col-form-label text-md-right label-register"><?php echo e(__('Password')); ?></label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -104,7 +106,7 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right"><?php echo e(__('Confirm Password')); ?></label>
+                                       class="col-md-4 col-form-label label-register text-md-right"><?php echo e(__('Confirm Password')); ?></label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -113,12 +115,17 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="form-group row">
-                                <label for="tipo" class="col-md-4 col-form-label text-md-right">Tipo</label>
+                                <label for="tipo" class="col-md-4 col-form-label text-md-right label-register">Tipo</label>
 
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo">
                                         <option value="0">-</option>
-                                        <option value="1">Gerente</option>
+                                    <?php
+                                        $usuario=App\Users::find(Auth::id());
+                                        if($usuario->tipo==1){
+                                            echo '<option value="1">Gerente</option>';
+                                        }
+                                        ?>
                                         <option value="2">Coordinador</option>
                                         <option value="3">Operador</option>
                                         <option value="4">Técnico</option>
@@ -138,21 +145,22 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
+
                             <div id="camposTecnico">
                             <div class="form-group row">
-                                    <label for="nombretecnico" class="col-md-4 col-form-label text-md-right">Nombre </label>
+                                    <label for="nombretecnico" class="col-md-4 col-form-label text-md-right label-register">Nombre </label>
                                  <div class="col-md-6">
                                      <input id="nombretecnico" type="text" name="nombretecnico" class="form-control">
                                  </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="apellidotecnico" class="col-md-4 col-form-label text-md-right">Apellido </label>
+                                <label for="apellidotecnico" class="col-md-4 col-form-label text-md-right label-register">Apellido </label>
                                 <div class="col-md-6">
                                     <input id="apellidotecnico" type="text" name="apellidotecnico" class="form-control">
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="localizaciontecnico" class="col-md-4 col-form-label text-md-right">Localizacion </label>
+                                <label for="localizaciontecnico" class="col-md-4 col-form-label text-md-right label-register">Localizacion </label>
                                 <div class="col-md-6">
                                     <input id="pac-input" type="text" name="localizacion" class="form-control" placeholder=" ">
                                     <input type="hidden" name="localizaciontecnico" id="localizaciontecnico">
@@ -160,7 +168,7 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <label for="telefonotecnico" class="col-md-4 col-form-label text-md-right">Telefono </label>
+                                <label for="telefonotecnico" class="col-md-4 col-form-label text-md-right label-register">Telefono </label>
                                 <div class="col-md-6">
                                     <input id="telefonotecnico" type="text" name="telefonotecnico" class="form-control">
                                 </div>
@@ -169,7 +177,7 @@ unset($__errorArgs, $__bag); ?>
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary especialito">
                                             <?php echo e(__('Register')); ?>
 
                                         </button>
@@ -231,8 +239,28 @@ unset($__errorArgs, $__bag); ?>
                     break;
 
             }
-        })
-
+        });
+        let campoemail = document.getElementById("email");
+            campoemail.addEventListener("focusout",function () {
+                let email = document.getElementById("email").value;
+                $.ajax({
+                    data: email,
+                    url: "/users/buscaremails",
+                    type: "GET",
+                    async: false,
+                    success: function (result) {
+                         console.log(result)
+                        for(let x=0;x<result.length;x++){
+                            if(result[x]['email'] == email){
+                                alert("El correo introducido ya esta en uso");
+                            }
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError);
+                    }
+                });
+        });
     </script>
     <script>
 

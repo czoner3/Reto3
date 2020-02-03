@@ -1,3 +1,8 @@
+body{
+    background-color: rgba(55, 231, 186, 0.07) !important;
+
+}
+
 #camposTecnico{
     display: none;
     flex-direction: column;
@@ -5,15 +10,37 @@
 
 .container-register{
     width: 100%;
-    height: 100%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100%;
+    padding: 10px;
+}
+
+.formulito{
+    width: 100%;
+}
+
+.card{
+    width: 100%;
+}
+
+.formulito input , .formulito label{
+    font-size: 13px;
+    height: 27px;
+    margin-top: 10px;
+    padding:5px;
+}
+
+.especialito{
+    height: 40px;
+    padding: 10px !important;
+
 }
 
 .justify-content-center-register{
-    width: 30% !important;
-
+    /* width: 30% !important; */
 }
 
 #card-header-register{
@@ -22,3 +49,26 @@ transition: all 0.2s ease-in-out;
 #card-body-register{
     transition: all 0.2s ease-in-out;
 }
+
+.color-cortina-dos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(31, 31, 27, 0.56);
+    z-index: 2;
+}
+
+.card-body{
+    padding: 1.25rem;
+}
+
+
+regInpu{
+    width: 75% !important;
+}
+
+.label-register {
+    padding: 20px;
+
+}
+

@@ -39,6 +39,7 @@ Route::get('/estadisticas','EstadisticasController@index')->name("estadisticas")
 
 Route::get('/estadisticas/cargar' , 'EstadisticasController@comprobarChart');
 
+Route::get('/users/buscaremails' , 'UserController@buscaremails');
 
 
 

@@ -2,17 +2,13 @@
 
 @section('content')
 
-    <div class="full-container">
 
-        <div class="img">
-            <div class="color-cortina">
-            </div>
-        </div>
+
+
+
 
         <form action="tecnico/{{$incidencia->id}}" method="POST">
             @csrf
-
-
             <div class="form-group2">
 
                 <div class="form-group form-group-alpha">
@@ -26,7 +22,7 @@
 
                             <div>
                                 <label for="telefonoCliente">Telefono:</label>
-                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}"disabled>
+                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}" disabled>
                             </div>
                             <div class="observacion-tecnico">
                                 <label for="observaciones">Observaciones:</label>
@@ -38,24 +34,24 @@
                         <div class="coche-tecnico">
                             <div>
                                 <label for="matriculaCoche">Matricula:</label>
-                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}"disabled>
+                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}" disabled>
                             </div>
                             <div>
                                 <label for="marcaCoche">Marca:</label>
-                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}"disabled>
+                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}" disabled>
                             </div>
                             <div>
                                 <label for="modeloCoche">Modelo:</label>
-                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}"disabled>
+                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}" disabled>
                             </div>
 
                             <div>
                                 <label for="aseguradoraCoche">Aseguradora:</label>
-                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}"disabled>
+                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}" disabled>
                             </div>
                             <div>
                                 <label for="tiponicidencia">Tipo de incidencia:</label>
-                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}"disabled>
+                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}" disabled>
                             </div>
                         </div>
                     </div>
@@ -65,17 +61,16 @@
                     </div>
 
                 </div>
+                <div class="botones-incidencia">
                 <select class="custom-select" name="estado">
                     <option value="2">Resuelta en garaje</option>
                     <option value="3">Resuelta insitu</option>
                 </select>
-                    <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
-                <div class="volver">
-                    <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
-                </div>
+                    <div class="resolver">
+                      <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
+                    </div>
             </div>
-
-
+            </div>
         </form>
 
     </div>

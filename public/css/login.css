@@ -16,18 +16,21 @@
     animation-fill-mode: forwards;
     animation-duration: 1s;
     opacity: 0;
-    margin-right: 200px;
+    margin-right: 209px;
     margin-bottom: 200px;
-
+}
+.card{
+    -webkit-box-shadow: 17px 21px 6px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 17px 21px 6px -7px rgba(0,0,0,0.75);
+    box-shadow: 17px 21px 6px -7px rgba(0,0,0,0.75);
 }
 
 .izquierda{
-    height: 100%;
+    /* height: 29%; */
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .derecha{
     height: 100%;
@@ -35,6 +38,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+
+}
+
+.fondico{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 
 }
 
@@ -87,6 +99,7 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+
 }
 
 .imagen{
@@ -106,8 +119,10 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgba(255, 255, 245, 0.83);
+    background-color: rgba(47, 99, 98, 0.54);
     z-index: 2;
+
+
 }
 
 
@@ -150,3 +165,72 @@
     }
 }
 
+@media screen and (max-width: 650px) {
+    .derecha{
+        display: none;
+    }
+    .izquierda{
+        width: 100%;
+    }
+    .img{
+        height: 0;
+    }
+    .container{
+        background-color: rgba(47, 99, 98, 0.54);
+    }
+
+    .login-col{
+        width: 90% !important;
+    }
+
+    .card-body{
+        padding: 10px;
+
+    }
+    .card{
+        -webkit-box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
+        box-shadow: 10px 13px 3px -4px rgba(0,0,0,0.75);
+    }
+
+
+
+    .remember{
+        display: none;
+    }
+
+    }
+
+
+@media screen and (max-width: 361px) {
+    .derecha {
+        display: none;
+    }
+
+    .izquierda {
+        width: 100%;
+    }
+
+    .img {
+        height: 0;
+    }
+
+    .container {
+        background-color: rgba(47, 99, 98, 0.54);
+    }
+
+    .card-body {
+        padding: 10px;
+
+    }
+
+    .card-body input {
+
+    }
+    .login-col{
+        width: auto !important;
+    }
+
+
+
+}

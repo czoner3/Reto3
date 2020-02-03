@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\Users;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,14 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $usuario=Users::find(Auth::id());
+
+        if($usuario->tipo=='1'||$usuario->tipo=='2') {
+            return view('auth.register');
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**

@@ -23,6 +23,7 @@ class IncidenciaController extends Controller
 
         $usuario=Users::find(Auth::id());
 
+
         if($usuario->tipo!='4') {
             $tipoincidencia = $request->get('tipoincidencia');
             $estado = $request->get('estado');
@@ -46,13 +47,13 @@ class IncidenciaController extends Controller
                 ->cliente_id($cliente_id)
                 ->usuario_id($usuario_id)
                 ->tecnico_id($tecnico_id)
-                ->paginate(10);
+                ->paginate(5);
 
             /* $users = DB::table('users')->where('tipo', '=' ,2);
              foreach ($users as $user) {
                  echo($user->id);
              }*/
-            $users = Users::all()->where('tipo', '=', 2);
+            $users = Users::all()->where('tipo', '=', 3);
 
             $tecnicos = Tecnico::all();
             $clientes = Cliente::all();
@@ -69,7 +70,7 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Responseº
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -80,7 +81,7 @@ class IncidenciaController extends Controller
         $usuario=Users::find(Auth::id());
         $userid = $usuario->id;
 
-        $tecnicos = Tecnico::all()->where('estado','=',0);
+        $tecnicos = Tecnico::all()->where('estado',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
             "userid" => $userid

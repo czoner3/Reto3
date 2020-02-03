@@ -1,3 +1,57 @@
+.contdni{
+    width: 90%;
+    margin-left: 5%;
+}
+.campodni{
+    width: 30%;
+    margin-left: 69%;
+    margin-top: 1%;
+}
+#fichaIncidencia{
+    height: 0;
+    overflow: hidden;
+}
+#fichaCliente{
+    width: 90%;
+    margin-left: 5%;
+}
+.cliente{
+    width: 50%;
+    float: left;
+    padding: 45px 10px 45px 10px;
+    border-bottom-left-radius: 1%;
+}
+.coche{
+    width: 50%;
+    float: left;
+    padding: 2px 10px 18px 10px;
+    border-bottom-right-radius: 1%;
+}
+.matricula{
+    margin-top: 32px;
+    height: 22px;
+}
+#conttipo{
+    width: 90%;
+    margin: 2px 0 2% 5%;
+}
+.mapaoperador{
+    width: 90%;
+    height: 30%;
+    margin: 0 0 1.3% 5%;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+}
+
+.buscador{
+    margin-left:2%;
+    height: 30px;
+    margin-top: 10px;
+    width: 30%;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 5px 0px rgba(128,118,128,1);
+}
+
 .filtros {
     display: flex;
     flex-direction: column;
@@ -10,7 +64,74 @@
 }
 .filtros:hover{
     background-color: rgba(41, 166, 131, 0.13);
+}
 
+.cliente{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.cliente input{
+    border: 1px solid rgba(9, 182, 185, 0.16);
+}
+.coche{
+    background-color: rgba(52, 215, 172, 0.1);
+}
+
+.customed{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    margin: 0 !important;
+}
+
+.customed:hover{
+
+    box-shadow: inset -340px 0 0 0 #32cc98;
+}
+.customed2{
+    border: 1px solid rgba(41,165,130,0.7) !important;
+    background-color:#32cc98 !important;
+    color: white !important;
+    height: 42.3px;
+    margin: 0 !important;
+    padding-top: 9px !important;;
+}
+
+
+
+customed2 input{
+    border: 1px solid rgba(165, 163, 35, 0.7) !important;
+    background-color:rgba(41,165,130,0.7) !important;
+    color: white;
+}
+
+
+#matricula{
+    padding: 20px;
+}
+.tabla{
+    overflow-x: auto;
+}
+
+.botones-incidencia{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    flex-direction: row-reverse;
+
+}
+
+.pagination{
+   justify-content: center !important;
+}
+
+
+#dniCliente{
+    padding: 27px;
+    border: 1px solid rgba(41,165,130,0.7) !important;
+}
+
+customed-div{
+    height: 100% !important;
 }
 
 .selection-div{
@@ -46,12 +167,21 @@ tr:hover{
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
+
 }
 .tabla{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.mitabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .normal{
@@ -113,6 +243,20 @@ tr:hover{
     -webkit-font-smoothing: antialiased;
 }
 
+.page-item.active .page-link{
+  background-color: #32cc98; !important;
+    border:1px solid #32cc98;
+}
+
+.page-link{
+    color:#32cc98; !important;
+
+}
+
+.edited-header th{
+    background-color: #32cc98;  !important;;
+}
+
 .button-div{
 margin-top: 10px;
 }
@@ -129,7 +273,7 @@ margin-top: 10px;
 
 /* Button 1 */
 .btn-1 {
-    background-color: rgba(41,165,130,0.7);
+    background-color: #32cc98;
     color: #fff;
 }
 
@@ -152,6 +296,32 @@ margin-top: 10px;
     font-size: 140%;
     width: 60px;
 }
+
+.btn-1-alpha {
+    background-color: #32cc98;
+    color: #fff;
+}
+
+.btn-1-alpha:hover {
+    background-color: rgba(47, 188, 148, 0.7);
+    color: #ffffff;
+}
+
+.btn-1-alpha:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+.btn-1-alpha:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
 
 /* Button 2 */
 .btn-2 {
@@ -228,6 +398,8 @@ margin-top: 10px;
     width: 60px;
 }
 
+
+
 /* Icons */
 
 .icon-cart:before {
@@ -245,3 +417,218 @@ margin-top: 10px;
 .icon-send:before {
     content: "\f1d8";
 }
+
+@media screen and (max-width: 1400px){
+    .customed{
+        width: 120px;
+        padding: 0px;
+    }
+    .customed2{
+        width: 170px;
+        padding: 0px;
+    }
+}
+@media screen and (max-width: 650px){
+    .campodni{
+        width: 55% !important;
+        margin-left: 44% !important;
+    }
+}
+@media screen and (max-width: 518px){
+    .customed2{
+        font-size: 10px !important;
+        width: 65px;
+        height: 42px;
+    }
+    .btn-1{
+        width: 35% !important;
+        padding-left: 7% !important;
+        height: auto!important;
+    }
+    .btn-3{
+        width: 35% !important;
+        padding-left: 10% !important;
+        height: auto!important;
+    }
+}
+@media screen and (max-width: 361px){
+    .campodni{
+        width: 100% !important;
+        margin-left: 0!important;
+    }
+    .customed2{
+        font-size: 10px !important;
+        width: 65px;
+    }
+    .btn-1{
+        width: 35% !important;
+        padding-left: 4% !important;
+        height: auto!important;
+    }
+    .btn-3{
+        width: 35% !important;
+        padding-left: 7% !important;
+        height: auto!important;
+    }
+
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+table tbody tr td:last-child {
+    margin-bottom: 0;
+
+
+}
+tr:first-child{
+    animation-duration:2s;
+    animation-delay: 0s;
+   /* animation-name: parpadeo-last-child;*/
+    animation-iteration-count: infinite;
+}
+
+label{
+    text-overflow: ellipsis;
+
+
+}
+
+table * {
+    position: relative;
+}
+table td, table th {
+    padding-left: 8px;
+    margin-bottom: 0px !important;
+
+}
+table thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+}
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+table td, table th {
+    text-align: left;
+}
+table td.l, table th.l {
+    text-align: right;
+}
+table td.c, table th.c {
+    text-align: center;
+}
+table td.r, table th.r {
+    text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+    .incidencia{
+        flex-direction: column;
+    }
+
+    .selection-div{
+        flex-direction: column;
+        width: 100%;
+    }
+    .selection{
+        width: 60%;
+    }
+
+}
+@media screen and (max-width: 35.5em) {
+    table {
+        display: block;
+    }
+    table > *, table tr, table td, table th {
+        display: block;
+
+    }
+    table thead {
+        display: none;
+    }
+    table tbody tr {
+        height: auto;
+        padding: 8px 0;
+    }
+    table tbody tr td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+    }
+    table tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+    tr:first-child{
+    /* animation-name: parpadeo-last-child;*/
+    }
+    table tbody tr td:before {
+        position: absolute;
+        font-weight: 700;
+        width: 40%;
+        left: 10px;
+        top: 0;
+    }
+
+    table td{
+        display: flex  !important;;
+        justify-content: center  !important;;
+        align-items: center  !important;;
+        border-top: 1px solid #dee2e6 !important;
+    }
+    table tbody tr td:nth-child(1):before {
+        content: "Tipo incidencia";
+    }
+    table tbody tr td:nth-child(2):before {
+        content: "Estado";
+    }
+    table tbody tr td:nth-child(3):before {
+        content: "Fecha Incidencia";
+    }
+    table tbody tr td:nth-child(4):before {
+        content: "ID Cliente";
+    }
+    table tbody tr td:nth-child(6):before {
+        content: "Nombre Cliente";
+    }
+    table tbody tr td:nth-child(7):before {
+        content: "ID Usuario";
+    }
+    table tbody tr td:nth-child(8):before {
+        content: "Nombre Operador";
+    }
+    table tbody tr td:nth-child(9):before {
+        content: "ID Tecnico";
+    }
+    table tbody tr td:nth-child(10):before {
+        content: "Nombre Tecnico";
+    }
+    table tbody tr td:nth-child(10):before {
+        content: "Observaciones";
+    }
+}
+
+
+blockquote {
+    color: white;
+    text-align: center;
+}
+
+
+@keyframes parpadeo-last-child {
+
+    50%{
+        background-color: rgba(101, 255, 107, 0.33);
+       }
+    }
+

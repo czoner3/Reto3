@@ -9,7 +9,7 @@
     <div class="incidencia" class="form-group" style="">
         <div class="selection-div">
         <div class="selection">
-            <label for="tipoincidencia">Tipo de incidencia:</label>
+            <label for="tipoincidencia">Tipo:</label>
             <select class="custom-select" name="tipoincidencia">
                 <option value="">--</option>
                 <option value="1">Pinchazo</option>
@@ -55,7 +55,7 @@
             <select class="custom-select" name="tecnico_id">
                 <option value="">--</option>
                 @foreach($tecnicos as $tecnico)
-                    <option value="{{$tecnico->id}}">{{$tecnico->nombre}}</option>
+                    <option value="{{$tecnico->id}}">{{$tecnico->nombre . ' ' . $tecnico->apellido}}</option>
                 @endforeach
             </select>
             {{--<input class="form-control" type="text" id="tecnico_id" name="tecnico_id">--}}
@@ -63,7 +63,7 @@
         </div>
             <div class="button-div">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-1 btn-sep icon-send">Filtrar</button>
+                        <button type="submit" class="btn btn-1-alpha btn-sep icon-send">Filtrar</button>
                     </div>
             </div>
                 </div>
@@ -71,12 +71,12 @@
 </div>
 
 <div class="row col-11 tabla">
-    <table class="table " border="1">
-        <thead class="thead-dark ">
+    <table class="table table-inci" style="overflow-x: auto" border="1">
+        <thead class="thead edited-header">
         <tr>
             <th>Tipo incidencia</th>
-            <th>Fecha incidencia</th>
             <th>Estado</th>
+            <th>Fecha incidencia</th>
             <th>ID Cliente</th>
             <th>Nombre cliente</th>
             <th>ID Usuario</th>
@@ -88,7 +88,7 @@
         </thead>
         <tbody>
         @foreach($incidencia as $inci)
-            <tr>
+            <tr class="brillo">
                 <td>
                     @switch($inci->tipoincidencia)
                         @case(1)
@@ -143,11 +143,25 @@
                 </td>
                 <td>{{$inci->observaciones}}</td>
             </tr>
+
         @endforeach
         </tbody>
     </table>
 </div>
 </div>
+<div class="paginacion">
+{{$incidencia->links()}}
+</div>
+
+        @foreach($incidencia as $inci)
+
+        @if($inci->estado==1)
+        <script>
+            $(".brillo").css("animation-name", "parpadeo-last-child");
+
+        </script>
+        @endif
+        @endforeach
 
 @endsection
 
@@ -162,3 +176,5 @@
  * Time: 11:52
  */
 ?>
+
+

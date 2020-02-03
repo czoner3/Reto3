@@ -1,16 +1,12 @@
 <?php $__env->startSection('content'); ?>
 
-    <div class="full-container">
 
-        <div class="img">
-            <div class="color-cortina">
-            </div>
-        </div>
 
-        <form  action="" method="GET">
+
+
+
+        <form action="tecnico/<?php echo e($incidencia->id); ?>" method="POST">
             <?php echo csrf_field(); ?>
-
-
             <div class="form-group2">
 
                 <div class="form-group form-group-alpha">
@@ -19,12 +15,12 @@
                         <div class="cliente-tecnico">
                             <div>
                                 <label for="nombreCliente">Nombre de cliente:</label>
-                                <input class="form-control" type="text" id="nombreCliente" name="nombreCliente" value="<?php echo e($cliente->nombrecli); ?>">
+                                <input class="form-control" type="text" id="nombreCliente" name="nombreCliente" value="<?php echo e($cliente->nombrecli); ?>" disabled>
                             </div>
 
                             <div>
                                 <label for="telefonoCliente">Telefono:</label>
-                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="<?php echo e($cliente->telefono); ?>">
+                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="<?php echo e($cliente->telefono); ?>"disabled>
                             </div>
                             <div class="observacion-tecnico">
                                 <label for="observaciones">Observaciones:</label>
@@ -36,24 +32,24 @@
                         <div class="coche-tecnico">
                             <div>
                                 <label for="matriculaCoche">Matricula:</label>
-                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="<?php echo e($vehiculo->matricula); ?>">
+                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="<?php echo e($vehiculo->matricula); ?>"disabled>
                             </div>
                             <div>
                                 <label for="marcaCoche">Marca:</label>
-                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="<?php echo e($vehiculo->marca); ?>">
+                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="<?php echo e($vehiculo->marca); ?>"disabled>
                             </div>
                             <div>
                                 <label for="modeloCoche">Modelo:</label>
-                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="<?php echo e($vehiculo->modelo); ?>">
+                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="<?php echo e($vehiculo->modelo); ?>"disabled>
                             </div>
 
                             <div>
                                 <label for="aseguradoraCoche">Aseguradora:</label>
-                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="<?php echo e($vehiculo->aseguradora); ?>">
+                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="<?php echo e($vehiculo->aseguradora); ?>"disabled>
                             </div>
                             <div>
                                 <label for="tiponicidencia">Tipo de incidencia:</label>
-                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="<?php echo e($incidencia->tipoincidencia); ?>">
+                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="<?php echo e($incidencia->tipoincidencia); ?>"disabled>
                             </div>
                         </div>
                     </div>
@@ -63,17 +59,16 @@
                     </div>
 
                 </div>
-                <div class="boton-tecnico">
-                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta garaje">
-                    <input class="btn btn-success btn-alpha" type="submit" value="Resuelta insitu">
-                </div>
-                <div class="volver">
-                    <a class="btn btn-primary btn-alpha" href="http://homestead.test/">volver</a>
-                </div>
+                <div class="botones-incidencia">
+                <select class="custom-select" name="estado">
+                    <option value="2">Resuelta en garaje</option>
+                    <option value="3">Resuelta insitu</option>
+                </select>
+                    <div class="resolver">
+                      <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
+                    </div>
             </div>
-
-
-
+            </div>
         </form>
 
     </div>
@@ -103,7 +98,7 @@
                     type: 'marca',
                 },
                 {
-                    position: new google.maps.LatLng(<?php echo e($tecnico->localizacion); ?>),
+                    position: new google.maps.LatLng<?php echo e($tecnico->localizacion); ?>,
                     type: 'marca',
                 }
             ];
@@ -145,7 +140,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ1IlkRnZIO-tM5Z-OcVz2r6Pk7egLuTA&callback=initMap"
             async defer></script>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/resources/views/tecnico.blade.php ENDPATH**/ ?>

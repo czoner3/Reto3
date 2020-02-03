@@ -12,25 +12,30 @@
     <link  rel="stylesheet" href="{{asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/login.css')}}">
     <link  rel="stylesheet" href="{{asset('css/tecnico.css')}}">
-    <link  rel="stylesheet" href="{{asset('css/menu.css')}}">
+
     <link  rel="stylesheet" href="{{secure_asset('css/tecnico.css')}}">
     <link  rel="stylesheet" href="{{asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/register.css')}}">
     <link  rel="stylesheet" href="{{asset('css/incidencias.css')}}">
     <link  rel="stylesheet" href="{{secure_asset('css/incidencias.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/estadisticas.css')}}">
+    <link  rel="stylesheet" href="{{asset('css/estadisticas.css')}}">
+    <link  rel="stylesheet" href="{{asset('css/layout.css')}}">
+    <link  rel="stylesheet" href="{{secure_asset('css/layout.css')}}">
 
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+
     {{-- ChartScript --}}
 
 
 </head>
 <body>
-<header style="height: 7%;background-color: rgba(41,165,130,0.7);">
-    <img src="https://roadside-assistance.online/img/logos/en.png" style="height: 65px;margin-left: 4%">
+<header class="cabecera">
+    <img class="logo" src="https://roadside-assistance.online/img/logos/en.png">
     <div class="dropdown" style="position:absolute;right: 5%;top: 1%;">
 
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,6 +57,12 @@
             }
             if($usuario->tipo==1 ||$usuario->tipo==2){
                 echo '<a class="dropdown-item" href="/register">Registrar un usuario</a>';
+            }
+            if($usuario->tipo==1 ||$usuario->tipo==2||$usuario->tipo==3){
+                echo '<a class="dropdown-item" href="/incidencia">Historico</a>';
+            }
+            if($usuario->tipo==1 ||$usuario->tipo==2){
+                echo '<a class="dropdown-item" href="/estadisticas">Ver estadisticas</a>';
             }
 
         ?>
