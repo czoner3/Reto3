@@ -78,8 +78,8 @@
                                 <label for="tipo" class="col-md-4 col-form-label text-md-right label-register">Tipo</label>
 
                                 <div class="col-md-6">
-                                    <select name="tipo" class="form-control" id="tipo">
-                                        <option value="0">-</option>
+                                    <select name="tipo" class="form-control" id="tipo" required>
+                                        <option value="" disabled="disabled" selected>--</option>
                                     <?php
                                         $usuario=App\Users::find(Auth::id());
                                         if($usuario->tipo==1){

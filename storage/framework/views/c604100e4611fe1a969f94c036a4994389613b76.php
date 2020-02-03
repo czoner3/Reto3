@@ -93,18 +93,6 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
 
-                                <div class="form-group row remember">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
-
-                                            <label class="form-check-label label-login" for="remember">
-                                                <?php echo e(__('Remember Me')); ?>
-
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4 contenedor-logineo">
