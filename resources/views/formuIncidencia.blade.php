@@ -64,7 +64,7 @@
 
                     <div>
                         <label for="tipovehiculo">Tipo de vehiculo:</label>
-                        <select class="custom-select" name="tipovehiculo"  REQUIRED>
+                        <select class="custom-select" id="tipovehiculo" name="tipovehiculo"  REQUIRED>
                             <option value="1">Vehículos ligeros</option>
                             <option value="2">Vehículos pesados </option>
                             <option value="3">Vehículos especiales y agrícolas</option>
@@ -293,6 +293,7 @@
             document.getElementById('marca').value = '{$coche->marca}';
             document.getElementById('modelo').value = '{$coche->modelo}';
             document.getElementById('aseguradora').value = '{$coche->aseguradora}';
+            document.getElementById('tipovehiculo').value = '{$coche->tipo}';
         </script>";
     }
     ?>
