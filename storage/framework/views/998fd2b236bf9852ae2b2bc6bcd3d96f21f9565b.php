@@ -1,6 +1,5 @@
 <?php $__env->startSection('content'); ?>
 <div class="contenedor">
-<div class="row col-11 titulo-incidencias"><h1>Incidencias</h1></div>
 
 <div class="row col-11 filtros">
     <form action="/incidencia" method="get">
