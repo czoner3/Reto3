@@ -2,29 +2,31 @@
 
 @section('content')
 
-        <form action="tecnico/{{$incidencia->id}}" method="POST">
-            @csrf
-            <div class="form-group2">
+    <form action="tecnico/{{$incidencia->id}}" method="POST">
+        @csrf
+        <div class="form-group2">
 
-                <div class="form-group form-group-alpha">
-                    <h2>Datos Incidencia</h2>
-                    <div class="contenedor-cli-coche">
-                        <div class="cliente-tecnico">
-                            <div>
-                                <label for="nombreCliente">Nombre de cliente:</label>
-                                <input class="form-control" type="text" id="nombreCliente" name="nombreCliente" value="{{$cliente->nombrecli}}" disabled>
-                            </div>
-
-                            <div>
-                                <label for="telefonoCliente">Telefono:</label>
-                                <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente" value="{{$cliente->telefono}}" disabled>
-                            </div>
-                            <div class="observacion-tecnico">
-                                <label for="observaciones">Observaciones:</label>
-                                <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
-                            </div>
-
+            <div class="form-group form-group-alpha">
+                <h2>Datos Incidencia</h2>
+                <div class="contenedor-cli-coche">
+                    <div class="cliente-tecnico">
+                        <div>
+                            <label for="nombreCliente">Nombre de cliente:</label>
+                            <input class="form-control" type="text" id="nombreCliente" name="nombreCliente"
+                                   value="{{$cliente->nombrecli}}" disabled>
                         </div>
+
+                        <div>
+                            <label for="telefonoCliente">Telefono:</label>
+                            <input class="form-control" type="text" id="telefonoCliente" name="telefonoCliente"
+                                   value="{{$cliente->telefono}}" disabled>
+                        </div>
+                        <div class="observacion-tecnico">
+                            <label for="observaciones">Observaciones:</label>
+                            <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
+                        </div>
+                    </div>
+                    <div>
                     </div>
                     <div class="coche-tecnico">
                         <div>
