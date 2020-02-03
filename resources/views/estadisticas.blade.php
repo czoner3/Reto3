@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="contenedor-principal-chart">
+
     <div class="quesito-datos">
     <div class="quesito">
         <h4>Tipo de incidencias totales:</h4>
@@ -30,7 +30,7 @@
         <canvas id="myChart3" height="125%"></canvas>
     </div>
     </div>
-</div>
+
 <form action="/estadisticas" method="get"></form>
 
 
