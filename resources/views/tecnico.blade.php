@@ -2,11 +2,6 @@
 
 @section('content')
 
-
-
-
-
-
         <form action="tecnico/{{$incidencia->id}}" method="POST">
             @csrf
             <div class="form-group2">
@@ -28,50 +23,70 @@
                                 <label for="observaciones">Observaciones:</label>
                                 <textarea name="observaciones" id="observaciones" rows="5" cols="60"> </textarea>
                             </div>
+
+                        </div>
+                    </div>
+                    <div class="coche-tecnico">
+                        <div>
+                            <label for="matriculaCoche">Matrícula:</label>
+                            <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche"
+                                   value="{{$vehiculo->matricula}}" disabled>
                         </div>
                         <div>
+                            <label for="marcaCoche">Marca:</label>
+                            <input class="form-control" type="text" id="marcaCoche" name="marcaCoche"
+                                   value="{{$vehiculo->marca}}" disabled>
                         </div>
-                        <div class="coche-tecnico">
-                            <div>
-                                <label for="matriculaCoche">Matricula:</label>
-                                <input class="form-control" type="text" id="matriculaCoche" name="matriculaCoche" value="{{$vehiculo->matricula}}" disabled>
-                            </div>
-                            <div>
-                                <label for="marcaCoche">Marca:</label>
-                                <input class="form-control" type="text" id="marcaCoche" name="marcaCoche" value="{{$vehiculo->marca}}" disabled>
-                            </div>
-                            <div>
-                                <label for="modeloCoche">Modelo:</label>
-                                <input class="form-control" type="text" id="modeloCoche" name="modeloCoche" value="{{$vehiculo->modelo}}" disabled>
-                            </div>
+                        <div>
+                            <label for="modeloCoche">Modelo:</label>
+                            <input class="form-control" type="text" id="modeloCoche" name="modeloCoche"
+                                   value="{{$vehiculo->modelo}}" disabled>
+                        </div>
 
-                            <div>
-                                <label for="aseguradoraCoche">Aseguradora:</label>
-                                <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche" value="{{$vehiculo->aseguradora}}" disabled>
-                            </div>
-                            <div>
-                                <label for="tiponicidencia">Tipo de incidencia:</label>
-                                <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia" value="{{$incidencia->tipoincidencia}}" disabled>
-                            </div>
+                        <div>
+                            <label for="aseguradoraCoche">Aseguradora:</label>
+                            <input class="form-control" type="text" id="aseguradoraCoche" name="aseguradoraCoche"
+                                   value="{{$vehiculo->aseguradora}}" disabled>
+                        </div>
+                        <div>
+                            <label for="tiponicidencia">Tipo de incidencia:</label>
+                            <input class="form-control" type="text" id="tiponicidencia" name="tiponicidencia"
+                                   value=
+                                @switch($incidencia->tipoincidencia)
+                                   @case(1)
+                                       'Pinchazo'
+                                    @break
+                                   @case(2)
+                                       'Golpe'
+                                    @break
+                                   @case(3)
+                                       'Averia'
+                                    @break
+                                   @case(4)
+                                       'Otro'
+                                    @break
+                                   @endswitch disabled>
                         </div>
                     </div>
-                    <div class="contenedor-mapa">
-                        <div class="mapa" id="map">
-                        </div>
-                    </div>
-
                 </div>
-                <div class="botones-incidencia">
+                <div class="contenedor-mapa">
+                    <div class="mapa" id="map">
+                    </div>
+                </div>
+
+            </div>
+            <div class="botones-incidencia">
                 <select class="custom-select" name="estado">
                     <option value="2">Resuelta en garaje</option>
-                    <option value="3">Resuelta insitu</option>
+                    <option value="3">Resuelta in situ</option>
                 </select>
-                    <div class="resolver">
-                      <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje" value="Resolver incidencia">
-                    </div>
+                <div class="resolver">
+                    <input type="submit" class="btn btn-success btn-alpha" id="resultagaraje"
+                           value="Resolver incidencia">
+                </div>
             </div>
-            </div>
-        </form>
+        </div>
+    </form>
 
     </div>
     <script>
@@ -82,7 +97,7 @@
             var directionsService = new google.maps.DirectionsService();
             var directionsRenderer = new google.maps.DirectionsRenderer();
             let mapOptions = {
-                center: {lat: 42.8811127 ,lng: -2.5877665},
+                center: {lat: 42.8811127, lng: -2.5877665},
                 zoom: 8
             }
             var map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -112,7 +127,8 @@
                     icon: icons[features[i].type].icon,
                     map: map
                 });
-            };
+            }
+            ;
 
             calcRoute(features);
 
@@ -124,7 +140,7 @@
                     destination: end,
                     travelMode: 'DRIVING'
                 };
-                directionsService.route(request, function(result, status) {
+                directionsService.route(request, function (result, status) {
                     if (status == 'OK') {
                         directionsRenderer.setDirections(result);
                         locations.setMap(null);
@@ -135,8 +151,6 @@
 
 
         }
-
-
 
 
     </script>

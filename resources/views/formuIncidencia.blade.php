@@ -41,8 +41,10 @@
                 </div>
                 <div class="coche border border-secondary">
 
-                    <div class="matricula input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Matricula" id="matricula" name="matricula" REQUIRED>
+
+                    <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
+                        <input type="text" class="form-control" placeholder="Matrícula" id="matricula" name="matricula" REQUIRED>
+
                         <div class="input-group-append customed-div">
                             <button type="button" class="btn btn-outline-secondary customed2" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
                         </div>
