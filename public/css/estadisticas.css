@@ -1,3 +1,4 @@
+
 .contenedor-principal-chart{
     width: 100vw;
     height: 100vh;
@@ -90,3 +91,64 @@
     -moz-box-shadow: 6px 9px 17px -9px rgba(0,0,0,0.75);
     box-shadow: 6px 9px 17px -9px rgba(0,0,0,0.75)
 }
+
+@media screen and (max-width: 650px){
+    .quesito-datos{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .quesito{
+        width: 90%;
+        margin: 10px;
+    }
+
+    .datos1{
+        width: 90%;
+        margin: 15px;
+    }
+
+    .datos2{
+        width: 90%;
+    }
+
+
+    .barra-y-grafico{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barras{
+        width: 90%;
+        margin: 10px;
+        height: 145%;
+    }
+    .grafico{
+        width: 90%;
+        margin: 10px;
+
+    }
+
+    .grafico h3{
+        font-size: 15px;
+    }
+
+
+    .barras h3{
+        font-size: 15px;
+    }
+    .quesito h4{
+        font-size: 15px;
+    }
+    .datos1 h4{
+        font-size: 13px;
+    }
+    .contenedor-principal-chart {
+
+        height: 1120px;
+    }
+
+
+}
+

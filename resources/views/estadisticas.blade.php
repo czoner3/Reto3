@@ -9,43 +9,30 @@
          <canvas id="myChart1" height="190%"></canvas>
     </div>
         <div class="datos1">
-            <h4 style="color: #82ff73" id="total4"></h4>
+            <h4 style="color:#5eb953" id="total4"></h4>
             <h4 id="titulo4"></h4>
             <canvas id="myChart4" height="145%"></canvas>
 
         </div>
-        <div class="datos2">
 
-        </div>
     </div>
 
     <div class="barra-y-grafico">
     <div class="barras">
 
         <h3 id="titulo2"></h3>
-         <canvas id="myChart2" height="100%"></canvas>
+         <canvas id="myChart2" height="125%"></canvas>
     </div>
 
     <div class="grafico">
-        <h3 style="color: #82ff73" id="total1"></h3>
+        <h3 style="color: #5eb953" id="total1"></h3>
         <h3 id="titulo1"></h3>
-        <canvas id="myChart3" height="100%"></canvas>
+        <canvas id="myChart3" height="125%"></canvas>
     </div>
     </div>
 </div>
 <form action="/estadisticas" method="get"></form>
-      <!--  <div class="estadisticas" class="form-group" style="width: 50%;float: left;">
-            <div>
-                <label for="tipochart">Tipo de incidencia:</label>
-                <select class="custom-select" name="tipochart" id="tipochart">
-                    <option value="0">--</option>
-                    <option value="1">Tipo incidencia</option>
-                    <option value="2">Por tecnicos</option>
-                    <option value="3">Numero incidentes</option>
-                    <option value="4">Tipo de resolucion</option>
-                </select>
-            </div>
-        </div>-->
+
 
         <script>
             var myChart1;
@@ -300,6 +287,7 @@
                   data: {
                       labels: ['Pinchazo', 'Golpe', 'Averia', 'otro'],
                       datasets: [{
+                          label: '',
 
                           data: [cPinchazo, cGolpe,cAveria,cOtro],
                           backgroundColor: [
@@ -342,6 +330,7 @@
                     data: {
                         labels: ['Abierta','Cerrada en Garaje','Cerrada Insitu'],
                         datasets: [{
+                            label: '',
 
                             data: [cAbierto, cCerradoGaraje,cCerradoInsitu],
                             backgroundColor: [
@@ -382,6 +371,7 @@
                     data: {
                         labels: ['Enero', 'Febrero', 'Marzo', 'Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
                         datasets: [{
+                            label: '',
                             data: [aContadorIncidenciaPorMes[0],aContadorIncidenciaPorMes[1],aContadorIncidenciaPorMes[2],
                                    aContadorIncidenciaPorMes[3],aContadorIncidenciaPorMes[4],aContadorIncidenciaPorMes[5],
                                    aContadorIncidenciaPorMes[6],aContadorIncidenciaPorMes[7],aContadorIncidenciaPorMes[8],
@@ -433,6 +423,7 @@
                     data: {
                         labels: ['2010', '2011', '2012','2013','2014','2015','2016','2017','2018','2019','2020'],
                         datasets: [{
+                            label: '',
 
                             data: [aContadorIncidenciaPorDec[0],aContadorIncidenciaPorDec[1],aContadorIncidenciaPorDec[2],
                                 aContadorIncidenciaPorDec[3],aContadorIncidenciaPorDec[4],aContadorIncidenciaPorDec[5],
