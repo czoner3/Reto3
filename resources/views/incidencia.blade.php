@@ -13,7 +13,7 @@
                 <option value="">--</option>
                 <option value="1">Pinchazo</option>
                 <option value="2">Golpe</option>
-                <option value="3">Averia</option>
+                <option value="3">Avería</option>
                 <option value="4">Otro</option>
             </select>
             {{--<input class="form-control" type="text" id="tipoincidencia" name="tipoincidencia">--}}
@@ -97,7 +97,7 @@
                         Golpe
                         @break
                         @case(3)
-                        Averia
+                        Avería
                         @break
                         @case(4)
                         Otro
@@ -115,7 +115,7 @@
                         Cerrada en garaje
                         @break
                         @case(3)
-                        Cerrada insitu
+                        Cerrada in situ
                         @break
                     @endswitch
                     </td>
@@ -164,16 +164,5 @@
 
 @endsection
 
-
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: msimm
- * Date: 17/01/2020
- * Time: 11:52
- */
-?>
 
 
