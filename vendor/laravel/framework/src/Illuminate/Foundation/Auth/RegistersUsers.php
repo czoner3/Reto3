@@ -20,7 +20,7 @@ trait RegistersUsers
     {
         $usuario=Users::find(Auth::id());
 
-        if($usuario->tipo=='1'||$usuario->tipo=='1') {
+        if($usuario->tipo=='1'||$usuario->tipo=='2') {
             return view('auth.register');
         }
         else{
