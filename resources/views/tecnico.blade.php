@@ -2,17 +2,13 @@
 
 @section('content')
 
-    <div class="full-container">
 
-        <div class="img">
-            <div class="color-cortina">
-            </div>
-        </div>
+
+
+
 
         <form action="tecnico/{{$incidencia->id}}" method="POST">
             @csrf
-
-
             <div class="form-group2">
 
                 <div class="form-group form-group-alpha">
@@ -75,8 +71,6 @@
                     </div>
             </div>
             </div>
-
-
         </form>
 
     </div>

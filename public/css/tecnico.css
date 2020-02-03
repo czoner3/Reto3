@@ -60,16 +60,14 @@
     animation-direction:normal;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-
 }
 
 .botones-incidencia{
     width: 90%;
+    align-items: center;
     margin:0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+    flex-direction: row;
 }
 
 #resueltainsuto{
@@ -78,7 +76,6 @@ padding: 10px !important;
 #resueltagareja{
     padding: 10px !important;
 }
-
 
 .color-cortina{
     width: 100%;

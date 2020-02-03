@@ -1,16 +1,12 @@
 <?php $__env->startSection('content'); ?>
 
-    <div class="full-container">
 
-        <div class="img">
-            <div class="color-cortina">
-            </div>
-        </div>
+
+
+
 
         <form action="tecnico/<?php echo e($incidencia->id); ?>" method="POST">
             <?php echo csrf_field(); ?>
-
-
             <div class="form-group2">
 
                 <div class="form-group form-group-alpha">
@@ -73,8 +69,6 @@
                     </div>
             </div>
             </div>
-
-
         </form>
 
     </div>
