@@ -11,7 +11,7 @@
                 <option value="">--</option>
                 <option value="1">Pinchazo</option>
                 <option value="2">Golpe</option>
-                <option value="3">Averia</option>
+                <option value="3">Avería</option>
                 <option value="4">Otro</option>
             </select>
             
@@ -60,7 +60,7 @@
         </div>
             <div class="button-div">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-1-alpha btn-sep icon-send">Filtrar</button>
+                   <button type="submit" class="btn btn-1-alpha btn-sep icon-send">  <img src="https://icomoon.io/icons5d33221/6/218.svg">Filtrar</button>
                     </div>
             </div>
                 </div>
@@ -95,7 +95,7 @@
                         Golpe
                         <?php break; ?>
                         <?php case (3): ?>
-                        Averia
+                        Avería
                         <?php break; ?>
                         <?php case (4): ?>
                         Otro
@@ -113,7 +113,7 @@
                         Cerrada en garaje
                         <?php break; ?>
                         <?php case (3): ?>
-                        Cerrada insitu
+                        Cerrada in situ
                         <?php break; ?>
                     <?php endswitch; ?>
                     </td>
@@ -144,7 +144,7 @@
                     <?php echo e(\App\Tecnico::find($inci->tecnico_id)->nombre); ?>
 
                 </td>
-                <td><?php echo e($inci->observaciones); ?></td>
+                <td style="overflow: auto"><?php echo e($inci->observaciones); ?></td>
             </tr>
 
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -169,17 +169,6 @@
 
 <?php $__env->stopSection(); ?>
 
-
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: msimm
- * Date: 17/01/2020
- * Time: 11:52
- */
-?>
 
 
 

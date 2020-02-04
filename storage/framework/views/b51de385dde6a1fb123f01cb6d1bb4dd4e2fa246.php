@@ -119,7 +119,7 @@ unset($__errorArgs, $__bag); ?>
 
                                 <div class="col-md-6">
                                     <select name="tipo" class="form-control" id="tipo" required>
-                                        <option value="" disabled="disabled" selected>Elige</option>
+                                        <option value="" disabled="disabled" selected>--</option>
                                     <?php
                                         $usuario=App\Users::find(Auth::id());
                                         if($usuario->tipo==1){

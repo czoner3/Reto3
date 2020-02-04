@@ -242,19 +242,11 @@ margin-top: 10px;
     top: 2px;
 }
 
-.btn-1:before {
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    line-height: 3;
-    font-size: 140%;
-    width: 60px;
-}
 
 .btn-1-alpha {
     background-color: #32cc98;
     color: #fff;
+    padding: 10px !important;
 }
 
 .btn-1-alpha:hover {
@@ -267,15 +259,6 @@ margin-top: 10px;
     top: 2px;
 }
 
-.btn-1-alpha:before {
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    line-height: 3;
-    font-size: 140%;
-    width: 60px;
-}
 
 
 /* Button 2 */
@@ -354,24 +337,10 @@ margin-top: 10px;
 }
 
 
-
+/*https://icomoon.io/icons5d33221/6/218.svg*/
 /* Icons */
 
-.icon-cart:before {
-    content: "\f07a";
-}
 
-.icon-heart:before {
-    content: "\f55a";
-}
-
-.icon-info:before {
-    content: "\f05a";
-}
-
-.icon-send:before {
-    content: "\f1d8";
-}
 
 @media screen and (max-width: 1400px){
     .customed{
@@ -553,19 +522,19 @@ table td.r, table th.r {
     table tbody tr td:nth-child(4):before {
         content: "ID Cliente";
     }
-    table tbody tr td:nth-child(6):before {
+    table tbody tr td:nth-child(5):before {
         content: "Nombre Cliente";
     }
-    table tbody tr td:nth-child(7):before {
+    table tbody tr td:nth-child(6):before {
         content: "ID Usuario";
     }
-    table tbody tr td:nth-child(8):before {
+    table tbody tr td:nth-child(7):before {
         content: "Nombre Operador";
     }
-    table tbody tr td:nth-child(9):before {
+    table tbody tr td:nth-child(8):before {
         content: "ID Tecnico";
     }
-    table tbody tr td:nth-child(10):before {
+    table tbody tr td:nth-child(9):before {
         content: "Nombre Tecnico";
     }
     table tbody tr td:nth-child(10):before {
