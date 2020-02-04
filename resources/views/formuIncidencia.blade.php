@@ -6,21 +6,21 @@
     <form action="/incidencia" method="POST">
         @csrf
     <div class="botones-incidencia">
-            <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia" style="">Generar incidencia</button>
+            <button class="btn btn-1  btn-primary" type="submit" value="Generar incidencia">Generar incidencia</button>
             <button class="btn btn-3  btn-outline-secondary" type="submit" value="Volver" formmethod="get" formaction="/">Volver</button>
     </div>
 
-            <div class="border border-secondary rounded-top" style=" width: 90%;margin-left: 5%;">
-                <div class="campodni input-group mb-3" style="width: 30%;margin-left: 69%;margin-top: 1%;">
+            <div class="border border-secondary rounded-top contdni">
+                <div class="campodni input-group mb-3">
                     <input type="text" class="form-control" placeholder="Dni del cliente" id="dniCliente" name="dniCliente" REQUIRED>
                     <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary customed" id="botondni" name="action" value="Buscar dni" formaction=" ">Buscar dni</button>
                     </div>
                 </div>
             </div>
-        <div id="fichaIncidencia" style="height: 0px;overflow: hidden">
-            <div id="fichaCliente" style="width: 90%;margin-left: 5%;">
-                <div class="cliente border border-secondary" class="form-group" style="width: 50%;float: left;padding: 45px 10px 45px 10px;border-bottom-left-radius: 1%;">
+        <div id="fichaIncidencia">
+            <div id="fichaCliente">
+                <div class="cliente border border-secondary">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input class="form-control" type="text" id="nombre" name="nombre" REQUIRED>
@@ -39,10 +39,12 @@
                     </div>
 
                 </div>
-                <div class="coche border border-secondary" style="width: 50%;float: left;padding: 2px 10px 18px 10px;border-bottom-right-radius: 1%;">
+                <div class="coche border border-secondary">
+
 
                     <div class="input-group mb-3" style="margin-top: 32px;height: 22px;">
                         <input type="text" class="form-control" placeholder="Matrícula" id="matricula" name="matricula" REQUIRED>
+
                         <div class="input-group-append customed-div">
                             <button type="button" class="btn btn-outline-secondary customed2" id="botonmatricula" name="action" value="Buscar matricula" formaction=" ">Buscar matricula</button>
                         </div>
@@ -64,7 +66,7 @@
 
                     <div>
                         <label for="tipovehiculo">Tipo de vehiculo:</label>
-                        <select class="custom-select" name="tipovehiculo"  REQUIRED>
+                        <select class="custom-select" id="tipovehiculo" name="tipovehiculo"  REQUIRED>
                             <option value="1">Vehículos ligeros</option>
                             <option value="2">Vehículos pesados </option>
                             <option value="3">Vehículos especiales y agrícolas</option>
@@ -83,7 +85,7 @@
         </div>
 
 
-        <div style=" width: 90%;margin: 2px 0 2% 5%;">
+        <div id="conttipo">
             <label for="tipoincidencia">Tipo de incidencia:</label>
             <select class="custom-select" name="tipoincidencia"  REQUIRED>
                 <option value="1">pinchazo</option>
@@ -94,88 +96,13 @@
         </div>
 
         <input id="pac-input" type="text" name="localizacion" class="buscador" placeholder=" ">
-        <div id="map" style="width: 90%;height: 30%;margin: 0 0 1.3% 5%;border: 2px solid lightblue;border-radius: 10px;"></div>
+        <div class="mapaoperador" id="map"></div>
 
     </form>
+    <script src="{{ asset('js/incidencias.js') }}"></script>
 
 
 
-    <script>
-        let botondni = document.getElementById('botondni');
-
-        botondni.addEventListener("click", function () {
-
-
-            let dnicliente = document.getElementById('dniCliente').value;
-            comprobarDni(dnicliente);
-
-            function comprobarDni(dni){
-                let numero;
-                let letr;
-                let letra;
-                let regexpdni = /^\d{8}[a-zA-Z]$/;
-
-                if(regexpdni.test (dni)){
-                    numero = dni.substr(0,dni.length-1);
-                    letr = dni.substr(dni.length-1,1);
-                    numero = numero % 23;
-                    letra='TRWAGMYFPDXBNJZSQVHLCKET';
-                    letra=letra.substring(numero,numero+1);
-                    if (letra!=letr.toUpperCase()) {
-                        alert('Dni erroneo, la letra del NIF no se corresponde');
-                    }else{
-                        buscarDni(dnicliente)
-                    }
-                }else{
-                    alert('Dni erroneo, formato no válido');
-                }
-            }
-            function buscarDni(dnicliente){
-                document.getElementById('fichaIncidencia').style.height="414px";
-                document.getElementById('fichaIncidencia').style.transitionDelay="1s";
-                document.getElementById('fichaIncidencia').style.transitionDuration="1.5s";
-                botondni.style.backgroundColor="#32cc98";
-                botondni.style.color="white";
-
-                $.ajax({
-                    data: dnicliente,
-                    url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&dniCliente=" + dnicliente + "&action=Buscar+dni",
-                    type: "GET",
-                    async: false,
-                    success: function (result) {
-                        let contenido = $("<div />").html(result).find('#jscliente').html();
-                        eval(contenido);
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        console.log(thrownError);
-                    }
-                });
-            }
-        });
-
-
-        let botonmatricula = document.getElementById('botonmatricula');
-
-        botonmatricula.addEventListener("click", function () {
-            let nummatricula = document.getElementById('matricula').value;
-            $.ajax({
-                data: nummatricula,
-                url: "/create/incidencia?_token=KjSunNIDQC8HoHZt3Oayt3rB7mS5JV0mNVbrplb4&matricula="+ nummatricula +"&action=Buscar+matricula",
-                type: "GET",
-                async: false,
-                success: function (result) {
-                    console.log(result);
-                    let contenido = $("<div />").html(result).find( '#jscoche' ).html();
-                    eval(contenido);
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    console.log(thrownError);
-                }
-            });
-        });
-
-
-    </script>
     <script>
 
         function initAutoscomplete() {
@@ -368,6 +295,7 @@
             document.getElementById('marca').value = '{$coche->marca}';
             document.getElementById('modelo').value = '{$coche->modelo}';
             document.getElementById('aseguradora').value = '{$coche->aseguradora}';
+            document.getElementById('tipovehiculo').value = '{$coche->tipo}';
         </script>";
     }
     ?>

@@ -70,7 +70,7 @@ class IncidenciaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Responseº
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -81,7 +81,7 @@ class IncidenciaController extends Controller
         $usuario=Users::find(Auth::id());
         $userid = $usuario->id;
 
-        $tecnicos = Tecnico::all()->where('estado','=',0);
+        $tecnicos = Tecnico::all()->where('estado',0);
         return view('formuIncidencia', [
             "tecnicos"=> $tecnicos,
             "userid" => $userid
