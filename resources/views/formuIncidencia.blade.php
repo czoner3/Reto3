@@ -203,8 +203,7 @@
                     function buscarTecnico(posicion,features){
                         for (var i = 0; i < features.length; i++) {
                             if(features[i].position == posicion){
-                            let confirmar = confirm("¿Estas seguro de que quieres asignar a {{$tecnico->id}}?");
-                                //let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
+                                let confirmar = confirm("¿Estas seguro de que quieres asignar este tecnico?");
                                 if(confirmar==true) {
                                     document.getElementById('idTecnico').value = features[i].title;
                                     calcRoute(posicion, lugarIncidencia);
