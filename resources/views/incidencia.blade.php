@@ -62,7 +62,7 @@
         </div>
             <div class="button-div">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-1-alpha btn-sep icon-send">Filtrar</button>
+                   <button type="submit" class="btn btn-1-alpha btn-sep icon-send">  <img src="https://icomoon.io/icons5d33221/6/218.svg">Filtrar</button>
                     </div>
             </div>
                 </div>
@@ -140,7 +140,7 @@
                 <td>
                     {{\App\Tecnico::find($inci->tecnico_id)->nombre}}
                 </td>
-                <td>{{$inci->observaciones}}</td>
+                <td style="overflow: auto">{{$inci->observaciones}}</td>
             </tr>
 
         @endforeach
